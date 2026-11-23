@@ -18,7 +18,7 @@
 | **Sağ Tık Menüsü** | Herhangi bir uygulamaya sağ tıklayarak tek başına **Kur**, **Kaldır** veya **Web Sitesini Aç** işlemlerini yapabilirsiniz. |
 | **Yeşil `#FOSS` Köşe Simgesi** | Uygulamanın **Özgür ve Açık Kaynaklı Yazılım** olduğunu gösterir. |
 
-## Desteklenen Uygulamalar (239 Adet)
+## Desteklenen Uygulamalar (240 Adet)
 
 Kategoriyi açmak için başlığa tıklayın:
 
@@ -255,7 +255,7 @@ Kategoriyi açmak için başlığa tıklayın:
 </details>
 
 <details>
-<summary><strong>Yardımcı Programlar (53 uygulama)</strong></summary>
+<summary><strong>Yardımcı Programlar (54 uygulama)</strong></summary>
 
 | Uygulama | Açık Kaynak | Açıklama |
 | :--- | :---: | :--- |
@@ -310,6 +310,7 @@ Kategoriyi açmak için başlığa tıklayın:
 | [TreeSize Free](https://www.jam-software.com/treesize_free/) | — | Sürücülerinizde en çok yer kaplayan klasörleri hızlıca analiz edip görselleştiren disk analiz aracı. |
 | [UniGetUI](https://devolutions.net/unigetui/) | 🟢 Evet | WinGet, Chocolatey ve diğer Windows paket yöneticileri için modern görsel arayüz (UniGetUI). |
 | [WinRAR](https://www.win-rar.com/) | — | RAR ve ZIP arşivleri oluşturma, yönetme ve çıkarma için güçlü arşiv yöneticisi. |
+| [Wintoys](https://apps.microsoft.com/detail/9p8ltpgcbzxd) | — | Windows 10 ve 11 için performans optimizasyonu, sistem temizliği, hizmet yönetimi, sağlık araçları ve ince ayarlar sunan modern Microsoft Store uygulaması. |
 | [Wise Program Uninstaller (WiseCleaner)](https://www.wisecleaner.com/wise-program-uninstaller.html) | — | Windows programlarını hızlı, eksiksiz ve kalıntısız kaldırmak için kullanıcı dostu araç. |
 | [WizTree](https://wiztreefree.com/) | — | Sabit diskinizde en çok yer kaplayan dosya ve klasörleri saniyeler içinde bulan ultra hızlı disk analiz aracı. |
 

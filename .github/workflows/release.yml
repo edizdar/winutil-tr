@@ -27,6 +27,7 @@ jobs:
           Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) uygulama kurulum, ince ayar, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
 
           ### Öne Çıkan Özellikler
+          - **Wintoys Eklendi (240 Uygulama):** Popüler Windows optimizasyon ve bakım aracı **Wintoys** (`msstore:9P8LTPGCBZXD`) kendi simgesi ve Türkçe/İngilizce açıklamasıyla Kurulum sekmesine eklendi.
           - **Çift Dil Desteği (Türkçe / English):** Windows sistem dili Türkçe ise otomatik Türkçe, diğer tüm sistem dillerinde otomatik İngilizce açılır. Sağ üstteki **Ayarlar (⚙️)** menüsünden yeniden başlatmadan anlık dil değiştirilebilir.
           - **Tek Dosya Taşınabilir \`.exe\` (\`WinUtil-TR.exe\`):** Ek kurulum gerekmeden çift tıklayıp yönetici izniyle (UAC) çalışır.
           - **PowerShell Tek Satır Desteği:**

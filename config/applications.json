@@ -2146,5 +2146,14 @@
     "content": "Cloudflare WARP",
     "link": "https://one.one.one.one",
     "foss": false
+  },
+  "wintoys": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "Wintoys",
+    "description": "Windows 10 ve 11 için performans optimizasyonu, sistem temizliği, hizmet yönetimi, sağlık araçları ve ince ayarlar sunan modern Microsoft Store uygulaması.",
+    "link": "https://apps.microsoft.com/detail/9p8ltpgcbzxd",
+    "winget": "msstore:9P8LTPGCBZXD",
+    "foss": false
   }
 }
