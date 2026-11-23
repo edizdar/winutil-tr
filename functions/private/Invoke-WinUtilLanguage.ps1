@@ -212,6 +212,7 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFNavTab3Text" -Value $ui.NavTab3 -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFNavTab4Text" -Value $ui.NavTab4 -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFNavTab5Text" -Value $ui.NavTab5 -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFNavTab7Text" -Value $ui.NavTab7 -Property "Text"
     if ($PARAM_OFFLINE -and $sync.WPFTab1BT) {
         $sync.WPFTab1BT.ToolTip = $ui.OfflineInstallTooltip
     }
@@ -386,6 +387,49 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFBackToTweaks" -Value $ui.AppxBtnBack -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFInstallSelectedAppx" -Value $ui.AppxBtnInstall -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFRemoveSelectedAppx" -Value $ui.AppxBtnRemove -Property "Content"
+
+    # System & Health (Wintoys-style) tab
+    Set-WinUtilNamedControlText -Name "WPFSysRefreshBtn" -Value $ui.SysRefreshBtn -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysDashTitle" -Value $ui.SysDashTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysDashSubtitle" -Value $ui.SysDashSubtitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysTileOsLabel" -Value $ui.SysTileOs -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysTileCpuLabel" -Value $ui.SysTileCpu -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysTileRamLabel" -Value $ui.SysTileRam -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysTileGpuLabel" -Value $ui.SysTileGpu -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysTileDiskLabel" -Value $ui.SysTileDisk -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysBoostTitle" -Value $ui.SysBoostTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysLblHAGS" -Value $ui.SysLblHAGS -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblVBS" -Value $ui.SysLblVBS -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblFastStartup" -Value $ui.SysLblFastStartup -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblGameDVR" -Value $ui.SysLblGameDVR -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblAnimations" -Value $ui.SysLblAnimations -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblTransparency" -Value $ui.SysLblTransparency -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnRestartExplorer" -Value $ui.SysBtnRestartExplorer -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnFlushDns" -Value $ui.SysBtnFlushDns -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysHealthTitle" -Value $ui.SysHealthTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnQuickClean" -Value $ui.SysBtnQuickClean -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnWinSxS" -Value $ui.SysBtnWinSxS -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnOptimizeDrive" -Value $ui.SysBtnOptimizeDrive -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnSystemRepair" -Value $ui.SysBtnSystemRepair -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnDefenderScan" -Value $ui.SysBtnDefenderScan -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnStoreReset" -Value $ui.SysBtnStoreReset -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysQuickTweaksTitle" -Value $ui.SysQuickTweaksTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysLblThisPC" -Value $ui.SysLblThisPC -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblClockSeconds" -Value $ui.SysLblClockSeconds -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblCompactExplorer" -Value $ui.SysLblCompactExplorer -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblShortcutArrow" -Value $ui.SysLblShortcutArrow -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblLockScreenAds" -Value $ui.SysLblLockScreenAds -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblWindowsTips" -Value $ui.SysLblWindowsTips -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolsTitle" -Value $ui.SysToolsTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysToolTaskMgr" -Value $ui.SysToolTaskMgr -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolServices" -Value $ui.SysToolServices -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolRegedit" -Value $ui.SysToolRegedit -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolDevMgmt" -Value $ui.SysToolDevMgmt -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolDiskMgmt" -Value $ui.SysToolDiskMgmt -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolStartup" -Value $ui.SysToolStartup -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolStorage" -Value $ui.SysToolStorage -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysToolEventVwr" -Value $ui.SysToolEventVwr -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysActionStatus" -Value $ui.SysActionReady -Property "Text"
 }
 
 function Invoke-WinUtilLanguageChange {
@@ -428,12 +472,13 @@ function Invoke-WinUtilLanguageChange {
     $sync.AppxStatusBadges = [Hashtable]::Synchronized(@{})
 
     $tabButton = switch ($sync.currentTab) {
-        "Tweaks"   { "WPFTab2BT" }
-        "Config"   { "WPFTab3BT" }
-        "Updates"  { "WPFTab4BT" }
-        "Win11ISO" { "WPFTab5BT" }
-        "AppX"     { "WPFTab6BT" }
-        default    { "WPFTab1BT" }
+        "Tweaks"       { "WPFTab2BT" }
+        "Config"       { "WPFTab3BT" }
+        "Updates"      { "WPFTab4BT" }
+        "Win11ISO"     { "WPFTab5BT" }
+        "AppX"         { "WPFTab6BT" }
+        "SystemHealth" { "WPFTab7BT" }
+        default        { "WPFTab1BT" }
     }
     Invoke-WPFTab $tabButton
     if ($sync.WPFselectedAppsButton) {

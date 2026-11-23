@@ -1,6 +1,6 @@
 # WinUtil Türkçe
 
-[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.2-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
+[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.3-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)](#hızlı-başlangıç)
 [![Dil](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e%20%7C%20English-E84A4A?style=flat-square)](#dokümantasyon-rehberi)
 [![Lisans](https://img.shields.io/badge/Lisans-MIT-green?style=flat-square)](LICENSE)
@@ -38,6 +38,7 @@ Her sekmenin ve ayarın ne işe yaradığını ayrıntılı olarak aşağıdaki 
 | **[⚙️ İnce Ayarlar (Tweaks) Rehberi](rehber/ince-ayarlar.md)** | Standart/Minimal/Gelişmiş profiller, 69 ince ayar ve sistem tercihinin tam açıklaması, DNS seçimi ve geri alma. |
 | **[🛠️ Yapılandırma ve Güncellemeler](rehber/yapilandirma-ve-guncellemeler.md)** | Windows özellikleri (WSL, Hyper-V, .NET, Sandbox), sistem/ağ/update onarımları, eski paneller ve Windows Update profilleri. |
 | **[💿 Win11 Oluşturucu Rehberi](rehber/win11-olusturucu.md)** | Resmi Windows 11 ISO'sundan bloatware'siz, TPM/Microsoft hesabı engelsiz özel kurulum ISO'su veya format USB'si hazırlama. |
+| **[🩺 Sistem & Bakım (Wintoys Tarzı)](rehber/sistem-ve-bakim.md)** | Canlı donanım/sistem özeti (CPU/RAM/GPU/Disk), HAGS/VBS/Fast Startup performans anahtarları, tek tıkla TEMP/Shader/WinSxS/SSD TRIM temizliği ve hızlı masaüstü ayarları. |
 | **[📱 AppX Yönetimi Rehberi](rehber/appx-yonetimi.md)** | Windows ile yüklü gelen 34 Microsoft Store uygulamasının açıklamaları, güvenli kaldırma ve yeniden kurma rehberi. |
 | **[❓ Sık Sorulan Sorular (SSS)](rehber/sss.md)** | Yönetici izni, SmartScreen uyarısı, geri alma, İçe/Dışa Aktar, komut satırı parametreleri ve günlük dosyaları. |
 

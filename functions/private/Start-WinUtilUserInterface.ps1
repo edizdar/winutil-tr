@@ -536,6 +536,8 @@ $(Get-WinUtilString -Key "AboutVersion") : $($sync.version) ($(Get-WinUtilString
         $sync["WPFWin11ISOModifySection"].IsSelected = $true
     })
 
+    Initialize-WinUtilSystemHealthHandlers
+
     $buildClock.Stop()
     Write-WinUtilLog -Level "DEBUG" -Component "UI" -Message "Interface built in $($buildClock.ElapsedMilliseconds) ms, showing the window."
     Write-WinUtilTimingSummary -Scope "UI" -TotalMilliseconds $buildClock.ElapsedMilliseconds
