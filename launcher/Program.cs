@@ -11,8 +11,6 @@ using System.Windows.Forms;
 [assembly: AssemblyDescription("Windows Optimizasyon ve Uygulama Kurulum Aracı (ChrisTitusTech esinlenmesi)")]
 [assembly: AssemblyCompany("Erol Dizdar")]
 [assembly: AssemblyProduct("WinUtil Türkçe")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
 
 namespace WinUtilTR
 {

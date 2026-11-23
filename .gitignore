@@ -3,8 +3,8 @@ System.Management.Automation.dll
 Microsoft.PowerShell.ConsoleHost.dll
 
 winutil.exe.config
-winutil.ps1
 launcher/winutil.ps1.gz
+launcher/VersionInfo.generated.cs
 binary/
 testResults.xml
 

@@ -8,7 +8,9 @@ $OFS = "`r`n"
 $sync = [Hashtable]::Synchronized(@{})
 $sync.configs = @{}
 
-$script = (Get-Content -Path scripts\start.ps1 -Encoding UTF8) -replace '#{replaceme}', (Get-Date -Format 'yy.MM.dd')
+$versionFile = Join-Path (Get-Location) "VERSION"
+$appVersion = if (Test-Path $versionFile) { (Get-Content -Path $versionFile -Raw -Encoding UTF8).Trim() } else { "1.0" }
+$script = (Get-Content -Path scripts\start.ps1 -Encoding UTF8) -replace '#{replaceme}', $appVersion
 $isLocalCompile = -not [string]::Equals($env:GITHUB_ACTIONS, "true", [StringComparison]::OrdinalIgnoreCase)
 $script = $script -replace '#{islocalcompile}', $isLocalCompile.ToString().ToLowerInvariant()
 

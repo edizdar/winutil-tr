@@ -2,6 +2,7 @@
 
 Windows 10 ve Windows 11 için kapsamlı **Türkçe** uygulama kurulum, ince ayar (tweaks), sistem yapılandırma, Windows Update profil yönetimi ve Windows 11 ISO oluşturma aracı.
 
+> **Sürüm:** `v1.0`  
 > **Hazırlayan:** Erol Dizdar — [https://www.eroldizdar.tr/](https://www.eroldizdar.tr/)  
 > **Esinlenme:** [ChrisTitusTech / winutil](https://github.com/christitustech/winutil)
 
@@ -19,6 +20,14 @@ Windows 10 ve Windows 11 için kapsamlı **Türkçe** uygulama kurulum, ince aya
 
 ## Kullanım
 
+### Yöntem 1: PowerShell Tek Satır Komutu (İndirme Gerektirmez)
+PowerShell'i açıp aşağıdaki komutu çalıştırabilirsiniz (yönetici izni otomatik istenir):
+
+```powershell
+irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
+```
+
+### Yöntem 2: Tek Dosya `.exe`
 1. **[WinUtil-TR.exe](WinUtil-TR.exe)** dosyasını indirin ve çift tıklayın.
 2. Windows Yönetici İzni (UAC) penceresinde **Evet** deyin.
 3. Canlı konsol günlüğü görmek isterseniz komut satırından şu şekilde çalıştırabilirsiniz:
