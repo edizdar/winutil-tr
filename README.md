@@ -1,47 +1,69 @@
 # WinUtil Türkçe
 
-Windows 10 ve Windows 11 için kapsamlı **Türkçe** uygulama kurulum, ince ayar (tweaks), sistem yapılandırma, Windows Update profil yönetimi ve Windows 11 ISO oluşturma aracı.
+[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.0-2F7D78?style=flat-square)](VERSION)
+[![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)](#hızlı-başlangıç)
+[![Dil](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e-E84A4A?style=flat-square)](#dokümantasyon-rehberi)
+[![Lisans](https://img.shields.io/badge/Lisans-MIT-green?style=flat-square)](LICENSE)
 
-> **Sürüm:** `v1.0`  
+**WinUtil Türkçe**; Windows 10 ve Windows 11 sistemlerde toplu uygulama kurulumu, gizlilik ve performans ince ayarları, sistem onarımı, Windows Update profil yönetimi ve özel Windows 11 kurulum kalıbı (ISO / USB) oluşturma işlemlerini tek bir **Türkçe** arayüzde toplayan açık kaynaklı araçtır.
+
 > **Hazırlayan:** Erol Dizdar — [https://www.eroldizdar.tr/](https://www.eroldizdar.tr/)  
 > **Esinlenme:** [ChrisTitusTech / winutil](https://github.com/christitustech/winutil)
 
 ---
 
-## Öne Çıkan Özellikler
+## Hızlı Başlangıç
 
-- **Tam Türkçe Arayüz ve İçerik:** 239 uygulamanın açıklamaları, 69 ince ayar, 33 Windows özelliği/onarım, 34 AppX paketi, Windows Update profilleri ve Win11 ISO sihirbazı tamamen Türkçedir.
-- **Tek Dosya `.exe` (`WinUtil-TR.exe`):** Ek kurulum veya runtime gerektirmez. Çift tıkladığınızda otomatik yönetici yetkisi (UAC) ister ve siyah konsol penceresi açmadan doğrudan grafik arayüzle başlar.
-- **Canlı Sistem Durumu Rozetleri:**
-  - **İnce Ayarlar:** Sisteminizde hâlihazırda uygulanmış ince ayarların yanında otomatik yeşil **`✓ Uygulu`** etiketi görünür.
-  - **Yapılandırma:** Etkin Windows özelliklerinin yanında otomatik yeşil **`✓ Etkin`** etiketi görünür.
-  - **AppX:** Kurulu Microsoft Store uygulamalarının yanında otomatik yeşil **`✓ Kurulu`** etiketi görünür.
-  - Kutucuklar zorla işaretlenmez; yalnızca sizin seçtiğiniz öğeler üzerinde işlem yapılır.
-
-## Kullanım
-
-### Yöntem 1: PowerShell Tek Satır Komutu (İndirme Gerektirmez)
-PowerShell'i açıp aşağıdaki komutu çalıştırabilirsiniz (yönetici izni otomatik istenir):
+### Yöntem 1: PowerShell Tek Satır Komutu *(İndirme Gerektirmez)*
+Herhangi bir Windows 10/11 bilgisayarda **PowerShell**'i açın ve aşağıdaki komutu çalıştırın *(yönetici izni otomatik istenir)*:
 
 ```powershell
 irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
 ```
 
-### Yöntem 2: Tek Dosya `.exe`
-1. **[WinUtil-TR.exe](WinUtil-TR.exe)** dosyasını indirin ve çift tıklayın.
-2. Windows Yönetici İzni (UAC) penceresinde **Evet** deyin.
-3. Canlı konsol günlüğü görmek isterseniz komut satırından şu şekilde çalıştırabilirsiniz:
-   ```powershell
-   .\WinUtil-TR.exe -Console
-   ```
+### Yöntem 2: Tek Dosya `.exe` *(Taşınabilir)*
+1. **[WinUtil-TR.exe](https://github.com/edizdar/winutil-tr/raw/main/WinUtil-TR.exe)** dosyasını indirin ve çift tıklayın.
+2. Windows Yönetici İzni (UAC) penceresinde **Evet** deyin — siyah konsol penceresi açılmadan doğrudan Türkçe arayüz başlar.
+3. Canlı konsol çıktısını da görmek isterseniz komut satırından `.\WinUtil-TR.exe -Console` şeklinde başlatabilirsiniz.
+
+---
+
+## Dokümantasyon Rehberi
+
+Her sekmenin ve ayarın ne işe yaradığını ayrıntılı olarak aşağıdaki rehberlerde bulabilirsiniz:
+
+| Rehber | Kapsam |
+| :--- | :--- |
+| **[📦 Kurulum (Install) Rehberi](rehber/kurulum.md)** | 239 popüler uygulamanın tek tıkla kurulumu, güncellenmesi, kaldırılması, WinGet/Chocolatey ve kategori listesi. |
+| **[⚙️ İnce Ayarlar (Tweaks) Rehberi](rehber/ince-ayarlar.md)** | Standart/Minimal/Gelişmiş profiller, 69 ince ayar ve sistem tercihinin tam açıklaması, DNS seçimi ve geri alma. |
+| **[🛠️ Yapılandırma ve Güncellemeler](rehber/yapilandirma-ve-guncellemeler.md)** | Windows özellikleri (WSL, Hyper-V, .NET, Sandbox), sistem/ağ/update onarımları, eski paneller ve Windows Update profilleri. |
+| **[💿 Win11 Oluşturucu Rehberi](rehber/win11-olusturucu.md)** | Resmi Windows 11 ISO'sundan bloatware'siz, TPM/Microsoft hesabı engelsiz özel kurulum ISO'su veya format USB'si hazırlama. |
+| **[📱 AppX Yönetimi Rehberi](rehber/appx-yonetimi.md)** | Windows ile yüklü gelen 34 Microsoft Store uygulamasının açıklamaları, güvenli kaldırma ve yeniden kurma rehberi. |
+| **[❓ Sık Sorulan Sorular (SSS)](rehber/sss.md)** | Yönetici izni, SmartScreen uyarısı, geri alma, İçe/Dışa Aktar, komut satırı parametreleri ve günlük dosyaları. |
+
+---
+
+## Türkçe Sürümün Öne Çıkan Farkları
+
+- **%100 Türkçe Arayüz ve Açıklamalar:** Tüm sekmeler, butonlar, diyaloglar, 239 uygulama açıklaması, 69 ince ayar, 33 özellik/onarım ve 34 AppX açıklaması Türkçedir.
+- **Canlı Sistem Durumu Rozetleri:** Hangi bilgisayarda açılırsa o sistemi arka planda otomatik tarar:
+  - **İnce Ayarlar** sekmesinde zaten uygulanmış ayarların yanında **`✓ Uygulu`**
+  - **Yapılandırma** sekmesinde etkin Windows özelliklerinin yanında **`✓ Etkin`**
+  - **AppX** sekmesinde kurulu uygulamaların yanında **`✓ Kurulu`** etiketi görünür.
+- **Güvenli Seçim Mantığı:** İşaretlemediğiniz hiçbir ayar geri alınmaz veya uygulama kaldırılmaz; yalnızca sizin seçtiğiniz öğeler işlenir.
+- **Tek Dosya Taşınabilir `.exe`:** Ek runtime kurulumu gerekmeden Windows 10/11'de yerleşik .NET Framework 4.8 ile çalışır.
+
+---
 
 ## Kaynaktan Derleme
 
-Değişiklik yaptıktan sonra `winutil.ps1` ve `WinUtil-TR.exe` dosyalarını yeniden oluşturmak için:
+Kodlarda değişiklik yaptıktan sonra `winutil.ps1` ve `WinUtil-TR.exe` dosyalarını yeniden derlemek için:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Build-Exe.ps1
 ```
+
+Sürüm numarası **[VERSION](VERSION)** dosyasından okunur; her yeni sürümde bu dosya güncellenerek hem uygulama içi **Hakkında** ekranı hem de `.exe` dosya özellikleri otomatik güncellenir.
 
 ## Lisans
 
