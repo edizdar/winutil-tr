@@ -139,6 +139,9 @@ namespace WinUtilTR
                 using (var gzip = new GZipStream(resourceStream, CompressionMode.Decompress))
                 using (var output = new FileStream(tempFile, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
+                    // Prepend UTF-8 BOM so Windows PowerShell 5.1 reads Turkish characters accurately with -File
+                    byte[] utf8Bom = new byte[] { 0xEF, 0xBB, 0xBF };
+                    output.Write(utf8Bom, 0, utf8Bom.Length);
                     gzip.CopyTo(output);
                 }
 

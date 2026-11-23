@@ -53,8 +53,9 @@ $script += "`$WinUtilAutounattendXml = @'`r`n$autounattendXml`r`n'@"
 
 $script += Get-Content -Path scripts\main.ps1 -Raw -Encoding UTF8
 
-# Write UTF-8 with BOM so Windows PowerShell 5.1 parses Turkish characters accurately
-[System.IO.File]::WriteAllText((Join-Path (Get-Location) "winutil.ps1"), ($script -join "`r`n"), [System.Text.UTF8Encoding]::new($true))
+# Write UTF-8 without BOM so PowerShell 5.1 'irm ... | iex' works cleanly with Turkish characters.
+# (The standalone EXE launcher prepends a UTF-8 BOM when extracting the temp file for -File execution.)
+[System.IO.File]::WriteAllText((Join-Path (Get-Location) "winutil.ps1"), ($script -join "`r`n"), [System.Text.UTF8Encoding]::new($false))
 
 if ($Run) {
     .\Winutil.ps1
