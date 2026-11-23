@@ -1,0 +1,2150 @@
+{
+  "1password": {
+    "category": "Yardımcı Programlar",
+    "choco": "1password",
+    "content": "1Password",
+    "description": "Parolalarınızı güvenli bir şekilde saklamanızı ve yönetmenizi sağlayan parola yöneticisi.",
+    "link": "https://1password.com/",
+    "winget": "AgileBits.1Password",
+    "foss": false
+  },
+  "7zip": {
+    "category": "Yardımcı Programlar",
+    "choco": "7zip",
+    "content": "7-Zip",
+    "description": "Yüksek sıkıştırma oranı ve geniş format desteği sunan ücretsiz, açık kaynaklı dosya arşivleme aracı.",
+    "link": "https://www.7-zip.org/",
+    "winget": "7zip.7zip",
+    "foss": true
+  },
+  "abdownloadmanager": {
+    "category": "Yardımcı Programlar",
+    "choco": "ab-download-manager",
+    "content": "AB Download Manager",
+    "description": "Çoklu iş parçacıklı indirme, kuyruk zamanlama, hız sınırlama ve tarayıcı entegrasyonu sunan açık kaynaklı indirme yöneticisi.",
+    "link": "https://abdownloadmanager.com/",
+    "winget": "amir1376.ABDownloadManager",
+    "foss": true
+  },
+  "adobe": {
+    "category": "Belgeler",
+    "choco": "adobereader",
+    "content": "Adobe Acrobat Reader",
+    "description": "PDF belgelerini görüntüleme, yazdırma ve açıklama ekleme özellikleri sunan ücretsiz PDF görüntüleyici.",
+    "link": "https://www.adobe.com/acrobat/pdf-reader.html",
+    "winget": "Adobe.Acrobat.Reader.64-bit",
+    "foss": false
+  },
+  "advancedip": {
+    "category": "Profesyonel Araçlar",
+    "choco": "advanced-ip-scanner",
+    "content": "Advanced IP Scanner",
+    "description": "Yerel ağları (LAN) analiz ederek bağlı cihazlar hakkında bilgi veren hızlı ve kolay ağ tarayıcı.",
+    "link": "https://www.advanced-ip-scanner.com/",
+    "winget": "Famatech.AdvancedIPScanner",
+    "foss": false
+  },
+  "aimp": {
+    "category": "Multimedya Araçları",
+    "choco": "aimp",
+    "content": "AIMP (Müzik Çalar)",
+    "description": "Çeşitli ses formatları, çalma listeleri ve özelleştirilebilir arayüz desteği sunan zengin özellikli müzik çalar.",
+    "link": "https://www.aimp.ru/",
+    "winget": "AIMP.AIMP",
+    "foss": false
+  },
+  "angryipscanner": {
+    "category": "Profesyonel Araçlar",
+    "choco": "angryip",
+    "content": "Angry IP Scanner",
+    "description": "IP adreslerini ve portları tarayarak ağ bağlantısı bilgisi sunan açık kaynaklı, çapraz platform ağ tarayıcı.",
+    "link": "https://angryip.org/",
+    "winget": "angryziber.AngryIPScanner",
+    "foss": true
+  },
+  "anydesk": {
+    "category": "Yardımcı Programlar",
+    "choco": "anydesk",
+    "content": "AnyDesk",
+    "description": "Hızlı bağlantı ve düşük gecikme ile bilinen uzaktan masaüstü erişim ve kontrol yazılımı.",
+    "link": "https://anydesk.com/",
+    "winget": "AnyDesk.AnyDesk",
+    "foss": false
+  },
+  "audacity": {
+    "category": "Multimedya Araçları",
+    "choco": "audacity",
+    "content": "Audacity",
+    "description": "Güçlü ses kayıt ve düzenleme yetenekleriyle tanınan ücretsiz, açık kaynaklı ses düzenleme yazılımı.",
+    "link": "https://www.audacityteam.org/",
+    "winget": "Audacity.Audacity",
+    "foss": true
+  },
+  "autoruns": {
+    "category": "Microsoft Araçları",
+    "choco": "autoruns",
+    "content": "Autoruns",
+    "description": "Sistem açılışında ve oturum açıldığında hangi programların otomatik çalıştığını ayrıntılı şekilde gösteren Microsoft aracı.",
+    "link": "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
+    "winget": "Microsoft.Sysinternals.Autoruns",
+    "foss": false
+  },
+  "rdcman": {
+    "category": "Microsoft Araçları",
+    "choco": "rdcman",
+    "content": "RDCMan",
+    "description": "Birden fazla uzak masaüstü (RDP) bağlantısını tek pencereden yönetmeye yarayan Microsoft aracı.",
+    "link": "https://learn.microsoft.com/en-us/sysinternals/downloads/rdcman",
+    "winget": "Microsoft.Sysinternals.RDCMan",
+    "foss": false
+  },
+  "autohotkey": {
+    "category": "Yardımcı Programlar",
+    "choco": "autohotkey",
+    "content": "AutoHotkey",
+    "description": "Windows için özel otomasyon betikleri, makrolar ve klavye kısayolları oluşturmanızı sağlayan betik dili.",
+    "link": "https://www.autohotkey.com/",
+    "winget": "AutoHotkey.AutoHotkey",
+    "foss": true
+  },
+  "battlenet": {
+    "category": "Oyunlar",
+    "choco": "na",
+    "winget": "Blizzard.BattleNet",
+    "content": "Battle.net",
+    "description": "Activision Blizzard oyunlarını indirmek ve başlatmak için resmi oyun platformu.",
+    "link": "https://battle.net",
+    "foss": false
+  },
+  "bitwarden": {
+    "category": "Yardımcı Programlar",
+    "choco": "bitwarden",
+    "content": "Bitwarden",
+    "description": "Parolalarınızı şifreli bir kasada birden fazla cihazda eşitleyerek saklayan açık kaynaklı parola yöneticisi.",
+    "link": "https://bitwarden.com/",
+    "winget": "Bitwarden.Bitwarden",
+    "foss": true
+  },
+  "blender": {
+    "category": "Multimedya Araçları",
+    "choco": "blender",
+    "content": "Blender (3B Grafik)",
+    "description": "Modelleme, heykel, animasyon ve render araçları sunan güçlü, açık kaynaklı 3B tasarım yazılımı.",
+    "link": "https://www.blender.org/",
+    "winget": "BlenderFoundation.Blender",
+    "foss": true
+  },
+  "brave": {
+    "category": "Tarayıcılar",
+    "choco": "brave",
+    "content": "Brave",
+    "description": "Reklamları ve izleyicileri yerleşik olarak engelleyen, hızlı ve gizlilik odaklı web tarayıcısı.",
+    "link": "https://www.brave.com",
+    "winget": "Brave.Brave",
+    "foss": true
+  },
+  "bruno": {
+    "category": "Geliştirme",
+    "choco": "bruno",
+    "content": "Bruno",
+    "description": "API koleksiyonlarını düz metin dosyaları olarak saklayan, sürüm kontrolü dostu yerel API istemcisi.",
+    "link": "https://www.usebruno.com/",
+    "winget": "Bruno.Bruno",
+    "foss": true
+  },
+  "bulkcrapuninstaller": {
+    "category": "Yardımcı Programlar",
+    "choco": "bulk-crap-uninstaller",
+    "content": "Bulk Crap Uninstaller",
+    "description": "İstenmeyen programları toplu olarak ve kalıntı bırakmadan kaldırmaya yarayan ücretsiz, açık kaynaklı kaldırıcı.",
+    "link": "https://www.bcuninstaller.com/",
+    "winget": "Klocman.BulkCrapUninstaller",
+    "foss": true
+  },
+  "blurautoclicker": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "BlurAutoClicker",
+    "description": "Gelişmiş özelliklere ve yüksek performansa sahip otomatik tıklama aracı.",
+    "link": "https://blur009.vercel.app/projects/blur-autoclicker/",
+    "winget": "Blur009.BlurAutoClicker",
+    "foss": true
+  },
+  "calibre": {
+    "category": "Multimedya Araçları",
+    "choco": "calibre",
+    "content": "Calibre",
+    "description": "Güçlü ve kullanımı kolay e-kitap yöneticisi, görüntüleyicisi ve format dönüştürücüsü.",
+    "link": "https://calibre-ebook.com/",
+    "winget": "calibre.calibre",
+    "foss": true
+  },
+  "cemu": {
+    "category": "Oyunlar",
+    "choco": "cemu",
+    "content": "Cemu",
+    "description": "PC üzerinde Wii U oyun ve uygulamalarını çalıştırmayı sağlayan emülatör.",
+    "link": "https://cemu.info/",
+    "winget": "Cemu.Cemu",
+    "foss": true
+  },
+  "chatgpt": {
+    "category": "Geliştirme",
+    "choco": "na",
+    "content": "ChatGPT Desktop",
+    "description": "Microsoft Store üzerinden dağıtılan resmi Windows ChatGPT masaüstü uygulaması.",
+    "link": "https://openai.com/chatgpt/download/",
+    "winget": "msstore:9NT1R1C2HH7J",
+    "foss": false
+  },
+  "chatterino": {
+    "category": "İletişim",
+    "choco": "chatterino",
+    "content": "Chatterino",
+    "description": "Daha akıcı bir yayın deneyimi için temiz ve özelleştirilebilir Twitch sohbet istemcisi.",
+    "link": "https://www.chatterino.com/",
+    "winget": "ChatterinoTeam.Chatterino",
+    "foss": true
+  },
+  "chrome": {
+    "category": "Tarayıcılar",
+    "choco": "googlechrome",
+    "content": "Chrome",
+    "description": "Hızı, sadeliği ve Google servisleriyle entegrasyonuyla tanınan yaygın web tarayıcısı.",
+    "link": "https://www.google.com/chrome/",
+    "winget": "Google.Chrome",
+    "foss": false
+  },
+  "chromium": {
+    "category": "Tarayıcılar",
+    "choco": "chromium",
+    "content": "Chromium",
+    "description": "Chrome dahil birçok modern web tarayıcısının temelini oluşturan açık kaynaklı tarayıcı projesi.",
+    "link": "https://www.chromium.org/",
+    "winget": "Hibbiki.Chromium",
+    "foss": true
+  },
+  "cinebenchr23": {
+    "category": "Profesyonel Araçlar",
+    "choco": "na",
+    "content": "Cinebench R23",
+    "description": "İşlemci (CPU) render performansını karşılaştırmak için kullanılan kıyaslama (benchmark) aracı.",
+    "link": "https://www.maxon.net/en/cinebench",
+    "winget": "Maxon.CinebenchR23",
+    "foss": false
+  },
+  "claude": {
+    "category": "Geliştirme",
+    "choco": "claude",
+    "content": "Claude Desktop",
+    "description": "Yapay zeka destekli çalışma ve sohbet için Anthropic'in resmi Claude masaüstü uygulaması.",
+    "link": "https://claude.ai/download",
+    "winget": "Anthropic.Claude",
+    "foss": false
+  },
+  "claude-code": {
+    "category": "Geliştirme",
+    "choco": "claude-code",
+    "content": "Claude Code",
+    "description": "Terminal ve IDE geliştirme akışları için Anthropic'in yapay zeka kodlama ajanı.",
+    "link": "https://code.claude.com/",
+    "winget": "Anthropic.ClaudeCode",
+    "foss": false
+  },
+  "cmake": {
+    "category": "Geliştirme",
+    "choco": "cmake",
+    "content": "CMake",
+    "description": "Yazılımları derlemek, test etmek ve paketlemek için açık kaynaklı, çapraz platform derleme aracı.",
+    "link": "https://cmake.org/",
+    "winget": "Kitware.CMake",
+    "foss": true
+  },
+  "codex": {
+    "category": "Geliştirme",
+    "choco": "codex",
+    "content": "Codex",
+    "description": "Terminalinizde yerel olarak çalışan OpenAI kodlama ajanı (Codex CLI).",
+    "link": "https://developers.openai.com/codex/cli",
+    "winget": "OpenAI.Codex",
+    "foss": true
+  },
+  "cpuz": {
+    "category": "Profesyonel Araçlar",
+    "choco": "cpu-z",
+    "content": "CPU-Z",
+    "description": "İşlemci, bellek (RAM) ve anakart gibi donanım bileşenleri hakkında ayrıntılı bilgi sunan sistem tanılama aracı.",
+    "link": "https://www.cpuid.com/softwares/cpu-z.html",
+    "winget": "CPUID.CPU-Z",
+    "foss": false
+  },
+  "crystaldiskinfo": {
+    "category": "Yardımcı Programlar",
+    "choco": "crystaldiskinfo",
+    "content": "Crystal Disk Info",
+    "description": "Sabit disk ve SSD'lerin sağlık durumunu ve S.M.A.R.T. verilerini izleyen disk sağlığı aracı.",
+    "link": "https://crystalmark.info/en/software/crystaldiskinfo/",
+    "winget": "CrystalDewWorld.CrystalDiskInfo",
+    "foss": true
+  },
+  "crystaldiskmark": {
+    "category": "Yardımcı Programlar",
+    "choco": "crystaldiskmark",
+    "content": "Crystal Disk Mark",
+    "description": "Sabit disk ve SSD'lerin okuma ve yazma hızlarını ölçen disk performans testi aracı.",
+    "link": "https://crystalmark.info/en/software/crystaldiskmark/",
+    "winget": "CrystalDewWorld.CrystalDiskMark",
+    "foss": true
+  },
+  "cursor": {
+    "category": "Geliştirme",
+    "choco": "cursoride",
+    "content": "Cursor",
+    "description": "VS Code tabanlı, entegre yapay zeka destekli ve otonom kodlama özellikli kod editörü.",
+    "link": "https://cursor.com/",
+    "winget": "Anysphere.Cursor",
+    "foss": false
+  },
+  "ddu": {
+    "category": "Profesyonel Araçlar",
+    "choco": "ddu",
+    "content": "Display Driver Uninstaller",
+    "description": "NVIDIA, AMD ve Intel ekran kartı sürücülerini kalıntı bırakmadan tamamen kaldıran sorun giderme aracı.",
+    "link": "https://www.wagnardsoft.com/display-driver-uninstaller-DDU-",
+    "winget": "Wagnardsoft.DisplayDriverUninstaller",
+    "foss": true
+  },
+  "discord": {
+    "category": "İletişim",
+    "choco": "discord",
+    "content": "Discord",
+    "description": "Sesli, görüntülü ve yazılı sohbet sunan, oyuncular ve topluluklar arasında popüler iletişim platformu.",
+    "link": "https://discord.com/",
+    "winget": "Discord.Discord",
+    "foss": false
+  },
+  "dismtools": {
+    "category": "Microsoft Araçları",
+    "choco": "dismtools",
+    "content": "DISMTools",
+    "description": "Windows kalıplarını (ISO/WIM) yönetmek ve düzenlemek için hızlı, görsel arayüzlü DISM aracı.",
+    "link": "https://github.com/CodingWonders/DISMTools",
+    "winget": "CodingWondersSoftware.DISMTools.Stable",
+    "foss": true
+  },
+  "ntlite": {
+    "category": "Microsoft Araçları",
+    "choco": "ntlite-free",
+    "content": "NTLite",
+    "description": "Windows kurulum kalıplarına güncelleme ve sürücü entegre eden, kurulumu özelleştiren ve hızlandıran araç.",
+    "link": "https://ntlite.com",
+    "winget": "Nlitesoft.NTLite",
+    "foss": false
+  },
+  "dorion": {
+    "category": "İletişim",
+    "choco": "dorion",
+    "content": "Dorion",
+    "description": "Daha düşük bellek tüketimi, hızlı açılış, tema ve eklenti desteği sunan hafif alternatif Discord istemcisi.",
+    "link": "https://spikehd.dev/projects/dorion/",
+    "winget": "SpikeHD.Dorion",
+    "foss": true
+  },
+  "dockerdesktop": {
+    "category": "Geliştirme",
+    "choco": "docker-desktop",
+    "content": "Docker Desktop",
+    "description": "Windows üzerinde konteyner tabanlı uygulamalar oluşturmak, çalıştırmak ve test etmek için yerel ortam.",
+    "link": "https://www.docker.com/products/docker-desktop/",
+    "winget": "Docker.DockerDesktop",
+    "foss": false
+  },
+  "dotnet6": {
+    "category": "Microsoft Araçları",
+    "choco": "dotnet-6.0-runtime",
+    "content": ".NET Desktop Runtime 6",
+    "description": ".NET 6 ile geliştirilmiş uygulamaları çalıştırmak için gereken çalışma zamanı ortamı.",
+    "link": "https://dotnet.microsoft.com/download/dotnet/6.0",
+    "winget": "Microsoft.DotNet.DesktopRuntime.6",
+    "foss": true
+  },
+  "dotnet8": {
+    "category": "Microsoft Araçları",
+    "choco": "dotnet-8.0-runtime",
+    "content": ".NET Desktop Runtime 8",
+    "description": ".NET 8 ile geliştirilmiş uygulamaları çalıştırmak için gereken çalışma zamanı ortamı.",
+    "link": "https://dotnet.microsoft.com/download/dotnet/8.0",
+    "winget": "Microsoft.DotNet.DesktopRuntime.8",
+    "foss": true
+  },
+  "dotnet9": {
+    "category": "Microsoft Araçları",
+    "choco": "dotnet-9.0-runtime",
+    "content": ".NET Desktop Runtime 9",
+    "description": ".NET 9 ile geliştirilmiş uygulamaları çalıştırmak için gereken çalışma zamanı ortamı.",
+    "link": "https://dotnet.microsoft.com/download/dotnet/9.0",
+    "winget": "Microsoft.DotNet.DesktopRuntime.9",
+    "foss": true
+  },
+  "dotnet10": {
+    "category": "Microsoft Araçları",
+    "choco": "dotnet-10.0-runtime",
+    "content": ".NET Desktop Runtime 10",
+    "description": ".NET 10 ile geliştirilmiş uygulamaları çalıştırmak için gereken çalışma zamanı ortamı.",
+    "link": "https://dotnet.microsoft.com/download/dotnet/10.0",
+    "winget": "Microsoft.DotNet.DesktopRuntime.10",
+    "foss": true
+  },
+  "dropbox": {
+    "category": "Yardımcı Programlar",
+    "choco": "dropbox",
+    "content": "Dropbox",
+    "description": "Dosyalarınızı cihazlar arasında eşitleyen ve paylaşmanızı sağlayan bulut depolama istemcisi.",
+    "link": "https://www.dropbox.com/desktop",
+    "winget": "Dropbox.Dropbox",
+    "foss": false
+  },
+  "eaapp": {
+    "category": "Oyunlar",
+    "choco": "ea-app",
+    "content": "EA App",
+    "description": "Electronic Arts (EA) oyunlarına erişmek ve oynamak için resmi oyun platformu.",
+    "link": "https://www.ea.com/ea-app",
+    "winget": "ElectronicArts.EADesktop",
+    "foss": false
+  },
+  "eartrumpet": {
+    "category": "Multimedya Araçları",
+    "choco": "eartrumpet",
+    "content": "EarTrumpet (Ses Kontrolü)",
+    "description": "Windows için uygulama bazlı ses düzeylerini kolayca yönetmeyi sağlayan gelişmiş ses kontrol aracı.",
+    "link": "https://eartrumpet.app/",
+    "winget": "File-New-Project.EarTrumpet",
+    "foss": true
+  },
+  "edge": {
+    "category": "Tarayıcılar",
+    "choco": "microsoft-edge",
+    "content": "Edge",
+    "description": "Chromium tabanlı, Microsoft servisleriyle entegre modern web tarayıcısı.",
+    "link": "https://www.microsoft.com/edge",
+    "winget": "Microsoft.Edge",
+    "foss": false
+  },
+  "es-de": {
+    "category": "Oyunlar",
+    "choco": "",
+    "content": "EmulationStation Desktop Edition",
+    "_comment": "This and emulationstation are two completely different things. ES-DE is your frontend for everything and has its own set of emulators. Emulationstation is a graphical frontend for RetroArch.",
+    "description": "Çoklu platform oyun koleksiyonunuza göz atmak ve başlatmak için masaüstü emülatör arayüzü.",
+    "link": "https://es-de.org/",
+    "winget": "ES-DE.EmulationStation-DE",
+    "foss": true
+  },
+  "enteauth": {
+    "category": "Yardımcı Programlar",
+    "choco": "ente-auth",
+    "content": "Ente Auth",
+    "description": "Ücretsiz, çapraz platform ve uçtan uca şifreli iki faktörlü doğrulama (2FA) uygulaması.",
+    "link": "https://ente.io/auth/",
+    "winget": "ente-io.auth-desktop",
+    "foss": true
+  },
+  "epicgames": {
+    "category": "Oyunlar",
+    "choco": "epicgameslauncher",
+    "content": "Epic Games Launcher",
+    "description": "Epic Games Store'daki oyunları indirmek ve oynamak için resmi başlatıcı.",
+    "link": "https://www.epicgames.com/store/en-US/",
+    "winget": "EpicGames.EpicGamesLauncher",
+    "foss": false
+  },
+  "files": {
+    "category": "Yardımcı Programlar",
+    "choco": "files",
+    "content": "Files",
+    "description": "Modern tasarımlı, sekmeli alternatif Windows dosya yöneticisi.",
+    "link": "https://files.community",
+    "winget": "FilesCommunity.Files",
+    "foss": true
+  },
+  "fileconverter": {
+    "category": "Multimedya Araçları",
+    "choco": "file-converter",
+    "content": "File Converter",
+    "description": "Dosya Gezgini sağ tık menüsünden doğrudan dosya dönüştürme ve sıkıştırma yapan araç.",
+    "link": "https://file-converter.io/",
+    "winget": "AdrienAllard.FileConverter",
+    "foss": true
+  },
+  "firefox": {
+    "category": "Tarayıcılar",
+    "choco": "firefox",
+    "content": "Firefox",
+    "description": "Özelleştirme seçenekleri, gizlilik özellikleri ve eklentileriyle tanınan açık kaynaklı web tarayıcısı.",
+    "link": "https://www.mozilla.org/en-US/firefox/new/",
+    "winget": "Mozilla.Firefox",
+    "foss": true
+  },
+  "firefoxesr": {
+    "category": "Tarayıcılar",
+    "choco": "FirefoxESR",
+    "content": "Firefox ESR",
+    "description": "Uzun süreli destek (ESR) sürümüne sahip, kararlılık ve güvenlik güncellemelerine odaklanan Mozilla Firefox.",
+    "link": "https://www.mozilla.org/en-US/firefox/enterprise/",
+    "winget": "Mozilla.Firefox.ESR",
+    "foss": true
+  },
+  "floorp": {
+    "category": "Tarayıcılar",
+    "choco": "floorp",
+    "content": "Floorp",
+    "description": "Sade, hızlı ve özelleştirilebilir bir gezinme deneyimi sunan açık kaynaklı web tarayıcısı.",
+    "link": "https://floorp.app/",
+    "winget": "Ablaze.Floorp",
+    "foss": true
+  },
+  "flux": {
+    "category": "Yardımcı Programlar",
+    "choco": "f.lux",
+    "content": "F.lux",
+    "description": "Gece kullanımında göz yorgunluğunu azaltmak için ekran renk sıcaklığını otomatik ayarlayan araç.",
+    "link": "https://justgetflux.com/",
+    "winget": "flux.flux",
+    "foss": false
+  },
+  "foobar": {
+    "category": "Multimedya Araçları",
+    "choco": "foobar2000",
+    "content": "foobar2000 (Müzik Çalar)",
+    "description": "Modüler yapısı ve gelişmiş özellikleriyle tanınan, son derece özelleştirilebilir müzik çalar.",
+    "link": "https://www.foobar2000.org/",
+    "winget": "PeterPawlowski.foobar2000",
+    "foss": false
+  },
+  "fnm": {
+    "category": "Geliştirme",
+    "choco": "fnm",
+    "content": "Fast Node Manager",
+    "description": "Node.js sürümlerini hızla kurmanızı ve aralarında geçiş yapmanızı sağlayan çapraz platform araç.",
+    "link": "https://github.com/Schniz/fnm",
+    "winget": "Schniz.fnm",
+    "foss": true
+  },
+  "foxpdfreader": {
+    "category": "Belgeler",
+    "choco": "foxitreader",
+    "content": "Foxit PDF Reader",
+    "description": "Tanıdık şerit (ribbon) arayüzlü ücretsiz ve hızlı PDF görüntüleyici.",
+    "link": "https://www.foxit.com/pdf-reader/",
+    "winget": "Foxit.FoxitReader",
+    "foss": false
+  },
+  "geforcenow": {
+    "category": "Oyunlar",
+    "choco": "nvidia-geforce-now",
+    "content": "GeForce NOW",
+    "description": "Yüksek kaliteli PC oyunlarını bulut üzerinden cihazınızda oynamanızı sağlayan bulut oyun servisi.",
+    "link": "https://www.nvidia.com/en-us/geforce-now/",
+    "winget": "Nvidia.GeForceNow",
+    "foss": false
+  },
+  "gimp": {
+    "category": "Multimedya Araçları",
+    "choco": "gimp",
+    "content": "GIMP (Görsel Düzenleyici)",
+    "description": "Fotoğraf rötuşlama, görsel düzenleme ve grafik tasarım için güçlü açık kaynaklı görsel düzenleyici.",
+    "link": "https://www.gimp.org/",
+    "winget": "GIMP.GIMP.3",
+    "foss": true
+  },
+  "git": {
+    "category": "Geliştirme",
+    "choco": "git",
+    "content": "Git",
+    "description": "Yazılım geliştirmede kaynak kod değişikliklerini takip etmek için yaygın dağıtık sürüm kontrol sistemi.",
+    "link": "https://git-scm.com/",
+    "winget": "Git.Git",
+    "foss": true
+  },
+  "gitextensions": {
+    "category": "Geliştirme",
+    "choco": "gitextensions",
+    "content": "Git Extensions",
+    "description": "Depo, geçmiş ve commit yönetimi sunan Windows için görsel Git istemcisi.",
+    "link": "https://gitextensions.github.io/",
+    "winget": "GitExtensionsTeam.GitExtensions",
+    "foss": true
+  },
+  "githubcli": {
+    "category": "Geliştirme",
+    "choco": "gh",
+    "content": "GitHub CLI",
+    "description": "Pull request, issue ve sürüm gibi GitHub iş akışlarını doğrudan terminale getiren komut satırı aracı.",
+    "link": "https://cli.github.com/",
+    "winget": "GitHub.cli",
+    "foss": true
+  },
+  "githubdesktop": {
+    "category": "Geliştirme",
+    "choco": "git;github-desktop",
+    "content": "GitHub Desktop",
+    "description": "GitHub depolarında çalışmayı kolaylaştıran görsel Git istemcisi.",
+    "link": "https://desktop.github.com/",
+    "winget": "GitHub.GitHubDesktop",
+    "foss": true
+  },
+  "gog": {
+    "category": "Oyunlar",
+    "choco": "goggalaxy",
+    "content": "GOG Galaxy",
+    "description": "DRM'siz oyunlar ve birleşik oyun kütüphanesi sunan GOG oyun istemcisi.",
+    "link": "https://www.gog.com/galaxy",
+    "winget": "GOG.Galaxy",
+    "foss": false
+  },
+  "golang": {
+    "category": "Geliştirme",
+    "choco": "golang",
+    "content": "Go",
+    "description": "Sadelik, güvenilirlik ve verimlilik için tasarlanmış derlenen programlama dili (Go).",
+    "link": "https://go.dev/",
+    "winget": "GoLang.Go",
+    "foss": true
+  },
+  "googledrive": {
+    "category": "Yardımcı Programlar",
+    "choco": "googledrive",
+    "content": "Google Drive",
+    "description": "Dosyalarınızı Google hesabınızla tüm cihazlar arasında eşitleyen bulut depolama istemcisi.",
+    "link": "https://www.google.com/drive/",
+    "winget": "Google.GoogleDrive",
+    "foss": false
+  },
+  "gpuz": {
+    "category": "Profesyonel Araçlar",
+    "choco": "gpu-z",
+    "content": "GPU-Z",
+    "description": "Ekran kartınız ve grafik işlemciniz (GPU) hakkında ayrıntılı teknik bilgi ve sensör verileri sunar.",
+    "link": "https://www.techpowerup.com/gpuz/",
+    "winget": "TechPowerUp.GPU-Z",
+    "foss": false
+  },
+  "gsudo": {
+    "category": "Profesyonel Araçlar",
+    "choco": "gsudo",
+    "content": "gsudo",
+    "description": "Mevcut konsol penceresinde doğrudan yönetici yetkisiyle komut çalıştırmayı sağlayan Windows 'sudo' aracı.",
+    "link": "https://github.com/gerardog/gsudo",
+    "winget": "gerardog.gsudo",
+    "foss": true
+  },
+  "helium": {
+    "category": "Tarayıcılar",
+    "choco": "helium",
+    "content": "Helium",
+    "description": "Gizlilik odaklı, hızlı ve sade web tarayıcısı.",
+    "link": "https://helium.computer",
+    "winget": "ImputNet.Helium",
+    "foss": true
+  },
+  "hugo": {
+    "category": "Geliştirme",
+    "choco": "hugo-extended",
+    "content": "Hugo",
+    "description": "Statik web siteleri oluşturmak için dünyanın en hızlı açık kaynaklı çatı araçlarından biri.",
+    "link": "https://gohugo.io",
+    "winget": "Hugo.Hugo.Extended",
+    "foss": true
+  },
+  "handbrake": {
+    "category": "Multimedya Araçları",
+    "choco": "handbrake",
+    "content": "HandBrake",
+    "description": "Videoları neredeyse her formattan yaygın kodeklere dönüştürebilen açık kaynaklı video dönüştürücü.",
+    "link": "https://handbrake.fr/",
+    "winget": "HandBrake.HandBrake",
+    "foss": true
+  },
+  "heroiclauncher": {
+    "category": "Oyunlar",
+    "choco": "heroic-games-launcher",
+    "content": "Heroic Games Launcher",
+    "description": "Epic Games Store, GOG ve Amazon Games için açık kaynaklı alternatif oyun başlatıcı.",
+    "link": "https://heroicgameslauncher.com/",
+    "winget": "HeroicGamesLauncher.HeroicGamesLauncher",
+    "foss": true
+  },
+  "hwinfo": {
+    "category": "Profesyonel Araçlar",
+    "choco": "hwinfo",
+    "content": "HWiNFO",
+    "description": "Windows için kapsamlı donanım bilgisi, sensör izleme ve sistem tanılama aracı.",
+    "link": "https://www.hwinfo.com/",
+    "winget": "REALiX.HWiNFO",
+    "foss": false
+  },
+  "hwmonitor": {
+    "category": "Profesyonel Araçlar",
+    "choco": "hwmonitor",
+    "content": "HWMonitor",
+    "description": "Bilgisayarın sıcaklık, voltaj ve fan hızı gibi temel sağlık sensörlerini okuyan donanım izleme programı.",
+    "link": "https://www.cpuid.com/softwares/hwmonitor.html",
+    "winget": "CPUID.HWMonitor",
+    "foss": false
+  },
+  "imhex": {
+    "category": "Profesyonel Araçlar",
+    "choco": "imhex",
+    "content": "ImHex",
+    "description": "Tersine mühendislik ve geliştiriciler için açık kaynaklı hex editörü, ayrıştırıcı ve veri analiz aracı.",
+    "link": "https://imhex.werwolv.net/",
+    "winget": "WerWolv.ImHex",
+    "foss": true
+  },
+  "imageglass": {
+    "category": "Multimedya Araçları",
+    "choco": "imageglass",
+    "content": "ImageGlass (Görsel Görüntüleyici)",
+    "description": "Hız ve sadeliğe odaklanan, çok sayıda görsel formatını destekleyen modern resim görüntüleyici.",
+    "link": "https://imageglass.org/",
+    "winget": "DuongDieuPhap.ImageGlass",
+    "foss": true
+  },
+  "internetdownloadmanager": {
+    "category": "Yardımcı Programlar",
+    "choco": "internet-download-manager",
+    "content": "Internet Download Manager",
+    "description": "Dosya indirmelerini hızlandıran, duraklatıp devam ettirebilen ve zamanlayabilen indirme yöneticisi (IDM).",
+    "link": "https://www.internetdownloadmanager.com/",
+    "winget": "Tonec.InternetDownloadManager",
+    "foss": false
+  },
+  "irfanview": {
+    "category": "Multimedya Araçları",
+    "choco": "irfanview",
+    "content": "IrfanView",
+    "description": "Çoklu format, toplu işleme ve eklenti desteği sunan hafif, hızlı ve ücretsiz resim görüntüleyici.",
+    "link": "https://irfanview.com/",
+    "winget": "IrfanSkiljan.IrfanView",
+    "foss": false
+  },
+  "itch": {
+    "category": "Oyunlar",
+    "choco": "itch",
+    "content": "Itch.io",
+    "description": "Bağımsız (indie) oyunlar ve yaratıcı projeler için dijital dağıtım platformu.",
+    "link": "https://itch.io/",
+    "winget": "ItchIo.Itch",
+    "foss": true
+  },
+  "itunes": {
+    "category": "Multimedya Araçları",
+    "choco": "itunes",
+    "content": "iTunes",
+    "description": "Apple tarafından geliştirilen medya oynatıcı, müzik kütüphanesi ve cihaz yönetim uygulaması.",
+    "link": "https://www.apple.com/itunes/",
+    "winget": "Apple.iTunes",
+    "foss": false
+  },
+  "java8": {
+    "category": "Geliştirme",
+    "choco": "corretto8jdk",
+    "content": "Amazon Corretto 8 (LTS)",
+    "description": "Amazon tarafından sağlanan ücretsiz, üretime hazır OpenJDK 8 (LTS) Java dağıtımı.",
+    "link": "https://aws.amazon.com/corretto",
+    "winget": "Amazon.Corretto.8.JDK",
+    "foss": true
+  },
+  "java21": {
+    "category": "Geliştirme",
+    "choco": "corretto21jdk",
+    "content": "Amazon Corretto 21 (LTS)",
+    "description": "Amazon tarafından sağlanan ücretsiz, üretime hazır OpenJDK 21 (LTS) Java dağıtımı.",
+    "link": "https://aws.amazon.com/corretto",
+    "winget": "Amazon.Corretto.21.JDK",
+    "foss": true
+  },
+  "java25": {
+    "category": "Geliştirme",
+    "choco": "corretto25jdk",
+    "content": "Amazon Corretto 25 (LTS)",
+    "description": "Amazon tarafından sağlanan ücretsiz, üretime hazır OpenJDK 25 (LTS) Java dağıtımı.",
+    "link": "https://aws.amazon.com/corretto",
+    "winget": "Amazon.Corretto.25.JDK",
+    "foss": true
+  },
+  "jellyfinmediaplayer": {
+    "category": "Sunucu Araçları",
+    "choco": "jellyfin-media-player",
+    "content": "Jellyfin Media Player",
+    "description": "Jellyfin medya sunucunuzdaki içeriklere erişip izlemenizi sağlayan masaüstü istemcisi.",
+    "link": "https://jellyfin.org/",
+    "winget": "Jellyfin.JellyfinMediaPlayer",
+    "foss": true
+  },
+  "jellyfinserver": {
+    "category": "Sunucu Araçları",
+    "choco": "jellyfin",
+    "content": "Jellyfin Server",
+    "description": "Kişisel medya arşivinizi düzenleyip yayınlamanızı sağlayan ücretsiz, açık kaynaklı medya sunucusu.",
+    "link": "https://jellyfin.org/",
+    "winget": "Jellyfin.Server",
+    "foss": true
+  },
+  "jetbrains": {
+    "category": "Geliştirme",
+    "choco": "jetbrainstoolbox",
+    "content": "Jetbrains Toolbox",
+    "description": "JetBrains geliştirici IDE'lerini kolayca kurmak ve güncellemek için yönetim aracı.",
+    "link": "https://www.jetbrains.com/toolbox/",
+    "winget": "JetBrains.Toolbox",
+    "foss": false
+  },
+  "jpegview": {
+    "category": "Yardımcı Programlar",
+    "choco": "jpegview",
+    "content": "JPEG View",
+    "description": "JPEG, PNG, WEBP, HEIC, AVIF ve TIFF gibi formatlar için minimalist ve çok hızlı resim görüntüleyici.",
+    "link": "https://github.com/sylikc/jpegview",
+    "winget": "sylikc.JPEGView",
+    "foss": true
+  },
+  "joplin": {
+    "category": "Belgeler",
+    "choco": "joplin",
+    "content": "Joplin",
+    "description": "Cihazlar arası eşitleme destekli açık kaynaklı not alma ve yapılacaklar listesi uygulaması.",
+    "link": "https://joplinapp.org/",
+    "winget": "Joplin.Joplin",
+    "foss": true
+  },
+  "keepassxc": {
+    "category": "Yardımcı Programlar",
+    "choco": "keepassxc",
+    "content": "KeePassXC",
+    "description": "Parolalarınızı çevrimdışı şifreli bir dosyada güvenle saklayan modern, açık kaynaklı parola yöneticisi.",
+    "link": "https://keepassxc.org/",
+    "winget": "KeePassXCTeam.KeePassXC",
+    "foss": true
+  },
+  "klite": {
+    "category": "Multimedya Araçları",
+    "choco": "k-litecodecpack-standard",
+    "content": "K-Lite Codec Standard",
+    "description": "Tüm yaygın ses ve video dosyalarını sorunsuz oynatmak için gerekli kodek paketi (Standart).",
+    "link": "https://www.codecguide.com/",
+    "winget": "CodecGuide.K-LiteCodecPack.Standard",
+    "foss": false
+  },
+  "kodi": {
+    "category": "Sunucu Araçları",
+    "choco": "kodi",
+    "content": "Kodi Media Center",
+    "description": "Video, müzik, podcast ve dijital medyalarınızı oynatıp yöneten açık kaynaklı medya merkezi.",
+    "link": "https://kodi.tv/",
+    "winget": "XBMCFoundation.Kodi",
+    "foss": true
+  },
+  "lazygit": {
+    "category": "Geliştirme",
+    "choco": "lazygit",
+    "content": "Lazygit",
+    "description": "Git komutları için sade ve hızlı terminal arayüzü.",
+    "link": "https://github.com/jesseduffield/lazygit/",
+    "winget": "JesseDuffield.lazygit",
+    "foss": true
+  },
+  "libreoffice": {
+    "category": "Belgeler",
+    "choco": "libreoffice-fresh",
+    "content": "LibreOffice",
+    "description": "Diğer büyük ofis paketleriyle uyumlu, güçlü ve ücretsiz açık kaynaklı ofis yazılımı.",
+    "link": "https://www.libreoffice.org/",
+    "winget": "TheDocumentFoundation.LibreOffice",
+    "foss": true
+  },
+  "librewolf": {
+    "category": "Tarayıcılar",
+    "choco": "librewolf",
+    "content": "LibreWolf",
+    "description": "Firefox tabanlı, ek gizlilik ve güvenlik sertleştirmeleri içeren açık kaynaklı tarayıcı.",
+    "link": "https://librewolf.net/",
+    "winget": "LibreWolf.LibreWolf",
+    "foss": true
+  },
+  "localsend": {
+    "category": "Sunucu Araçları",
+    "choco": "localsend.install",
+    "content": "LocalSend",
+    "description": "Aynı yerel ağdaki cihazlar arasında dosya paylaşımı sağlayan açık kaynaklı AirDrop alternatifi.",
+    "link": "https://localsend.org/",
+    "winget": "LocalSend.LocalSend",
+    "foss": true
+  },
+  "mpc-qt": {
+    "category": "Multimedya Araçları",
+    "choco": "mpc-qt",
+    "content": "mpc-qt",
+    "description": "Media Player Classic tarzında modern, açık kaynaklı video oynatıcı.",
+    "link": "https://mpc-qt.github.io",
+    "winget": "mpc-qt.mpc-qt",
+    "foss": true
+  },
+  "mpv": {
+    "category": "Multimedya Araçları",
+    "content": "mpv",
+    "description": "Geniş kodek ve altyazı desteği sunan ücretsiz, açık kaynaklı ve yüksek performanslı medya oynatıcı.",
+    "link": "https://mpv.io/",
+    "winget": "shinchiro.mpv",
+    "foss": true
+  },
+  "matrix": {
+    "category": "İletişim",
+    "choco": "element-desktop",
+    "content": "Element",
+    "description": "Güvenli ve merkeziyetsiz iletişim ağı Matrix için resmi Element istemcisi.",
+    "link": "https://element.io/",
+    "winget": "Element.Element",
+    "foss": true
+  },
+  "minitoolpartitionwizard": {
+    "category": "Yardımcı Programlar",
+    "choco": "partitionwizard",
+    "content": "MiniTool Partition Wizard",
+    "description": "Bölüm birleştirme, dosya sistemi dönüştürme ve disk yönetimi sunan kapsamlı ücretsiz disk bölümleme aracı.",
+    "link": "https://www.partitionwizard.com/",
+    "winget": "MiniTool.PartitionWizard.Free",
+    "foss": false
+  },
+  "modrinth": {
+    "category": "Oyunlar",
+    "choco": "modrinth-app",
+    "content": "Modrinth App",
+    "description": "Minecraft modlarını ve mod paketlerini yönetmek için masaüstü uygulaması.",
+    "link": "https://modrinth.com/app",
+    "winget": "Modrinth.ModrinthApp",
+    "foss": true
+  },
+  "moonlight": {
+    "category": "Sunucu Araçları",
+    "choco": "moonlight-qt",
+    "content": "Moonlight/GameStream Client",
+    "description": "PC oyunlarınızı yerel ağ üzerinden diğer cihazlara düşük gecikmeyle yayınlayan istemci.",
+    "link": "https://moonlight-stream.org/",
+    "winget": "MoonlightGameStreamingProject.Moonlight",
+    "foss": true
+  },
+  "mpchc": {
+    "category": "Multimedya Araçları",
+    "choco": "mpc-hc-clsid2",
+    "content": "Media Player Classic - Home Cinema",
+    "description": "Windows için ücretsiz, hafif ve açık kaynaklı klasik video ve ses oynatıcısı (MPC-HC).",
+    "link": "https://mpc-hc.org/",
+    "winget": "clsid2.mpc-hc",
+    "foss": true
+  },
+  "msedgeredirect": {
+    "category": "Yardımcı Programlar",
+    "choco": "msedgeredirect",
+    "content": "MSEdgeRedirect",
+    "description": "Windows Haberler, Arama ve Widget bağlantılarını Edge yerine varsayılan tarayıcınıza yönlendiren araç.",
+    "link": "https://github.com/rcmaehl/MSEdgeRedirect",
+    "winget": "rcmaehl.MSEdgeRedirect",
+    "foss": true
+  },
+  "msiafterburner": {
+    "category": "Profesyonel Araçlar",
+    "choco": "msiafterburner",
+    "content": "MSI Afterburner",
+    "description": "Ekran kartı hız aşırtma (overclock), fan kontrolü ve oyun içi FPS izleme aracı.",
+    "link": "https://www.msi.com/Landing/afterburner",
+    "winget": "Guru3D.Afterburner",
+    "foss": false
+  },
+  "mullvadvpn": {
+    "category": "Profesyonel Araçlar",
+    "choco": "mullvad-app",
+    "content": "Mullvad VPN",
+    "description": "Gizlilik odaklı Mullvad VPN servisinin resmi istemci yazılımı.",
+    "link": "https://mullvad.net/",
+    "winget": "MullvadVPN.MullvadVPN",
+    "foss": true
+  },
+  "mullvadbrowser": {
+    "category": "Tarayıcılar",
+    "choco": "na",
+    "content": "Mullvad Browser",
+    "description": "Tor Projesi iş birliğiyle geliştirilen, izleme karşıtı gizlilik odaklı web tarayıcısı.",
+    "link": "https://mullvad.net/browser",
+    "winget": "MullvadVPN.MullvadBrowser",
+    "foss": true
+  },
+  "nomacs": {
+    "category": "Multimedya Araçları",
+    "choco": "nomacs",
+    "content": "nomacs",
+    "description": "RAW ve PSD dahil tüm yaygın görsel formatlarını destekleyen ücretsiz, açık kaynaklı resim görüntüleyici.",
+    "link": "https://nomacs.org/",
+    "winget": "nomacs.nomacs",
+    "foss": true
+  },
+  "nanazip": {
+    "category": "Yardımcı Programlar",
+    "choco": "nanazip",
+    "content": "NanaZip",
+    "description": "7-Zip tabanlı, modern Windows 11 sağ tık menüsü destekli hızlı arşivleme aracı.",
+    "link": "https://nanazip.org",
+    "winget": "M2Team.NanaZip",
+    "foss": true
+  },
+  "netbird": {
+    "category": "Sunucu Araçları",
+    "choco": "netbird",
+    "content": "NetBird",
+    "description": "Kendi sunucunuza da bağlanabilen, Tailscale benzeri açık kaynaklı WireGuard ağ aracı.",
+    "link": "https://netbird.io/",
+    "winget": "Netbird.Netbird",
+    "foss": true
+  },
+  "tailscale": {
+    "category": "Profesyonel Araçlar",
+    "choco": "tailscale",
+    "content": "Tailscale",
+    "description": "WireGuard tabanlı, cihazlarınızı zahmetsizce özel ve güvenli bir ağda birleştiren VPN istemcisi.",
+    "link": "https://tailscale.com/",
+    "winget": "Tailscale.Tailscale",
+    "foss": false
+  },
+  "naps2": {
+    "category": "Belgeler",
+    "choco": "naps2",
+    "content": "NAPS2 (Tarayıcı)",
+    "description": "Belge tarayıcılarından PDF ve görsel oluşturmayı kolaylaştıran ücretsiz belge tarama uygulaması.",
+    "link": "https://www.naps2.com/",
+    "winget": "Cyanfish.NAPS2",
+    "foss": true
+  },
+  "neovim": {
+    "category": "Geliştirme",
+    "choco": "neovim",
+    "content": "Neovim",
+    "description": "Vim editörünün modernleştirilmiş, yüksek derecede genişletilebilir terminal metin editörü.",
+    "link": "https://neovim.io/",
+    "winget": "Neovim.Neovim",
+    "foss": true
+  },
+  "nextclouddesktop": {
+    "category": "Sunucu Araçları",
+    "choco": "nextcloud-client",
+    "content": "Nextcloud Desktop",
+    "description": "Nextcloud dosya eşitleme ve paylaşım platformunun resmi masaüstü istemcisi.",
+    "link": "https://nextcloud.com/install/#install-clients",
+    "winget": "Nextcloud.NextcloudDesktop",
+    "foss": true
+  },
+  "nmap": {
+    "category": "Profesyonel Araçlar",
+    "choco": "nmap",
+    "content": "Nmap",
+    "description": "Ağ keşfi, port tarama ve güvenlik denetimi için açık kaynaklı ağ analiz aracı.",
+    "link": "https://nmap.org/",
+    "winget": "Insecure.Nmap",
+    "foss": true
+  },
+  "nodejs": {
+    "category": "Geliştirme",
+    "choco": "nodejs",
+    "content": "NodeJS",
+    "description": "Sunucu tarafı ve ağ uygulamaları geliştirmek için Chrome V8 tabanlı JavaScript çalışma ortamı.",
+    "link": "https://nodejs.org/",
+    "winget": "OpenJS.NodeJS",
+    "foss": true
+  },
+  "nodejslts": {
+    "category": "Geliştirme",
+    "choco": "nodejs-lts",
+    "content": "NodeJS LTS",
+    "description": "Kararlı ve uzun süreli destekli (LTS) Node.js JavaScript çalışma ortamı.",
+    "link": "https://nodejs.org/",
+    "winget": "OpenJS.NodeJS.LTS",
+    "foss": true
+  },
+  "pnpm": {
+    "category": "Geliştirme",
+    "content": "pnpm",
+    "description": "JavaScript ve Node.js projeleri için hızlı ve disk alanı dostu paket yöneticisi.",
+    "link": "https://pnpm.io/",
+    "winget": "pnpm.pnpm",
+    "foss": true
+  },
+  "notepadplus": {
+    "category": "Geliştirme",
+    "choco": "notepadplusplus",
+    "content": "Notepad++",
+    "description": "Çoklu dil ve sözdizimi vurgulama destekli ücretsiz, açık kaynaklı kod ve metin editörü.",
+    "link": "https://notepad-plus-plus.org/",
+    "winget": "Notepad++.Notepad++",
+    "foss": true
+  },
+  "nuget": {
+    "category": "Microsoft Araçları",
+    "choco": "nuget.commandline",
+    "content": "NuGet",
+    "description": ".NET uygulamalarında kütüphane yönetimi ve paylaşımı sağlayan resmi paket yöneticisi.",
+    "link": "https://www.nuget.org/",
+    "winget": "Microsoft.NuGet",
+    "foss": true
+  },
+  "nvclean": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "NVCleanstall",
+    "description": "NVIDIA ekran kartı sürücü kurulumunu özelleştirerek yalnızca istediğiniz bileşenleri kurmanızı sağlayan araç.",
+    "link": "https://www.techpowerup.com/nvcleanstall/",
+    "winget": "TechPowerUp.NVCleanstall",
+    "foss": false
+  },
+  "obs": {
+    "category": "Multimedya Araçları",
+    "choco": "obs-studio",
+    "content": "OBS Studio",
+    "description": "Video kaydı ve canlı yayın için ücretsiz, açık kaynaklı ve en yaygın içerik üretici yazılımı.",
+    "link": "https://obsproject.com/",
+    "winget": "OBSProject.OBSStudio",
+    "foss": true
+  },
+  "obsidian": {
+    "category": "Belgeler",
+    "choco": "obsidian",
+    "content": "Obsidian",
+    "description": "Markdown tabanlı, bağlantılı not alma ve kişisel bilgi yönetimi uygulaması.",
+    "link": "https://obsidian.md/",
+    "winget": "Obsidian.Obsidian",
+    "foss": false
+  },
+  "okular": {
+    "category": "Belgeler",
+    "choco": "okular",
+    "content": "Okular",
+    "description": "Gelişmiş özelliklere sahip çok yönlü PDF ve belge görüntüleyici.",
+    "link": "https://okular.kde.org/",
+    "winget": "KDE.Okular",
+    "foss": true
+  },
+  "onedrive": {
+    "category": "Microsoft Araçları",
+    "choco": "onedrive",
+    "content": "OneDrive",
+    "description": "Microsoft'un dosyalarınızı cihazlar arasında saklayıp eşitleyen bulut depolama servisi.",
+    "link": "https://onedrive.live.com/",
+    "winget": "Microsoft.OneDrive",
+    "foss": false
+  },
+  "onlyoffice": {
+    "category": "Belgeler",
+    "choco": "onlyoffice",
+    "content": "ONLYOFFICE Desktop",
+    "description": "Microsoft Office belgeleriyle yüksek uyumluluğa sahip kapsamlı ücretsiz ofis paketi.",
+    "link": "https://www.onlyoffice.com/desktop.aspx",
+    "winget": "ONLYOFFICE.DesktopEditors",
+    "foss": true
+  },
+  "OPAutoClicker": {
+    "category": "Yardımcı Programlar",
+    "choco": "autoclicker",
+    "content": "OPAutoClicker",
+    "description": "İmleç konumunda veya belirli koordinatta çalışabilen iki modlu otomatik tıklama aracı.",
+    "link": "https://www.opautoclicker.com",
+    "winget": "OPAutoClicker.OPAutoClicker",
+    "foss": false
+  },
+  "opencode": {
+    "category": "Geliştirme",
+    "choco": "opencode",
+    "content": "OpenCode",
+    "description": "Yerel ve bulut yapay zeka modellerini destekleyen açık kaynaklı terminal kodlama ajanı.",
+    "link": "https://opencode.ai/",
+    "winget": "SST.opencode",
+    "foss": true
+  },
+  "openrgb": {
+    "category": "Yardımcı Programlar",
+    "choco": "openrgb",
+    "content": "OpenRGB",
+    "description": "Farklı marka donanım ve çevre birimlerinin RGB aydınlatmasını tek yerden yöneten açık kaynaklı yazılım.",
+    "link": "https://openrgb.org/",
+    "winget": "OpenRGB.OpenRGB",
+    "foss": true
+  },
+  "OpenVPN": {
+    "category": "Profesyonel Araçlar",
+    "choco": "openvpn-connect",
+    "content": "OpenVPN Connect",
+    "description": "OpenVPN sunucularına güvenli ve şifreli şekilde bağlanmanızı sağlayan resmi VPN istemcisi.",
+    "link": "https://openvpn.net/",
+    "winget": "OpenVPNTechnologies.OpenVPNConnect",
+    "foss": false
+  },
+  "OVirtualBox": {
+    "category": "Yardımcı Programlar",
+    "choco": "virtualbox",
+    "content": "Oracle VirtualBox",
+    "description": "Bilgisayarınızda sanal işletim sistemleri çalıştırmanızı sağlayan ücretsiz, açık kaynaklı sanallaştırma yazılımı.",
+    "link": "https://www.virtualbox.org/",
+    "winget": "Oracle.VirtualBox",
+    "foss": true
+  },
+  "policyplus": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "Policy Plus",
+    "description": "Home sürümü dahil tüm Windows sürümlerinde Yerel Grup İlkesi Düzenleyicisi (gpedit) sağlayan araç.",
+    "link": "https://github.com/Fleex255/PolicyPlus",
+    "winget": "Fleex255.PolicyPlus",
+    "foss": true
+  },
+  "processexplorer": {
+    "category": "Microsoft Araçları",
+    "choco": "procexp",
+    "content": "Process Explorer",
+    "description": "Çalışan işlemleri, DLL'leri ve sistem kaynaklarını derinlemesine gösteren gelişmiş Sysinternals görev yöneticisi.",
+    "link": "https://learn.microsoft.com/sysinternals/downloads/process-explorer",
+    "winget": "Microsoft.Sysinternals.ProcessExplorer",
+    "foss": false
+  },
+  "Paintdotnet": {
+    "category": "Multimedya Araçları",
+    "choco": "paint.net",
+    "content": "Paint.NET",
+    "description": "Kullanıcı dostu arayüze ve güçlü düzenleme araçlarına sahip ücretsiz Windows resim ve fotoğraf editörü.",
+    "link": "https://www.getpaint.net/",
+    "winget": "dotPDN.PaintDotNet",
+    "foss": false
+  },
+  "parsec": {
+    "category": "Yardımcı Programlar",
+    "choco": "parsec",
+    "content": "Parsec",
+    "description": "Oyun ve ortak çalışma için ultra düşük gecikmeli, yüksek kaliteli uzak masaüstü paylaşım uygulaması.",
+    "link": "https://parsec.app/",
+    "winget": "Parsec.Parsec",
+    "foss": false
+  },
+  "peazip": {
+    "category": "Yardımcı Programlar",
+    "choco": "peazip",
+    "content": "PeaZip",
+    "description": "Çoklu arşiv formatı ve güçlü şifreleme desteği sunan ücretsiz, açık kaynaklı arşiv yöneticisi.",
+    "link": "https://peazip.github.io/",
+    "winget": "Giorgiotani.Peazip",
+    "foss": true
+  },
+  "pdf-xchange": {
+    "category": "Belgeler",
+    "choco": "pdfxchangeeditor",
+    "content": "PDF-XChange Editor",
+    "description": "PDF oluşturma, görüntüleme, düzenleme, açıklama ekleme ve imzalama için kapsamlı PDF editörü.",
+    "link": "https://www.pdf-xchange.com/",
+    "winget": "TrackerSoftware.PDF-XChangeEditor",
+    "foss": false
+  },
+  "pdf24creator": {
+    "category": "Belgeler",
+    "choco": "pdf24",
+    "content": "PDF24 Creator",
+    "description": "PDF birleştirme, bölme, sıkıştırma ve dönüştürme için ücretsiz ve kolay masaüstü PDF araç seti.",
+    "link": "https://tools.pdf24.org/en/creator",
+    "winget": "geeksoftwareGmbH.PDF24Creator",
+    "foss": false
+  },
+  "pdfgear": {
+    "category": "Belgeler",
+    "choco": "pdfgear",
+    "content": "PDFgear",
+    "description": "Tamamen ücretsiz, kapsamlı PDF görüntüleme, düzenleme ve dönüştürme yazılımı.",
+    "link": "https://www.pdfgear.com/",
+    "winget": "PDFgear.PDFgear",
+    "foss": false
+  },
+  "pdfsam": {
+    "category": "Belgeler",
+    "choco": "pdfsam",
+    "content": "PDFsam Basic",
+    "description": "PDF dosyalarını bölmek, birleştirmek ve döndürmek için ücretsiz, açık kaynaklı araç.",
+    "link": "https://pdfsam.org/",
+    "winget": "PDFsam.PDFsam",
+    "foss": true
+  },
+  "playnite": {
+    "category": "Oyunlar",
+    "choco": "playnite",
+    "content": "Playnite",
+    "description": "Tüm oyun mağazalarındaki ve emülatörlerdeki oyunlarınızı tek bir arayüzde toplayan açık kaynaklı oyun kütüphanesi.",
+    "link": "https://playnite.link/",
+    "winget": "Playnite.Playnite",
+    "foss": true
+  },
+  "plex": {
+    "category": "Sunucu Araçları",
+    "choco": "plexmediaserver",
+    "content": "Plex Media Server",
+    "description": "Kişisel film, dizi ve müzik arşivinizi düzenleyip tüm cihazlara yayınlayan medya sunucusu.",
+    "link": "https://www.plex.tv/your-media/",
+    "winget": "Plex.PlexMediaServer",
+    "foss": false
+  },
+  "plexdesktop": {
+    "category": "Sunucu Araçları",
+    "choco": "plex",
+    "content": "Plex Desktop",
+    "description": "Plex Media Server için resmi Windows masaüstü izleme uygulaması.",
+    "link": "https://www.plex.tv",
+    "winget": "Plex.Plex",
+    "foss": false
+  },
+  "posh": {
+    "category": "Geliştirme",
+    "choco": "oh-my-posh",
+    "content": "Oh My Posh (Komut İstemi)",
+    "description": "PowerShell ve diğer kabuklar için özelleştirilebilir, şık komut istemi tema motoru.",
+    "link": "https://ohmyposh.dev/",
+    "winget": "JanDeDobbeleer.OhMyPosh",
+    "foss": true
+  },
+  "postman": {
+    "category": "Geliştirme",
+    "choco": "postman",
+    "content": "Postman",
+    "description": "API tasarlama, test etme ve belgeleme için yaygın geliştirici masaüstü istemcisi.",
+    "link": "https://www.postman.com/downloads/",
+    "winget": "Postman.Postman",
+    "foss": false
+  },
+  "powershell": {
+    "category": "Microsoft Araçları",
+    "choco": "powershell-core",
+    "content": "PowerShell",
+    "description": "Sistem yöneticileri ve geliştiriciler için modern, çapraz platform PowerShell 7 komut satırı ve betik ortamı.",
+    "link": "https://github.com/PowerShell/PowerShell",
+    "winget": "Microsoft.PowerShell",
+    "foss": true
+  },
+  "powertoys": {
+    "category": "Microsoft Araçları",
+    "choco": "powertoys",
+    "content": "PowerToys",
+    "description": "FancyZones, PowerRename ve renk seçici gibi üretkenlik araçları sunan resmi Microsoft yardımcı araç paketi.",
+    "link": "https://github.com/microsoft/PowerToys",
+    "winget": "Microsoft.PowerToys",
+    "foss": true
+  },
+  "prismlauncher": {
+    "category": "Oyunlar",
+    "choco": "prismlauncher",
+    "content": "Prism Launcher",
+    "description": "Çoklu profil, hesap ve mod yönetimi sunan açık kaynaklı Minecraft başlatıcısı.",
+    "link": "https://prismlauncher.org/",
+    "winget": "PrismLauncher.PrismLauncher",
+    "foss": true
+  },
+  "processlasso": {
+    "category": "Yardımcı Programlar",
+    "choco": "plasso",
+    "content": "Process Lasso",
+    "description": "İşlem önceliklerini ve CPU çekirdek atamalarını optimize ederek sistem akıcılığını artıran araç.",
+    "link": "https://bitsum.com/",
+    "winget": "BitSum.ProcessLasso",
+    "foss": false
+  },
+  "protonauth": {
+    "category": "Yardımcı Programlar",
+    "choco": "protonauth",
+    "content": "Proton Authenticator",
+    "description": "İki faktörlü doğrulama (2FA) kodlarınızı güvenle eşitleyip yedekleyen Proton uygulaması.",
+    "link": "https://proton.me/authenticator",
+    "winget": "Proton.ProtonAuthenticator",
+    "foss": true
+  },
+  "protonmail": {
+    "category": "İletişim",
+    "choco": "protonmail",
+    "content": "Proton Mail",
+    "description": "Sıfır erişimli uçtan uca şifreleme ile gizliliğinizi koruyan Proton e-posta uygulaması.",
+    "link": "https://proton.me/mail",
+    "winget": "Proton.ProtonMail",
+    "foss": true
+  },
+  "protondrive": {
+    "category": "Yardımcı Programlar",
+    "choco": "protondrive",
+    "content": "Proton Drive",
+    "description": "Dosyalarınızı İsviçre gizlilik standartlarında uçtan uca şifreleyerek koruyan bulut depolama.",
+    "link": "https://proton.me/drive",
+    "winget": "Proton.ProtonDrive",
+    "foss": true
+  },
+  "protonpass": {
+    "category": "Yardımcı Programlar",
+    "choco": "protonpass",
+    "content": "Proton Pass",
+    "description": "Uçtan uca şifreli, benzersiz e-posta takma adları sunan bulut tabanlı parola yöneticisi.",
+    "link": "https://proton.me/pass",
+    "winget": "Proton.ProtonPass",
+    "foss": true
+  },
+  "protonvpn": {
+    "category": "Profesyonel Araçlar",
+    "choco": "protonvpn",
+    "content": "Proton VPN",
+    "description": "Kayıt tutmayan, Secure Core ve Tor over VPN özellikli gizlilik odaklı VPN istemcisi.",
+    "link": "https://protonvpn.com/",
+    "winget": "Proton.ProtonVPN",
+    "foss": true
+  },
+  "processmonitor": {
+    "category": "Microsoft Araçları",
+    "choco": "procmon",
+    "content": "Process Monitor",
+    "description": "Dosya sistemi, kayıt defteri ve işlem etkinliklerini gerçek zamanlı izleyen gelişmiş Sysinternals aracı.",
+    "link": "https://docs.microsoft.com/en-us/sysinternals/downloads/procmon",
+    "winget": "Microsoft.Sysinternals.ProcessMonitor",
+    "foss": false
+  },
+  "pstools": {
+    "category": "Microsoft Araçları",
+    "choco": "pstools",
+    "content": "PsTools",
+    "description": "Yerel ve uzak Windows sistemlerini yönetmek için Sysinternals komut satırı araçları (PsExec vb.).",
+    "link": "https://learn.microsoft.com/en-us/sysinternals/downloads/pstools",
+    "winget": "Microsoft.Sysinternals.PsTools",
+    "foss": false
+  },
+  "putty": {
+    "category": "Profesyonel Araçlar",
+    "choco": "putty",
+    "content": "PuTTY",
+    "description": "SSH, Telnet ve seri konsol bağlantılarını destekleyen ücretsiz, açık kaynaklı terminal emülatörü.",
+    "link": "https://www.chiark.greenend.org.uk/~sgtatham/putty/",
+    "winget": "PuTTY.PuTTY",
+    "foss": true
+  },
+  "python3": {
+    "category": "Geliştirme",
+    "choco": "python",
+    "content": "Python3",
+    "description": "Web geliştirme, veri analizi, otomasyon ve yapay zeka için çok yönlü Python 3 programlama dili.",
+    "link": "https://www.python.org/",
+    "winget": "Python.Python.3.14",
+    "foss": true
+  },
+  "qbittorrent": {
+    "category": "Yardımcı Programlar",
+    "choco": "qbittorrent",
+    "content": "qBittorrent",
+    "description": "Hafif, reklamsız, ücretsiz ve açık kaynaklı BitTorrent indirme istemcisi.",
+    "link": "https://www.qbittorrent.org/",
+    "winget": "qBittorrent.qBittorrent",
+    "foss": true
+  },
+  "qownnotes": {
+    "category": "Belgeler",
+    "choco": "qownnotes",
+    "content": "QOwnNotes",
+    "description": "Nextcloud/ownCloud entegrasyonlu, ücretsiz ve açık kaynaklı Markdown not alma uygulaması.",
+    "link": "https://www.qownnotes.org/",
+    "winget": "pbek.QOwnNotes",
+    "foss": true
+  },
+  "qtox": {
+    "category": "İletişim",
+    "choco": "qtox",
+    "content": "QTox",
+    "description": "Gizlilik ve güvenliği ön planda tutan ücretsiz, açık kaynaklı mesajlaşma uygulaması.",
+    "link": "https://qtox.github.io/",
+    "winget": "Tox.qTox",
+    "foss": true
+  },
+  "revo": {
+    "category": "Yardımcı Programlar",
+    "choco": "revo-uninstaller",
+    "content": "Revo Uninstaller",
+    "description": "İstenmeyen programları kayıt defteri ve dosya kalıntılarıyla birlikte temizleyen gelişmiş kaldırıcı.",
+    "link": "https://www.revouninstaller.com/",
+    "winget": "RevoUninstaller.RevoUninstaller",
+    "foss": false
+  },
+  "WiseProgramUninstaller": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "Wise Program Uninstaller (WiseCleaner)",
+    "description": "Windows programlarını hızlı, eksiksiz ve kalıntısız kaldırmak için kullanıcı dostu araç.",
+    "link": "https://www.wisecleaner.com/wise-program-uninstaller.html",
+    "winget": "WiseCleaner.WiseProgramUninstaller",
+    "foss": false
+  },
+  "rufus": {
+    "category": "Profesyonel Araçlar",
+    "choco": "rufus",
+    "content": "Rufus Imager",
+    "description": "ISO dosyalarından önyüklenebilir (bootable) Windows/Linux USB bellekleri oluşturan hızlı araç.",
+    "link": "https://rufus.ie/",
+    "winget": "Rufus.Rufus",
+    "foss": true
+  },
+  "rustlang": {
+    "category": "Geliştirme",
+    "choco": "rust",
+    "content": "Rust",
+    "description": "Güvenlik ve yüksek performans için tasarlanmış sistem programlama dili (Rust).",
+    "link": "https://www.rust-lang.org/",
+    "winget": "Rustlang.Rust.MSVC",
+    "foss": true
+  },
+  "sdio": {
+    "category": "Yardımcı Programlar",
+    "choco": "sdio",
+    "content": "Snappy Driver Installer Origin",
+    "description": "Geniş sürücü veritabanına sahip ücretsiz, açık kaynaklı Windows sürücü güncelleme aracı.",
+    "link": "https://www.glenn.delahoy.com/snappy-driver-installer-origin/",
+    "winget": "GlennDelahoy.SnappyDriverInstallerOrigin",
+    "foss": true
+  },
+  "sharex": {
+    "category": "Multimedya Araçları",
+    "choco": "sharex",
+    "content": "ShareX (Ekran Görüntüsü)",
+    "description": "Gelişmiş düzenleme, ekran kaydı ve hızlı paylaşım özellikleri sunan ücretsiz, açık kaynaklı ekran görüntüsü aracı.",
+    "link": "https://getsharex.com/",
+    "winget": "ShareX.ShareX",
+    "foss": true
+  },
+  "nilesoftShell": {
+    "category": "Yardımcı Programlar",
+    "choco": "nilesoft-shell",
+    "content": "Nilesoft Shell",
+    "description": "Windows sağ tık bağlam menüsünü özelleştiren ve ek işlevler kazandıran güçlü araç.",
+    "link": "https://nilesoft.org/",
+    "winget": "Nilesoft.Shell",
+    "foss": false
+  },
+  "systeminformer": {
+    "category": "Profesyonel Araçlar",
+    "choco": "systeminformer",
+    "content": "System Informer",
+    "description": "Sistem kaynaklarını izleme, yazılım hata ayıklama ve zararlı tespitine yardımcı güçlü açık kaynaklı araç.",
+    "link": "https://systeminformer.com/",
+    "winget": "WinsiderSS.SystemInformer",
+    "foss": true
+  },
+  "signal": {
+    "category": "İletişim",
+    "choco": "signal",
+    "content": "Signal",
+    "description": "Uçtan uca şifreleme ile güvenli ve gizli iletişim sunan gizlilik odaklı mesajlaşma uygulaması.",
+    "link": "https://signal.org/",
+    "winget": "OpenWhisperSystems.Signal",
+    "foss": true
+  },
+  "signalrgb": {
+    "category": "Yardımcı Programlar",
+    "choco": "na",
+    "content": "SignalRGB",
+    "description": "Farklı markalardaki RGB cihazlarınızı tek bir ücretsiz uygulamadan kontrol edip senkronize eder.",
+    "link": "https://www.signalrgb.com/",
+    "winget": "WhirlwindFX.SignalRgb",
+    "foss": false
+  },
+  "simplenote": {
+    "category": "Belgeler",
+    "choco": "simplenote",
+    "content": "Simplenote",
+    "description": "Notlarınızı, listelerinizi ve fikirlerinizi sade biçimde tutmanızı sağlayan ücretsiz not uygulaması.",
+    "link": "https://simplenote.com/",
+    "winget": "Automattic.Simplenote",
+    "foss": true
+  },
+  "simplewall": {
+    "category": "Profesyonel Araçlar",
+    "choco": "simplewall",
+    "content": "Simplewall",
+    "description": "Uygulamaların gelen ve giden ağ trafiğini kontrol etmenizi sağlayan hafif, açık kaynaklı Windows güvenlik duvarı.",
+    "link": "https://github.com/henrypp/simplewall",
+    "winget": "Henry++.simplewall",
+    "foss": true
+  },
+  "slack": {
+    "category": "İletişim",
+    "choco": "slack",
+    "content": "Slack",
+    "description": "Kanallar, mesajlaşma ve dosya paylaşımıyla ekipleri bir araya getiren iş birliği platformu.",
+    "link": "https://slack.com/",
+    "winget": "SlackTechnologies.Slack",
+    "foss": false
+  },
+  "startallback": {
+    "category": "Yardımcı Programlar",
+    "choco": "StartAllBack",
+    "content": "StartAllBack",
+    "description": "Windows 11 görev çubuğunu, Başlat menüsünü ve Dosya Gezgini'ni klasik ve geliştirilmiş hale getirir.",
+    "link": "https://www.startallback.com/",
+    "winget": "StartIsBack.StartAllBack",
+    "foss": false
+  },
+  "starship": {
+    "category": "Geliştirme",
+    "choco": "starship",
+    "content": "Starship (Kabuk İstemi)",
+    "description": "PowerShell ve diğer kabuklar için hızlı, minimalist ve özelleştirilebilir komut istemi.",
+    "link": "https://starship.rs/",
+    "winget": "Starship.Starship",
+    "foss": true
+  },
+  "steam": {
+    "category": "Oyunlar",
+    "choco": "steam-client",
+    "content": "Steam",
+    "description": "PC oyunları satın almak, indirmek ve çok oyunculu oynamak için en yaygın dijital oyun platformu.",
+    "link": "https://store.steampowered.com/about/",
+    "winget": "Valve.Steam",
+    "foss": false
+  },
+  "roblox": {
+    "category": "Oyunlar",
+    "choco": "na",
+    "content": "Roblox",
+    "description": "Topluluk tarafından oluşturulan oyunları oynamanızı ve kendi oyunlarınızı geliştirmenizi sağlayan platform.",
+    "link": "https://www.roblox.com/",
+    "winget": "Roblox.Roblox",
+    "foss": false
+  },
+  "sublimetext": {
+    "category": "Geliştirme",
+    "choco": "sublimetext4",
+    "content": "Sublime Text",
+    "description": "Kod, biçimlendirme ve düz metin için son derece hızlı ve gelişmiş metin editörü.",
+    "link": "https://www.sublimetext.com/",
+    "winget": "SublimeHQ.SublimeText.4",
+    "foss": false
+  },
+  "sumatra": {
+    "category": "Belgeler",
+    "choco": "sumatrapdf",
+    "content": "Sumatra PDF",
+    "description": "Minimalist tasarımlı, çok hafif ve anında açılan ücretsiz PDF, ePub ve çizgi roman görüntüleyici.",
+    "link": "https://www.sumatrapdfreader.org/free-pdf-reader.html",
+    "winget": "SumatraPDF.SumatraPDF",
+    "foss": true
+  },
+  "sunshine": {
+    "category": "Sunucu Araçları",
+    "choco": "sunshine",
+    "content": "Sunshine/GameStream Server",
+    "description": "PC oyunlarınızı diğer cihazlara düşük gecikmeyle yayınlamanızı sağlayan açık kaynaklı GameStream sunucusu.",
+    "link": "https://app.lizardbyte.dev/Sunshine/",
+    "winget": "LizardByte.Sunshine",
+    "foss": true
+  },
+  "synctrayzor": {
+    "category": "Sunucu Araçları",
+    "choco": "synctrayzor",
+    "content": "SyncTrayzor",
+    "description": "Syncthing dosya eşitleme aracını yerel sistem tepsisi uygulaması gibi yönetmeyi kolaylaştıran Windows arayüzü.",
+    "link": "https://github.com/GermanCoding/SyncTrayzor",
+    "winget": "GermanCoding.SyncTrayzor"
+  },
+  "syncthing": {
+    "category": "Sunucu Araçları",
+    "choco": "syncthing",
+    "content": "Syncthing (CLI / Web UI)",
+    "description": "Bulut sunucusu olmadan cihazlar arasında doğrudan, şifreli dosya eşitleme yapan açık kaynaklı araç.",
+    "link": "https://syncthing.net/",
+    "winget": "Syncthing.Syncthing",
+    "foss": true
+  },
+  "tcpview": {
+    "category": "Microsoft Araçları",
+    "choco": "tcpview",
+    "content": "TCPView",
+    "description": "Sisteminizdeki tüm etkin TCP ve UDP ağ bağlantılarını gerçek zamanlı listeleyen Sysinternals aracı.",
+    "link": "https://docs.microsoft.com/en-us/sysinternals/downloads/tcpview",
+    "winget": "Microsoft.Sysinternals.TCPView",
+    "foss": false
+  },
+  "teams": {
+    "category": "İletişim",
+    "choco": "microsoft-teams",
+    "content": "Teams",
+    "description": "Sohbet, görüntülü toplantı ve dosya paylaşımı sunan Microsoft iş birliği uygulaması.",
+    "link": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+    "winget": "Microsoft.Teams",
+    "foss": false
+  },
+  "teamviewer": {
+    "category": "Yardımcı Programlar",
+    "choco": "teamviewer",
+    "content": "TeamViewer",
+    "description": "Uzak bilgisayarlara bağlanıp destek ve kontrol sağlayan popüler uzaktan erişim yazılımı.",
+    "link": "https://www.teamviewer.com/",
+    "winget": "TeamViewer.TeamViewer",
+    "foss": false
+  },
+  "teamspeak3": {
+    "category": "İletişim",
+    "choco": "teamspeak",
+    "content": "TeamSpeak 3",
+    "description": "Düşük gecikmeli, kristal netliğinde sesli iletişim sunan klasik TeamSpeak 3 istemcisi.",
+    "link": "https://www.teamspeak.com/",
+    "winget": "TeamSpeakSystems.TeamSpeakClient",
+    "foss": false
+  },
+  "teamspeak6": {
+    "category": "İletişim",
+    "choco": "na",
+    "content": "TeamSpeak 6",
+    "description": "Modern arayüzlü, yüksek ses kaliteli ve düşük gecikmeli yeni nesil TeamSpeak 6 istemcisi.",
+    "link": "https://www.teamspeak.com/",
+    "winget": "TeamSpeakSystems.TeamSpeakClient.Beta.6",
+    "foss": false
+  },
+  "telegram": {
+    "category": "İletişim",
+    "choco": "telegram",
+    "content": "Telegram",
+    "description": "Hızı, bulut eşitlemesi ve güvenlik özellikleriyle tanınan anlık mesajlaşma uygulaması.",
+    "link": "https://telegram.org/",
+    "winget": "Telegram.TelegramDesktop",
+    "foss": true
+  },
+  "terminal": {
+    "category": "Microsoft Araçları",
+    "choco": "microsoft-windows-terminal",
+    "content": "Windows Terminal",
+    "description": "Çoklu sekme ve bölme destekli, modern ve hızlı resmi Microsoft Windows Terminal uygulaması.",
+    "link": "https://aka.ms/terminal",
+    "winget": "Microsoft.WindowsTerminal",
+    "foss": true
+  },
+  "thunderbird": {
+    "category": "İletişim",
+    "choco": "thunderbird",
+    "content": "Thunderbird",
+    "description": "Gelişmiş özelliklere sahip ücretsiz ve açık kaynaklı Mozilla e-posta, haber ve takvim istemcisi.",
+    "link": "https://www.thunderbird.net/",
+    "winget": "Mozilla.Thunderbird",
+    "foss": true
+  },
+  "betterbird": {
+    "category": "İletişim",
+    "choco": "betterbird",
+    "content": "Betterbird",
+    "description": "Ek özellikler ve hata düzeltmeleri içeren geliştirilmiş Mozilla Thunderbird çatalı.",
+    "link": "https://www.betterbird.eu/",
+    "winget": "Betterbird.Betterbird",
+    "foss": true
+  },
+  "tor": {
+    "category": "Tarayıcılar",
+    "choco": "tor-browser",
+    "content": "Tor Browser",
+    "description": "Tor ağını kullanarak çevrimiçi gizlilik ve anonim web gezintisi sağlayan tarayıcı.",
+    "link": "https://www.torproject.org/",
+    "winget": "TorProject.TorBrowser",
+    "foss": true
+  },
+  "totalcommander": {
+    "category": "Yardımcı Programlar",
+    "choco": "TotalCommander",
+    "content": "Total Commander",
+    "description": "Çift panelli arayüzüyle güçlü ve hızlı klasik Windows dosya yöneticisi.",
+    "link": "https://www.ghisler.com/",
+    "winget": "Ghisler.TotalCommander",
+    "foss": false
+  },
+  "treesize": {
+    "category": "Yardımcı Programlar",
+    "choco": "treesizefree",
+    "content": "TreeSize Free",
+    "description": "Sürücülerinizde en çok yer kaplayan klasörleri hızlıca analiz edip görselleştiren disk analiz aracı.",
+    "link": "https://www.jam-software.com/treesize_free/",
+    "winget": "JAMSoftware.TreeSize.Free",
+    "foss": false
+  },
+  "ttaskbar": {
+    "category": "Yardımcı Programlar",
+    "choco": "translucenttb",
+    "content": "TranslucentTB",
+    "description": "Windows görev çubuğunun şeffaflığını ve görünümünü özelleştirmenizi sağlayan hafif araç.",
+    "link": "https://translucenttb.github.io",
+    "winget": "CharlesMilette.TranslucentTB",
+    "foss": true
+  },
+  "ubisoft": {
+    "category": "Oyunlar",
+    "choco": "ubisoft-connect",
+    "content": "Ubisoft Connect",
+    "description": "Ubisoft oyunlarına erişmek ve oynamak için resmi dijital oyun platformu.",
+    "link": "https://ubisoftconnect.com/",
+    "winget": "Ubisoft.Connect",
+    "foss": false
+  },
+  "ungoogled": {
+    "category": "Tarayıcılar",
+    "choco": "ungoogled-chromium",
+    "content": "Ungoogled Chromium",
+    "description": "Daha yüksek gizlilik için Google servisleri ve entegrasyonları çıkarılmış Chromium tarayıcısı.",
+    "link": "https://github.com/Eloston/ungoogled-chromium",
+    "winget": "eloston.ungoogled-chromium",
+    "foss": true
+  },
+  "unity": {
+    "category": "Geliştirme",
+    "choco": "unity-hub",
+    "content": "Unity Game Engine",
+    "description": "2B, 3B, AR ve VR oyunlar geliştirmek için güçlü oyun motoru ve geliştirme platformu.",
+    "link": "https://unity.com/",
+    "winget": "Unity.UnityHub",
+    "foss": false
+  },
+  "vagrant": {
+    "category": "Geliştirme",
+    "choco": "vagrant",
+    "content": "Vagrant",
+    "description": "Tekrarlanabilir sanal makine geliştirme ortamlarını kolayca oluşturup yöneten araç.",
+    "link": "https://developer.hashicorp.com/vagrant",
+    "winget": "Hashicorp.Vagrant",
+    "foss": false
+  },
+  "everything": {
+    "category": "Yardımcı Programlar",
+    "choco": "everything",
+    "content": "Everything",
+    "description": "Windows'taki tüm dosya ve klasörleri adlarına göre milisaniyeler içinde bulan anlık arama motoru.",
+    "link": "https://www.voidtools.com/",
+    "winget": "voidtools.Everything",
+    "foss": false
+  },
+  "vc2015_32": {
+    "category": "Microsoft Araçları",
+    "choco": "vcredist2015",
+    "content": "Visual C++ 2015-2022 32-bit",
+    "description": "32-bit C++ uygulamalarının çalışması için gereken Microsoft Visual C++ 2015-2022 çalışma zamanı paketi.",
+    "link": "https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads",
+    "winget": "Microsoft.VCRedist.2015+.x86",
+    "foss": false
+  },
+  "vc2015_64": {
+    "category": "Microsoft Araçları",
+    "choco": "vcredist2015",
+    "content": "Visual C++ 2015-2022 64-bit",
+    "description": "64-bit C++ uygulamalarının çalışması için gereken Microsoft Visual C++ 2015-2022 çalışma zamanı paketi.",
+    "link": "https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads",
+    "winget": "Microsoft.VCRedist.2015+.x64",
+    "foss": false
+  },
+  "ventoy": {
+    "category": "Profesyonel Araçlar",
+    "choco": "ventoy",
+    "content": "Ventoy",
+    "description": "Tek bir USB belleğe birden fazla ISO dosyası atıp önyüklemenizi sağlayan açık kaynaklı araç.",
+    "link": "https://www.ventoy.net/",
+    "winget": "Ventoy.Ventoy",
+    "foss": true
+  },
+  "vesktop": {
+    "category": "İletişim",
+    "choco": "na",
+    "content": "Vesktop",
+    "description": "Vencord eklentisi hazır kurulu gelen, daha akıcı ve çapraz platform alternatif Discord masaüstü uygulaması.",
+    "link": "https://vesktop.dev",
+    "winget": "Vencord.Vesktop",
+    "foss": true
+  },
+  "viber": {
+    "category": "İletişim",
+    "choco": "viber",
+    "content": "Viber",
+    "description": "Grup sohbetleri, sesli ve görüntülü aramalar sunan ücretsiz mesajlaşma uygulaması.",
+    "link": "https://www.viber.com/",
+    "winget": "Rakuten.Viber",
+    "foss": false
+  },
+  "visualstudio2022": {
+    "category": "Geliştirme",
+    "choco": "visualstudio2022community",
+    "content": "Visual Studio 2022",
+    "description": "Uygulama geliştirme, hata ayıklama ve dağıtım için kapsamlı Microsoft Visual Studio 2022 IDE.",
+    "link": "https://visualstudio.microsoft.com/",
+    "winget": "Microsoft.VisualStudio.2022.Community",
+    "foss": false
+  },
+  "visualstudio2026": {
+    "category": "Geliştirme",
+    "choco": "visualstudio2026community",
+    "content": "Visual Studio 2026",
+    "description": "Uygulama geliştirme, hata ayıklama ve dağıtım için en yeni Microsoft Visual Studio 2026 IDE.",
+    "link": "https://visualstudio.microsoft.com/",
+    "winget": "Microsoft.VisualStudio.Community",
+    "foss": false
+  },
+  "vivaldi": {
+    "category": "Tarayıcılar",
+    "choco": "vivaldi",
+    "content": "Vivaldi",
+    "description": "Kişiselleştirme ve üretkenlik özelliklerine odaklanan son derece özelleştirilebilir web tarayıcısı.",
+    "link": "https://vivaldi.com/",
+    "winget": "Vivaldi.Vivaldi",
+    "foss": false
+  },
+  "vlc": {
+    "category": "Multimedya Araçları",
+    "choco": "vlc",
+    "content": "VLC (Video Oynatıcı)",
+    "description": "Neredeyse tüm ses ve video formatlarını ek kodek gerekmeden oynatan ücretsiz, açık kaynaklı medya oynatıcı.",
+    "link": "https://www.videolan.org/vlc/",
+    "winget": "VideoLAN.VLC",
+    "foss": true
+  },
+  "vrdesktopstreamer": {
+    "category": "Oyunlar",
+    "choco": "na",
+    "content": "Virtual Desktop Streamer",
+    "description": "Bilgisayar ekranınızı sanal gerçeklik (VR) başlıklarına akışla aktaran yardımcı uygulama.",
+    "link": "https://www.vrdesktop.net/",
+    "winget": "VirtualDesktop.Streamer",
+    "foss": false
+  },
+  "vscode": {
+    "category": "Geliştirme",
+    "choco": "vscode",
+    "content": "VS Code",
+    "description": "Geniş eklenti ekosistemi ve çoklu dil desteğine sahip ücretsiz, açık kaynaklı kod editörü.",
+    "link": "https://code.visualstudio.com/",
+    "winget": "Microsoft.VisualStudioCode",
+    "foss": true
+  },
+  "vscodium": {
+    "category": "Geliştirme",
+    "choco": "vscodium",
+    "content": "VS Codium",
+    "description": "Microsoft telemetrisi çıkarılmış, tamamen açık kaynaklı topluluk derlemesi VS Code.",
+    "link": "https://vscodium.com/",
+    "winget": "VSCodium.VSCodium",
+    "foss": true
+  },
+  "waterfox": {
+    "category": "Tarayıcılar",
+    "choco": "waterfox",
+    "content": "Waterfox",
+    "description": "Kullanıcı seçimi ve gizliliğini korumaya odaklanan hızlı, Firefox tabanlı web tarayıcısı.",
+    "link": "https://www.waterfox.net/",
+    "winget": "Waterfox.Waterfox",
+    "foss": true
+  },
+  "whatsapp": {
+    "category": "İletişim",
+    "choco": "na",
+    "content": "WhatsApp Desktop",
+    "description": "Microsoft Store üzerinden dağıtılan resmi Meta WhatsApp Windows masaüstü uygulaması.",
+    "link": "https://www.whatsapp.com/download",
+    "winget": "msstore:9NKSQGP7F2NH",
+    "foss": false
+  },
+  "wingetui": {
+    "category": "Yardımcı Programlar",
+    "choco": "wingetui",
+    "content": "UniGetUI",
+    "description": "WinGet, Chocolatey ve diğer Windows paket yöneticileri için modern görsel arayüz (UniGetUI).",
+    "link": "https://devolutions.net/unigetui/",
+    "winget": "Devolutions.UniGetUI",
+    "foss": true
+  },
+  "winrar": {
+    "category": "Yardımcı Programlar",
+    "choco": "winrar",
+    "content": "WinRAR",
+    "description": "RAR ve ZIP arşivleri oluşturma, yönetme ve çıkarma için güçlü arşiv yöneticisi.",
+    "link": "https://www.win-rar.com/",
+    "winget": "RARLab.WinRAR",
+    "foss": false
+  },
+  "winscp": {
+    "category": "Profesyonel Araçlar",
+    "choco": "winscp",
+    "content": "WinSCP",
+    "description": "Yerel ve uzak bilgisayarlar arasında güvenli dosya aktarımı sağlayan açık kaynaklı SFTP, FTP ve SCP istemcisi.",
+    "link": "https://winscp.net/",
+    "winget": "WinSCP.WinSCP",
+    "foss": true
+  },
+  "wireguard": {
+    "category": "Profesyonel Araçlar",
+    "choco": "wireguard",
+    "content": "WireGuard",
+    "description": "Hızlı, modern, sade ve yüksek güvenlikli açık kaynaklı VPN protokolü istemcisi.",
+    "link": "https://www.wireguard.com/",
+    "winget": "WireGuard.WireGuard",
+    "foss": true
+  },
+  "wireshark": {
+    "category": "Profesyonel Araçlar",
+    "choco": "wireshark",
+    "content": "Wireshark",
+    "description": "Ağ trafiğini gerçek zamanlı yakalayıp derinlemesine inceleyen açık kaynaklı ağ protokol analizörü.",
+    "link": "https://www.wireshark.org/",
+    "winget": "WiresharkFoundation.Wireshark",
+    "foss": true
+  },
+  "wiztree": {
+    "category": "Yardımcı Programlar",
+    "choco": "wiztree",
+    "content": "WizTree",
+    "description": "Sabit diskinizde en çok yer kaplayan dosya ve klasörleri saniyeler içinde bulan ultra hızlı disk analiz aracı.",
+    "link": "https://wiztreefree.com/",
+    "winget": "AntibodySoftware.WizTree",
+    "foss": false
+  },
+  "xeheditor": {
+    "category": "Yardımcı Programlar",
+    "choco": "HxD",
+    "content": "HxD Hex Editor",
+    "description": "İkili (binary) dosyaları görüntülemek, düzenlemek ve analiz etmek için ücretsiz hex editörü (HxD).",
+    "link": "https://mh-nexus.de/en/hxd/",
+    "winget": "MHNexus.HxD",
+    "foss": false
+  },
+  "xournal": {
+    "category": "Belgeler",
+    "choco": "xournalplusplus",
+    "content": "Xournal++",
+    "description": "PDF üzerine açıklama ekleme destekli açık kaynaklı el yazısı ve not alma yazılımı.",
+    "link": "https://xournalpp.github.io/",
+    "winget": "Xournal++.Xournal++",
+    "foss": true
+  },
+  "yarn": {
+    "category": "Geliştirme",
+    "choco": "yarn",
+    "content": "Yarn",
+    "description": "JavaScript projeleri için hızlı, güvenilir ve güvenli bağımlılık/paket yöneticisi.",
+    "link": "https://yarnpkg.com/",
+    "winget": "Yarn.Yarn",
+    "foss": true
+  },
+  "zoom": {
+    "category": "İletişim",
+    "choco": "zoom",
+    "content": "Zoom",
+    "description": "Çevrimiçi toplantılar, web seminerleri ve görüntülü görüşmeler için popüler konferans uygulaması.",
+    "link": "https://zoom.us/",
+    "winget": "Zoom.Zoom",
+    "foss": false
+  },
+  "uv": {
+    "category": "Geliştirme",
+    "choco": "uv",
+    "content": "uv",
+    "description": "Rust ile yazılmış, son derece hızlı modern Python paket ve proje yöneticisi.",
+    "link": "https://docs.astral.sh/uv/getting-started/installation/",
+    "winget": "astral-sh.uv",
+    "foss": true
+  },
+  "tightvnc": {
+    "category": "Yardımcı Programlar",
+    "choco": "TightVNC",
+    "content": "TightVNC",
+    "description": "Ağ üzerinden başka bir bilgisayara erişip kontrol etmenizi sağlayan ücretsiz, açık kaynaklı uzak masaüstü yazılımı.",
+    "link": "https://www.tightvnc.com/",
+    "winget": "GlavSoft.TightVNC",
+    "foss": true
+  },
+  "glazewm": {
+    "category": "Yardımcı Programlar",
+    "choco": "glazewm",
+    "content": "GlazeWM",
+    "description": "i3 ve Polybar'dan esinlenen, Windows için döşemeli (tiling) pencere yöneticisi.",
+    "link": "https://github.com/glzr-io/glazewm",
+    "winget": "glzr-io.glazewm",
+    "foss": true
+  },
+  "Overwolf": {
+    "category": "Oyunlar",
+    "content": "CurseForge",
+    "description": "Overwolf destekli, birçok oyun için mod ve mod paketlerini yöneten CurseForge masaüstü uygulaması.",
+    "link": "https://www.overwolf.com/app/overwolf-curseforge",
+    "winget": "Overwolf.CurseForge",
+    "foss": false
+  },
+  "OFGB": {
+    "category": "Yardımcı Programlar",
+    "choco": "ofgb",
+    "content": "OFGB (Oh Frick Go Back)",
+    "description": "Windows 11'in çeşitli yerlerindeki reklamları kolayca kapatmaya yarayan görsel araç.",
+    "link": "https://github.com/xM4ddy/OFGB",
+    "winget": "xM4ddy.OFGB",
+    "foss": true
+  },
+  "ZenBrowser": {
+    "category": "Tarayıcılar",
+    "choco": "na",
+    "content": "Zen Browser",
+    "description": "Firefox tabanlı, modern, gizlilik ve performans odaklı yeni nesil web tarayıcısı.",
+    "link": "https://zen-browser.app/",
+    "winget": "Zen-Team.Zen-Browser",
+    "foss": true
+  },
+  "Zed": {
+    "category": "Geliştirme",
+    "choco": "zed",
+    "content": "Zed",
+    "description": "Hız ve gerçek zamanlı iş birliği için sıfırdan tasarlanmış modern, yüksek performanslı kod editörü.",
+    "link": "https://zed.dev/",
+    "winget": "ZedIndustries.Zed",
+    "foss": true
+  },
+  "zotero": {
+    "category": "Belgeler",
+    "choco": "zotero",
+    "content": "Zotero",
+    "description": "Araştırma kaynaklarınızı toplamanıza, düzenlemenize ve kaynakça oluşturmanıza yarayan ücretsiz akademik araç.",
+    "link": "https://www.zotero.org/",
+    "winget": "DigitalScholar.Zotero",
+    "foss": true
+  },
+  "deskflow": {
+    "category": "Yardımcı Programlar",
+    "choco": "deskflow",
+    "content": "Deskflow",
+    "description": "Tek bir klavye ve fareyi ağ üzerinden birden fazla bilgisayarda paylaşmanızı sağlayan açık kaynaklı yazılım KVM.",
+    "link": "https://github.com/deskflow/deskflow",
+    "winget": "Deskflow.Deskflow",
+    "foss": true
+  },
+  "Ruby": {
+    "category": "Geliştirme",
+    "choco": "ruby",
+    "winget": "RubyInstallerTeam.Ruby.4.0",
+    "description": "MSYS2 kurulumu ile birlikte gelen Ruby programlama dili çalışma ortamı.",
+    "content": "Ruby",
+    "link": "https://rubyinstaller.org/",
+    "foss": true
+  },
+  "Lua": {
+    "category": "Geliştirme",
+    "choco": "lua",
+    "winget": "rjpcomputing.luaforwindows",
+    "description": "Windows için tüm temel araçları hazır içeren Lua betik dili ortamı.",
+    "content": "Lua",
+    "link": "https://github.com/rjpcomputing/luaforwindows",
+    "foss": true
+  },
+  "CloudflareWARP": {
+    "category": "Yardımcı Programlar",
+    "choco": "warp",
+    "winget": "Cloudflare.Warp",
+    "description": "Cloudflare DNS desteği de sunan ücretsiz/freemium hızlı VPN ve gizlilik uygulaması.",
+    "content": "Cloudflare WARP",
+    "link": "https://one.one.one.one",
+    "foss": false
+  }
+}

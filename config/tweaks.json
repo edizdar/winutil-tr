@@ -1,0 +1,1711 @@
+{
+  "WPFTweaksActivity": {
+    "Content": "Etkinlik Geçmişi - Devre Dışı Bırak",
+    "Description": "Pano geçmişini korurken Windows'un kullanıcı etkinliklerini yayımlamasını ve buluta yüklemesini durdurur.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+        "Name": "EnableActivityFeed",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+        "Name": "PublishUserActivities",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+        "Name": "UploadUserActivities",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/activity"
+  },
+  "WPFTweaksHiber": {
+    "Content": "Hazırda Bekletme (Hibernation) - Devre Dışı Bırak",
+    "Description": "Hazırda bekletme bilgisayarı kapatırken RAM içeriğini diske yazar ve disk alanı kaplar. Masaüstü bilgisayarlarda kapatılması önerilir.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\System\\CurrentControlSet\\Control\\Session Manager\\Power",
+        "Name": "HibernateEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FlyoutMenuSettings",
+        "Name": "ShowHibernateOption",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      }
+    ],
+    "InvokeScript": [
+      "powercfg.exe /hibernate off"
+    ],
+    "UndoScript": [
+      "powercfg.exe /hibernate on"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/hiber"
+  },
+  "WPFTweaksWidget": {
+    "Content": "Widget'lar (Araç Takımları) - Kaldır",
+    "Description": "Görev çubuğunun sol alt köşesindeki rahatsız edici widget'ları kaldırır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      # Sometimes if you dont stop the Widgets process the removal may fail\n\n      Get-Process *Widget* | Stop-Process\n      Get-AppxPackage Microsoft.WidgetsPlatformRuntime -AllUsers | Remove-AppxPackage -AllUsers\n      Get-AppxPackage MicrosoftWindows.Client.WebExperience -AllUsers | Remove-AppxPackage -AllUsers\n\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      Write-Host \"Removed widgets\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/widget"
+  },
+  "WPFTweaksRevertStartMenu": {
+    "Content": "Başlat Menüsü Eski Düzen - Etkinleştir",
+    "Description": "25H2 ile gelen yeni düzenden önceki klasik Başlat Menüsü düzenini geri getirir. Daha yeni Windows sürümlerinde ÇALIŞMAYABİLİR!",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\ControlSet001\\Control\\FeatureManagement\\Overrides\\8\\3036241548",
+        "Name": "EnabledState",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/revertstartmenu"
+  },
+  "WPFTweaksDisableStoreSearch": {
+    "Content": "Başlat Menüsü Mağaza Önerileri - Devre Dışı Bırak",
+    "Description": "Başlat menüsünde arama yaparken önerilen Microsoft Store uygulamalarının gösterilmesini engeller.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "icacls \"$Env:LocalAppData\\Packages\\Microsoft.WindowsStore_8wekyb3d8bbwe\\LocalState\\store.db\" /deny *S-1-1-0:F"
+    ],
+    "UndoScript": [
+      "icacls \"$Env:LocalAppData\\Packages\\Microsoft.WindowsStore_8wekyb3d8bbwe\\LocalState\\store.db\" /grant *S-1-1-0:F"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/disablestoresearch"
+  },
+  "WPFTweaksLocation": {
+    "Content": "Konum İzleme - Devre Dışı Bırak",
+    "Description": "Windows konum izleme servisini devre dışı bırakır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "service": [
+      {
+        "Name": "lfsvc",
+        "StartupType": "Disabled",
+        "OriginalType": "Manual"
+      }
+    ],
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\CapabilityAccessManager\\ConsentStore\\location",
+        "Name": "Value",
+        "Value": "Deny",
+        "Type": "String",
+        "OriginalValue": "Allow"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Sensor\\Overrides\\{BFA794E4-F964-4FDB-90F6-51056BFE4B44}",
+        "Name": "SensorPermissionState",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKLM:\\SYSTEM\\Maps",
+        "Name": "AutoUpdateEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/location"
+  },
+  "WPFTweaksServices": {
+    "Content": "Hizmetleri Elle (Manuel) Başlatmaya Ayarla",
+    "Description": "Gereksiz arka plan hizmetlerini yalnızca ihtiyaç duyulduğunda çalışacak şekilde 'Elle' başlangıç türüne ayarlar.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "service": [
+      {
+        "Name": "CscService",
+        "StartupType": "Disabled",
+        "OriginalType": "Manual"
+      },
+      {
+        "Name": "DiagTrack",
+        "StartupType": "Disabled",
+        "OriginalType": "Automatic"
+      },
+      {
+        "Name": "MapsBroker",
+        "StartupType": "Manual",
+        "OriginalType": "Automatic"
+      },
+      {
+        "Name": "StorSvc",
+        "StartupType": "Manual",
+        "OriginalType": "Automatic"
+      },
+      {
+        "Name": "SharedAccess",
+        "StartupType": "Disabled",
+        "OriginalType": "Automatic"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/services"
+  },
+  "WPFTweaksSvcHostSplitting": {
+    "Content": "svchost.exe Bölünmesi - Devre Dışı Bırak",
+    "Description": "svchost.exe işlem sayısını ve bellek tüketimini azaltmak için hizmet bölünmesini kapatır. 12 GB veya daha az RAM'li sistemler için önerilir. Xbox hizmetlerini etkileyebilir; değişiklik sonrası bilgisayarı yeniden başlatın.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      # A threshold above the physical memory disables svchost service splitting\n      $Memory = (Get-CimInstance Win32_PhysicalMemory | Measure-Object Capacity -Sum).Sum / 1KB\n      Set-ItemProperty -Path \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\" -Name SvcHostSplitThresholdInKB -Value $Memory -Type DWord\n      "
+    ],
+    "UndoScript": [
+      "\n      # Windows client default (0x380000): splitting back on\n      Set-ItemProperty -Path \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\" -Name SvcHostSplitThresholdInKB -Value 3670016 -Type DWord -Force\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/svchostsplitting"
+  },
+  "WPFTweaksBraveDebloat": {
+    "Content": "Brave Tarayıcı - Gereksiz Özellikleri Kapat",
+    "Description": "Brave Rewards, Leo AI, Kripto Cüzdan ve VPN gibi gereksiz özellikleri devre dışı bırakır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveRewardsDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveWalletDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveVPNDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveAIChatEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveStatsPingEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveNewsDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveTalkDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "TorDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "BraveP3AEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "UrlKeyedAnonymizedDataCollectionEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "SafeBrowsingExtendedReportingEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\BraveSoftware\\Brave",
+        "Name": "MetricsReportingEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/bravedebloat"
+  },
+  "WPFTweaksDisableWarningForUnsignedRdp": {
+    "Content": "İmzasız RDP Dosyası Uyarıları - Devre Dışı Bırak",
+    "Description": "Son Windows 10/11 güncellemeleriyle gelen imzasız RDP dosyalarını açarken çıkan uyarıları kapatır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services\\Client",
+        "Name": "RedirectionWarningDialogVersion",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Terminal Server Client",
+        "Name": "RdpLaunchConsentAccepted",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/disablewarningforunsignedrdp"
+  },
+  "WPFTweaksEdgeDebloat": {
+    "Content": "Microsoft Edge - Gereksiz Özellikleri Kapat",
+    "Description": "Edge içindeki telemetri seçeneklerini, açılır pencereleri ve rahatsız edici önerileri devre dışı bırakır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\EdgeUpdate",
+        "Name": "CreateDesktopShortcutDefault",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "PersonalizationReportingEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge\\ExtensionInstallBlocklist",
+        "Name": "1",
+        "Value": "ofefcgjbeghpigppfmkologfjadafddi",
+        "Type": "String",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "ShowRecommendationsEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "HideFirstRunExperience",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "UserFeedbackAllowed",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "ConfigureDoNotTrack",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "AlternateErrorPagesEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "EdgeCollectionsEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "EdgeShoppingAssistantEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "MicrosoftEdgeInsiderPromotionEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "ShowMicrosoftRewards",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "WebWidgetAllowed",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "DiagnosticData",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "EdgeAssetDeliveryServiceEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "WalletDonationEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Edge",
+        "Name": "DefaultBrowserSettingsCampaignEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/edgedebloat"
+  },
+  "WPFTweaksConsumerFeatures": {
+    "Content": "Tüketici Özellikleri (Reklam Uygulamaları) - Devre Dışı Bırak",
+    "Description": "Sponsorlu uygulama kurulumlarını durdurur ve Microsoft Store içerik önerilerini azaltır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\CloudContent",
+        "Name": "DisableWindowsConsumerFeatures",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/consumerfeatures"
+  },
+  "WPFTweaksTelemetry": {
+    "Content": "Telemetri (Veri Toplama) - Devre Dışı Bırak",
+    "Description": "Microsoft telemetri ve tanılama veri toplama görevlerini devre dışı bırakır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "service": [
+      {
+        "Name": "diagtrack",
+        "StartupType": "Disabled",
+        "OriginalType": "Automatic"
+      },
+      {
+        "Name": "WerSvc",
+        "StartupType": "Disabled",
+        "OriginalType": "Manual"
+      }
+    ],
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+        "Name": "Enabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Privacy",
+        "Name": "TailoredExperiencesWithDiagnosticDataEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Speech_OneCore\\Settings\\OnlineSpeechPrivacy",
+        "Name": "HasAccepted",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Input\\TIPC",
+        "Name": "Enabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\InputPersonalization",
+        "Name": "RestrictImplicitInkCollection",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\InputPersonalization",
+        "Name": "RestrictImplicitTextCollection",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\InputPersonalization\\TrainedDataStore",
+        "Name": "HarvestContacts",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Personalization\\Settings",
+        "Name": "AcceptedPrivacyPolicy",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\DataCollection",
+        "Name": "AllowTelemetry",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "Start_TrackProgs",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+        "Name": "PublishUserActivities",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Siuf\\Rules",
+        "Name": "NumberOfSIUFInPeriod",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Siuf\\Rules",
+        "Name": "PeriodInNanoSeconds",
+        "Value": "<RemoveEntry>",
+        "Type": "QWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "InvokeScript": [
+      "\n      # Disable Defender Auto Sample Submission\n      try {\n          Set-MpPreference -SubmitSamplesConsent 2 -ErrorAction Stop\n      } catch {\n          # Skip Defender error 0x800106ba when its service is unavailable; other errors must fail.\n          if ($_.Exception.Message -notmatch '\\b0x800106ba\\b' -and $_.Exception.HResult -ne 0x800106BA) {\n              throw\n          }\n          Write-Warning 'Defender sample submission preference could not be changed; Defender may be unavailable or disabled.'\n          Write-WinUtilLog -Level 'WARN' -Component 'Script' -Message 'Defender sample submission preference could not be changed; Defender may be unavailable or disabled.'\n      }\n\n      # Disable PowerShell 7 telemetry\n      [Environment]::SetEnvironmentVariable('POWERSHELL_TELEMETRY_OPTOUT', '1', 'Machine')\n      "
+    ],
+    "UndoScript": [
+      "\n      # Enable Defender Auto Sample Submission\n      try {\n          Set-MpPreference -SubmitSamplesConsent 1 -ErrorAction Stop\n      } catch {\n          # Skip Defender error 0x800106ba when its service is unavailable; other errors must fail.\n          if ($_.Exception.Message -notmatch '\\b0x800106ba\\b' -and $_.Exception.HResult -ne 0x800106BA) {\n              throw\n          }\n          Write-Warning 'Defender sample submission preference could not be restored; Defender may be unavailable or disabled.'\n          Write-WinUtilLog -Level 'WARN' -Component 'Script' -Message 'Defender sample submission preference could not be restored; Defender may be unavailable or disabled.'\n      }\n\n      # Enable PowerShell 7 telemetry\n      [Environment]::SetEnvironmentVariable('POWERSHELL_TELEMETRY_OPTOUT', '', 'Machine')\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/telemetry"
+  },
+  "WPFTweaksDeliveryOptimization": {
+    "Content": "Teslim İyileştirme (P2P Güncelleme) - Devre Dışı Bırak",
+    "Description": "Windows'un internet bant genişliğinizi kullanarak başka bilgisayarlara güncelleme yüklemesini durdurur.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization",
+        "Name": "DODownloadMode",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/deliveryoptimization"
+  },
+  "WPFTweaksRemoveEdge": {
+    "Content": "Microsoft Edge - Kaldır",
+    "Description": "Resmi kaldırma aracının kilidini açarak Microsoft Edge tarayıcısını sistem düzeyinde kaldırır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      $EdgeAppDir = \"$Env:ProgramFiles (x86)\\Microsoft\\Edge\\Application\"\n      $Path = $null\n      if (Test-Path -LiteralPath $EdgeAppDir -ErrorAction Stop) {\n          $InstallerPattern = Join-Path $EdgeAppDir \"*\\Installer\\setup.exe\"\n          if (Test-Path -Path $InstallerPattern -ErrorAction Stop) {\n              $Path = Resolve-Path -Path $InstallerPattern -ErrorAction Stop | Select-Object -Last 1\n          }\n      }\n\n      if ($Path) {\n          New-Item -Path \"$Env:SystemRoot\\SystemApps\\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\\MicrosoftEdge.exe\" -Force\n          Start-Process -FilePath $Path -ArgumentList \"--uninstall --system-level --force-uninstall --delete-profile\" -Wait\n          Write-Host \"Microsoft Edge was removed\"\n      } else {\n          Write-Host \"Microsoft Edge is not installed\"\n      }\n      "
+    ],
+    "UndoScript": [
+      "\n      Write-Host \"Installing Microsoft Edge...\"\n      winget install Microsoft.Edge --source winget\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/removeedge"
+  },
+  "WPFTweaksDisableBitLocker": {
+    "Content": "BitLocker Şifreleme - Devre Dışı Bırak",
+    "Description": "BitLocker disk şifrelemesini devre dışı bırakır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      $bitLockerVolume = Get-BitLockerVolume -MountPoint $Env:SystemDrive -ErrorAction Stop\n\n      if ($bitLockerVolume.VolumeStatus -eq 'FullyDecrypted') {\n          Write-Host \"BitLocker is already disabled on $($Env:SystemDrive).\"\n      } else {\n          Disable-BitLocker -MountPoint $Env:SystemDrive -ErrorAction Stop\n      }\n      "
+    ],
+    "UndoScript": [
+      "Enable-BitLocker -MountPoint $Env:SystemDrive"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/disablebitlocker"
+  },
+  "WPFTweaksUTC": {
+    "Content": "Tarih ve Saat - UTC Olarak Ayarla",
+    "Description": "Windows + Linux çift önyükleme (dual-boot) yapan bilgisayarlar için saat senkronizasyonu sorununu çözer.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\TimeZoneInformation",
+        "Name": "RealTimeIsUniversal",
+        "Value": "1",
+        "Type": "QWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/utc"
+  },
+  "WPFTweaksRemoveOneDrive": {
+    "Content": "Microsoft OneDrive - Kaldır",
+    "Description": "Kullanıcı dosyalarınızı koruyarak OneDrive'ı kendi kaldırıcısıyla sistemden tamamen kaldırır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      $OneDrivePath = $Env:OneDrive\n      $OneDriveFolderExists = -not [string]::IsNullOrWhiteSpace($OneDrivePath) -and (Test-Path -LiteralPath $OneDrivePath -PathType Container -ErrorAction Stop)\n\n      if ($OneDriveFolderExists) {\n          $OneDriveAcl = Get-Acl -LiteralPath $OneDrivePath -ErrorAction Stop\n      } else {\n          Write-Host \"OneDrive folder is already absent; skipping folder permissions and cleanup.\"\n      }\n\n      try {\n          if ($OneDriveFolderExists) {\n              # Protect user files while the uninstaller runs.\n              icacls $OneDrivePath /deny \"*S-1-5-32-544:(D,DC)\"\n              if ($LASTEXITCODE -ne 0) { throw \"Unable to protect the OneDrive folder (icacls exit code $LASTEXITCODE).\" }\n          }\n\n          Write-Host \"Uninstalling OneDrive...\"\n          Start-Process -FilePath (Join-Path $Env:SystemRoot \"System32\\OneDriveSetup.exe\") -ArgumentList '/uninstall' -Wait -ErrorAction Stop\n\n          # Some of OneDrive files use explorer, and OneDrive uses FileCoAuth\n          Write-Host \"Removing leftover OneDrive Files...\"\n\n          Get-Process -ErrorAction Stop | Where-Object ProcessName -eq 'FileCoAuth' | Stop-Process -ErrorAction Stop\n          Get-Process -ErrorAction Stop | Where-Object ProcessName -eq 'Explorer' | Stop-Process -ErrorAction Stop\n\n          $OneDriveLeftovers = @(\"$Env:LocalAppData\\Microsoft\\OneDrive\", \"$Env:ProgramData\\Microsoft OneDrive\")\n          foreach ($LeftoverPath in $OneDriveLeftovers) {\n              if (Test-Path -LiteralPath $LeftoverPath -ErrorAction Stop) {\n                  Remove-Item -LiteralPath $LeftoverPath -Recurse -Force -ErrorAction Stop\n              }\n          }\n      } finally {\n          if ($OneDriveFolderExists) {\n              # Restore access even when uninstall or leftover cleanup fails.\n              Set-Acl -LiteralPath $OneDrivePath -AclObject $OneDriveAcl -ErrorAction Stop\n          }\n      }\n\n      if ($OneDriveFolderExists -and -not (Get-ChildItem -LiteralPath $OneDrivePath -Force -ErrorAction Stop)) {\n          # Refuse to delete if files appeared after the emptiness check.\n          [System.IO.Directory]::Delete($OneDrivePath, $false)\n          [Environment]::SetEnvironmentVariable('OneDrive', $null, 'User')\n      }\n\n      # OneSyncSvc is a per-user template; Get-Service only exposes user instances.\n      # Skip the operation if this Windows installation has no template.\n      if (Test-Path -LiteralPath 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\OneSyncSvc') {\n          Set-Service -Name OneSyncSvc -StartupType Disabled\n      }\n      "
+    ],
+    "UndoScript": [
+      "\n      Write-Host \"Installing OneDrive\"\n      winget install Microsoft.Onedrive --source winget\n\n      # Enable OneSyncSvc when the per-user service template exists\n      if (Test-Path -LiteralPath 'HKLM:\\SYSTEM\\CurrentControlSet\\Services\\OneSyncSvc') {\n          Set-Service -Name OneSyncSvc -StartupType Automatic\n      }\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/removeonedrive"
+  },
+  "WPFTweaksRemoveHomeAndGallery": {
+    "Content": "Dosya Gezgini Giriş ve Galeri - Devre Dışı Bırak",
+    "Description": "Dosya Gezgini'nden Giriş ve Galeri bölümlerini kaldırır ve varsayılan açılış olarak 'Bu Bilgisayar'ı ayarlar.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Classes\\CLSID\\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}",
+        "Name": "System.IsPinnedToNameSpaceTree",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Classes\\CLSID\\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}",
+        "Name": "System.IsPinnedToNameSpaceTree",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "LaunchTo",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/removehomeandgallery"
+  },
+  "WPFTweaksDisplay": {
+    "Content": "Görsel Efektler - En İyi Performans",
+    "Description": "Sistem görsel efektlerini en yüksek performans için ayarlar. Bunu sysdm.cpl üzerinden de elle yapabilirsiniz.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\Control Panel\\Desktop",
+        "Name": "DragFullWindows",
+        "Value": "0",
+        "Type": "String",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Desktop",
+        "Name": "MenuShowDelay",
+        "Value": "200",
+        "Type": "String",
+        "OriginalValue": "400"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Desktop\\WindowMetrics",
+        "Name": "MinAnimate",
+        "Value": "0",
+        "Type": "String",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Keyboard",
+        "Name": "KeyboardDelay",
+        "Value": "0",
+        "Type": "String",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "ListviewAlphaSelect",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "ListviewShadow",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarAnimations",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+        "Name": "VisualFXSetting",
+        "Value": "3",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\DWM",
+        "Name": "EnableAeroPeek",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarMn",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      }
+    ],
+    "InvokeScript": [
+      "Set-ItemProperty -Path \"HKCU:\\Control Panel\\Desktop\" -Name \"UserPreferencesMask\" -Type Binary -Value ([byte[]](144,18,3,128,16,0,0,0))"
+    ],
+    "UndoScript": [
+      "Remove-ItemProperty -Path \"HKCU:\\Control Panel\\Desktop\" -Name \"UserPreferencesMask\""
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/display"
+  },
+  "WPFTweaksReservedStorage": {
+    "Content": "Ayrılmış Depolamayı Devre Dışı Bırak",
+    "Description": "Windows güncellemeleri için ayrılan 7-10 GB'lık alanı serbest bırakır. Yalnızca küçük disklerde önerilir; büyük Windows güncellemelerinden önce yeniden açın.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "DISM /Online /Set-ReservedStorageState /State:Disabled"
+    ],
+    "UndoScript": [
+      "DISM /Online /Set-ReservedStorageState /State:Enabled"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/reservedstorage"
+  },
+  "WPFTweaksRestorePoint": {
+    "Content": "Sistem Geri Yükleme Noktası - Oluştur",
+    "Description": "WinUtil değişikliklerini gerekirse geri alabilmek için işlem öncesinde bir sistem geri yükleme noktası oluşturur.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "Checked": "False",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\SystemRestore",
+        "Name": "SystemRestorePointCreationFrequency",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1440"
+      }
+    ],
+    "InvokeScript": [
+      "\n      if (-not (Get-ComputerRestorePoint)) {\n          Enable-ComputerRestore -Drive $Env:SystemDrive\n      }\n\n      Checkpoint-Computer -Description \"System Restore Point created by WinUtil\" -RestorePointType MODIFY_SETTINGS\n      Write-Host \"System Restore Point Created Successfully\" -ForegroundColor Green\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/restorepoint"
+  },
+  "WPFTweaksEndTaskOnTaskbar": {
+    "Content": "Görev Çubuğunda Sağ Tıkla Görevi Sonlandır - Etkinleştir",
+    "Description": "Görev çubuğundaki bir programa sağ tıkladığınızda 'Görevi sonlandır' seçeneğini ekler.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
+        "Name": "TaskbarEndTask",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/endtaskontaskbar"
+  },
+  "WPFTweaksStorage": {
+    "Content": "Akıllı Depolama (Storage Sense) - Devre Dışı Bırak",
+    "Description": "Geçici dosyaları otomatik silen Akıllı Depolama özelliğini kapatır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\StorageSense\\Parameters\\StoragePolicy",
+        "Name": "01",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/storage"
+  },
+  "WPFTweaksWindowsAI": {
+    "Content": "Windows Yapay Zeka (AI / Copilot / Recall) - Kaldır ve Kapat",
+    "Description": "Tüm Windows yapay zeka özelliklerini ve paketlerini devre dışı bırakır ve kaldırır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
+        "Name": "SettingsPageVisibility",
+        "Value": "hide:aicomponents",
+        "Type": "String",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\WindowsNotepad",
+        "Name": "DisableAIFeatures",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "InvokeScript": [
+      "\n      $Appx = (Get-AppxPackage MicrosoftWindows.Client.CoreAI).PackageFullName\n      $Sid = (Get-LocalUser $Env:UserName).Sid.Value\n\n      New-Item \"HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Appx\\AppxAllUserStore\\EndOfLife\\$Sid\\$Appx\" -Force\n\n      Get-AppxPackage -AllUsers \"*Copilot*\" | Remove-AppxPackage -AllUsers\n      winget uninstall -e --name \"Copilot\" --silent --force --accept-source-agreements 2>$null\n      Get-AppxPackage -AllUsers Microsoft.MicrosoftOfficeHub | Remove-AppxPackage -AllUsers\n\n      if ($Appx) {\n          Remove-AppxPackage $Appx\n      }\n\n      # WSAIFabricSvc only exists on some Windows 11 builds; without the guard a\n      # missing service aborts the rest of this script block and Recall stays enabled\n      if (Get-Service -Name WSAIFabricSvc -ErrorAction SilentlyContinue) {\n          Set-Service -Name WSAIFabricSvc -StartupType Disabled\n      }\n      # Store/MSIX PowerShell 7 can hang or fail COM activation in DISM.\n      $RecallCommand = {\n          Disable-WindowsOptionalFeature -FeatureName Recall -Online -NoRestart -ErrorAction Stop | Out-Null\n      }\n      $RecallOutput = powershell.exe -NoProfile -NonInteractive -Command $RecallCommand 2>&1\n      if ($LASTEXITCODE -ne 0) {\n          throw \"Failed to disable Recall (exit code $LASTEXITCODE): $(($RecallOutput | Out-String).Trim())\"\n      }\n      $RecallOutput | ForEach-Object { Write-Host $_ }\n\n      Write-Host \"Windows AI Disabled\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/windowsai"
+  },
+  "WPFTweaksWPBT": {
+    "Content": "Windows Platform İkili Tablosu (WPBT) - Devre Dışı Bırak",
+    "Description": "Bilgisayar üreticilerinin açılışta kullanıcı izni olmadan yazılım/sürücü çalıştırmasını sağlayan WPBT güvenlik riskini kapatır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager",
+        "Name": "DisableWpbtExecution",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/wpbt"
+  },
+  "WPFTweaksPreventDeviceMetadataFromNetwork": {
+    "Content": "Cihaz Yardımcı Uygulamalarını Engelle",
+    "Description": "Yeni donanım (monitör, fare vb.) takıldığında otomatik olarak ek yazılım/reklam kurulmasını engeller.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Device Metadata",
+        "Name": "PreventDeviceMetadataFromNetwork",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/preventdevicemetadatafromnetwork"
+  },
+  "WPFTweaksRazerBlock": {
+    "Content": "Razer Yazılımı Otomatik Kurulumu - Engelle",
+    "Description": "Razer donanımı takıldığında otomatik kurulan tüm Razer yazılımlarını engeller. Donanım yazılım olmadan normal çalışır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\DriverSearching",
+        "Name": "SearchOrderConfig",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Installer",
+        "Name": "DisableCoInstallers",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "InvokeScript": [
+      "\n      $RazerPath = \"$Env:SystemRoot\\Installer\\Razer\"\n\n      if (Test-Path $RazerPath) {\n        Remove-Item $RazerPath\\* -Recurse -Force\n      } else {\n        New-Item -Path $RazerPath -ItemType Directory\n      }\n\n      icacls $RazerPath /deny \"*S-1-1-0:(W)\"\n      "
+    ],
+    "UndoScript": [
+      "\n      icacls \"$Env:SystemRoot\\Installer\\Razer\" /remove:d *S-1-1-0\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/razerblock"
+  },
+  "WPFTweaksLogiBlock": {
+    "Content": "Logitech İndirme Yardımcısı Otomatik Kurulumu - Engelle",
+    "Description": "Windows Update'in Logitech sürücüleriyle sürekli yeniden kurduğu Logi Download Assistant yazılımını engeller.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      Stop-Process -Name \"logi_download_assistant\" -Force -ErrorAction SilentlyContinue\n\n      $ProgramFiles64 = if ($Env:ProgramW6432) { $Env:ProgramW6432 } else { $Env:ProgramFiles }\n      $LogiPath = \"$ProgramFiles64\\LogiDownloadAssistant\"\n\n      if (Test-Path $LogiPath) {\n        Remove-Item $LogiPath\\* -Recurse -Force\n      } else {\n        New-Item -Path $LogiPath -ItemType Directory\n      }\n\n      icacls $LogiPath /deny \"*S-1-1-0:(W)\"\n      if ($LASTEXITCODE -ne 0) { throw \"icacls failed to deny write access on $LogiPath (exit code $LASTEXITCODE)\" }\n      "
+    ],
+    "UndoScript": [
+      "\n      $ProgramFiles64 = if ($Env:ProgramW6432) { $Env:ProgramW6432 } else { $Env:ProgramFiles }\n      $LogiPath = \"$ProgramFiles64\\LogiDownloadAssistant\"\n\n      if (Test-Path $LogiPath) {\n        icacls $LogiPath /remove:d \"*S-1-1-0\"\n        if ($LASTEXITCODE -ne 0) { throw \"icacls failed to remove the write-deny rule on $LogiPath (exit code $LASTEXITCODE)\" }\n      }\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/logiblock"
+  },
+  "WPFTweaksDisableNotifications": {
+    "Content": "Sistem Tepsisi Bildirimleri ve Takvim - Devre Dışı Bırak",
+    "Description": "Takvim dahil tüm sistem tepsisi bildirimlerini kapatır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Windows\\Explorer",
+        "Name": "DisableNotificationCenter",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\PushNotifications",
+        "Name": "ToastEnabled",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/disablenotifications"
+  },
+  "WPFTweaksBlockAdobeNet": {
+    "Content": "Adobe Sunucu Engelleme Listesi - Etkinleştir",
+    "Description": "Adobe'nin etkinleştirme ve telemetri sunucularına yapılan bağlantıları seçici olarak engelleyerek kesintileri azaltır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      $hostsUrl = Invoke-RestMethod -Uri https://github.com/Ruddernation-Designs/Adobe-URL-Block-List/raw/refs/heads/master/hosts\n      Add-Content -Path \"$Env:SystemRoot\\System32\\drivers\\etc\\hosts\" -Value $hostsUrl\n\n      ipconfig /flushdns\n      Write-Host 'Added Adobe url block list from host file'\n      "
+    ],
+    "UndoScript": [
+      "\n      Set-Content \"$Env:SystemRoot\\System32\\drivers\\etc\\hosts\" (\n          (Get-Content \"$Env:SystemRoot\\System32\\drivers\\etc\\hosts\") -join \"`n\" -replace '(?s)#New Ver.*', ''\n      )\n\n      ipconfig /flushdns\n      Write-Host 'Removed Adobe url block list from host file'\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/blockadobenet"
+  },
+  "WPFTweaksRightClickMenu": {
+    "Content": "Klasik Sağ Tık Menüsü (Windows 10 Tarzı) - Etkinleştir",
+    "Description": "Windows 11 Dosya Gezgini'nde eski tam sağ tık bağlam menüsünü geri getirir.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "InvokeScript": [
+      "Set-WinUtilClassicContextMenu"
+    ],
+    "UndoScript": [
+      "Set-WinUtilClassicContextMenu -Undo"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/rightclickmenu"
+  },
+  "WPFTweaksDiskCleanup": {
+    "Content": "Disk Temizleme - Çalıştır",
+    "Description": "C: sürücüsünde Disk Temizleme çalıştırır ve eski Windows güncelleme dosyalarını temizler.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      cleanmgr.exe /d C: /VERYLOWDISK\n      Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/diskcleanup"
+  },
+  "WPFTweaksDeleteTempFiles": {
+    "Content": "Geçici Dosyaları (TEMP) - Temizle",
+    "Description": "Sistem ve kullanıcı TEMP klasörlerindeki geçici dosyaları siler.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      # A temp folder always holds files something has open, including this run's own, and\n      # the job layer counts a logged error as a failed step\n      Remove-Item -Path \"$Env:Temp\\*\" -Recurse -Force -ErrorAction SilentlyContinue\n      Remove-Item -Path \"$Env:SystemRoot\\Temp\\*\" -Recurse -Force -ErrorAction SilentlyContinue\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/deletetempfiles"
+  },
+  "WPFTweaksIPv46": {
+    "Content": "IPv6 yerine IPv4'ü Önceliklendir",
+    "Description": "IPv6 yapılandırılmamış yerel ağlarda gecikme ve güvenlik avantajı sağlamak için IPv4'ü tercih eder.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+        "Name": "DisabledComponents",
+        "Value": "32",
+        "Type": "DWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/ipv46"
+  },
+  "WPFTweaksTeredo": {
+    "Content": "Teredo Tüneli - Devre Dışı Bırak",
+    "Description": "Ek gecikmeye yol açabilen Teredo IPv6 tünellemesini kapatır (bazı Xbox/çevrimiçi oyunları etkileyebilir).",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+        "Name": "DisabledComponents",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "InvokeScript": [
+      "netsh interface teredo set state disabled"
+    ],
+    "UndoScript": [
+      "netsh interface teredo set state default"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/teredo"
+  },
+  "WPFTweaksDisableSearchIndexing": {
+    "Content": "Windows Arama Dizinleme - Devre Dışı Bırak",
+    "Description": "Arka plan disk kullanımını azaltmak için Windows Search hizmetini kapatır (özellikle mekanik HDD'lerde faydalıdır). Uyarı: Dosya aramaları yavaşlar; Geri Al ile tekrar açılabilir.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "service": [
+      {
+        "Name": "WSearch",
+        "StartupType": "Disabled",
+        "OriginalType": "Automatic"
+      }
+    ],
+    "InvokeScript": [
+      "$search = Get-Service -Name WSearch -ErrorAction SilentlyContinue\n      if ($search -and $search.StartType -eq 'Disabled' -and $search.Status -ne 'Stopped') {\n        Stop-Service -Name WSearch -Force -ErrorAction Stop\n      }"
+    ],
+    "UndoScript": [
+      "$search = Get-Service -Name WSearch -ErrorAction SilentlyContinue\n      if ($search -and $search.StartType -eq 'Automatic' -and $search.Status -ne 'Running') {\n        Start-Service -Name WSearch -ErrorAction Stop\n      }"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/disablesearchindexing"
+  },
+  "WPFTweaksDisableIPv6": {
+    "Content": "IPv6 - Devre Dışı Bırak",
+    "Description": "Ağ bağdaştırıcılarında IPv6 protokolünü devre dışı bırakır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+        "Name": "DisabledComponents",
+        "Value": "255",
+        "Type": "DWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "InvokeScript": [
+      "Disable-NetAdapterBinding -Name * -ComponentID ms_tcpip6"
+    ],
+    "UndoScript": [
+      "Enable-NetAdapterBinding -Name * -ComponentID ms_tcpip6"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/disableipv6"
+  },
+  "WPFTweaksDisableBGapps": {
+    "Content": "Arka Plan Uygulamaları - Devre Dışı Bırak",
+    "Description": "Tüm Microsoft Store uygulamalarının arka planda çalışmasını tek seferde kapatır.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications",
+        "Name": "GlobalUserDisabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/disablebgapps"
+  },
+  "WPFTweaksDisableExplorerAutoDiscovery": {
+    "Content": "Dosya Gezgini Otomatik Klasör Türü Algılama - Devre Dışı Bırak",
+    "Description": "Dosya Gezgini'nin klasör içeriğine göre görünüm tahmin etmesini kapatarak gezinmeyi hızlandırır. UYARI: Klasör gruplamasını kapatır.",
+    "category": "Temel İnce Ayarlar",
+    "panel": "1",
+    "InvokeScript": [
+      "\n      # Previously detected folders\n      $bags = \"HKCU:\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\Bags\"\n\n      # Folder types lookup table\n      $bagMRU = \"HKCU:\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\BagMRU\"\n\n      # Flush Explorer view database. Explorer creates these keys only after a folder\n      # view has been saved, so skip them when missing or already removed\n      if (Test-Path $bags) {\n        Remove-Item -Path $bags -Recurse -Force\n        Write-Host \"Removed $bags\"\n      }\n\n      if (Test-Path $bagMRU) {\n        Remove-Item -Path $bagMRU -Recurse -Force\n        Write-Host \"Removed $bagMRU\"\n      }\n\n      # Every folder\n      $allFolders = \"HKCU:\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\Bags\\AllFolders\\Shell\"\n\n      if (!(Test-Path $allFolders)) {\n        New-Item -Path $allFolders -Force\n        Write-Host \"Created $allFolders\"\n      }\n\n      # Generic view\n      New-ItemProperty -Path $allFolders -Name \"FolderType\" -Value \"NotSpecified\" -PropertyType String -Force\n      Write-Host \"Set FolderType to NotSpecified\"\n\n      Write-Host Please sign out and back in, or restart your computer to apply the changes!\n      "
+    ],
+    "UndoScript": [
+      "\n      # Previously detected folders\n      $bags = \"HKCU:\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\Bags\"\n\n      # Folder types lookup table\n      $bagMRU = \"HKCU:\\Software\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\BagMRU\"\n\n      # Flush Explorer view database. Explorer creates these keys only after a folder\n      # view has been saved, so skip them when missing or already removed\n      if (Test-Path $bags) {\n        Remove-Item -Path $bags -Recurse -Force\n        Write-Host \"Removed $bags\"\n      }\n\n      if (Test-Path $bagMRU) {\n        Remove-Item -Path $bagMRU -Recurse -Force\n        Write-Host \"Removed $bagMRU\"\n      }\n\n      Write-Host Please sign out and back in, or restart your computer to apply the changes!\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/essential-tweaks/disableexplorerautodiscovery"
+  },
+  "WPFToggleDetailedBSoD": {
+    "Content": "Ayrıntılı Mavi Ekran (BSoD) Modu",
+    "Description": "Mavi ekran hatası oluştuğunda daha fazla teknik bilgi gösterir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
+        "Name": "DisplayParameters",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      },
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\CrashControl",
+        "Name": "DisableEmoticon",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/detailedbsod"
+  },
+  "WPFToggleBatteryPercentage": {
+    "Content": "Sistem Tepsisi Pil Yüzdesi",
+    "Description": "Görev çubuğundaki pil simgesinin yanında sayısal pil yüzdesini gösterir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "IsBatteryPercentageEnabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/batterypercentage"
+  },
+  "WPFToggleDarkMode": {
+    "Content": "Windows Koyu Tema",
+    "Description": "Sistem ve uygulamalar için Koyu Mod'u açar veya kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+        "Name": "AppsUseLightTheme",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "false"
+      },
+      {
+        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+        "Name": "SystemUsesLightTheme",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "false"
+      }
+    ],
+    "InvokeScript": [
+      "\n      Invoke-WinUtilExplorerUpdate\n      if ($sync.ThemeButton.Content -eq [char]0xF08C) {\n        Invoke-WinutilThemeChange -theme \"Auto\"\n      }\n      "
+    ],
+    "UndoScript": [
+      "\n      Invoke-WinUtilExplorerUpdate\n      if ($sync.ThemeButton.Content -eq [char]0xF08C) {\n        Invoke-WinutilThemeChange -theme \"Auto\"\n      }\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/darkmode"
+  },
+  "WPFToggleShowExt": {
+    "Content": "Dosya Uzantılarını Göster",
+    "Description": "Dosya Gezgini'nde dosya uzantılarını (.exe, .png vb.) görünür yapar.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "HideFileExt",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "false"
+      }
+    ],
+    "InvokeScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "UndoScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/showext"
+  },
+  "WPFToggleHiddenFiles": {
+    "Content": "Gizli Dosyaları Göster",
+    "Description": "Dosya Gezgini'nde gizli dosya ve klasörleri gösterir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "Hidden",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      }
+    ],
+    "InvokeScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "UndoScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/hiddenfiles"
+  },
+  "WPFToggleVerboseLogon": {
+    "Content": "Ayrıntılı Açılış/Kapanış Mesajları",
+    "Description": "Windows başlatılırken ve kapatılırken ayrıntılı durum mesajları gösterir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System",
+        "Name": "VerboseStatus",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/verboselogon"
+  },
+  "WPFToggleNewOutlook": {
+    "Content": "Yeni Microsoft Outlook Sürümü",
+    "Description": "Yeni Outlook uygulamasının kullanılıp kullanılmayacağını belirler.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\SOFTWARE\\Microsoft\\Office\\16.0\\Outlook\\Preferences",
+        "Name": "UseNewOutlook",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Office\\16.0\\Outlook\\Options\\General",
+        "Name": "HideNewOutlookToggle",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Office\\16.0\\Outlook\\Options\\General",
+        "Name": "DoNewOutlookAutoMigration",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      },
+      {
+        "Path": "HKCU:\\Software\\Policies\\Microsoft\\Office\\16.0\\Outlook\\Preferences",
+        "Name": "NewOutlookMigrationUserSetting",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/newoutlook"
+  },
+  "WPFToggleScrollbars": {
+    "Content": "Kaydırma Çubukları Her Zaman Görünür",
+    "Description": "Açık olduğunda kaydırma çubukları sürekli görünür kalır; kapalıyken otomatik gizlenir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Control Panel\\Accessibility",
+        "Name": "DynamicScrollbars",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/scrollbars"
+  },
+  "WPFMultiplaneOverlay": {
+    "Content": "Çoklu Düzlem Katmanı (Multiplane Overlay / MPO)",
+    "Description": "Multiplane Overlay birden fazla görüntü katmanını birleştirir, ancak bazı ekran kartlarında takılma/titreme sorunlarına yol açabilir. Değişiklik anında uygulanır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Combobox",
+    "ComboItems": "Etkin|Devre Dışı (Uyumluluk)|Tamamen Devre Dışı",
+    "ComboDescriptions": {
+      "Etkin": "Windows'un varsayılan MPO katman davranışını kullanır.",
+      "Devre Dışı (Uyumluluk)": "OverlayTestMode=5 ile daha yumuşak uyumluluk yöntemini kullanarak MPO'yu devre dışı bırakır.",
+      "Tamamen Devre Dışı": "OverlayTestMode=5 ve DisableOverlays=1 ile MPO'yu tamamen devre dışı bırakır."
+    },
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\Windows\\Dwm",
+        "Name": "OverlayTestMode",
+        "Type": "DWord",
+        "DefaultValue": "0",
+        "Values": {
+          "Etkin": "<RemoveEntry>",
+          "Devre Dışı (Uyumluluk)": "5",
+          "Tamamen Devre Dışı": "5"
+        }
+      },
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "Name": "DisableOverlays",
+        "Type": "DWord",
+        "DefaultValue": "0",
+        "Values": {
+          "Etkin": "<RemoveEntry>",
+          "Devre Dışı (Uyumluluk)": "<RemoveEntry>",
+          "Tamamen Devre Dışı": "1"
+        }
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/multiplaneoverlay"
+  },
+  "WPFToggleMouseAcceleration": {
+    "Content": "Fare İvmesi (İşaretçi Hassasiyetini Artır)",
+    "Description": "İmleç hareketinin farenin fiziksel hareket hızından etkilenmesini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Control Panel\\Mouse",
+        "Name": "MouseSpeed",
+        "Value": "1",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Mouse",
+        "Name": "MouseThreshold1",
+        "Value": "6",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Mouse",
+        "Name": "MouseThreshold2",
+        "Value": "10",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/mouseacceleration"
+  },
+  "WPFToggleNumLock": {
+    "Content": "Başlangıçta Num Lock Açık",
+    "Description": "Bilgisayar açıldığında Num Lock tuşunun otomatik açık olmasını sağlar.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKU:\\.Default\\Control Panel\\Keyboard",
+        "Name": "InitialKeyboardIndicators",
+        "Value": "2",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      },
+      {
+        "Path": "HKCU:\\Control Panel\\Keyboard",
+        "Name": "InitialKeyboardIndicators",
+        "Value": "2",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/numlock"
+  },
+  "WPFToggleWindowSnapping": {
+    "Content": "Pencere Yaslama (Snap)",
+    "Description": "Pencereleri ekran kenarlarına sürükleyerek hizalama özelliğini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Control Panel\\Desktop",
+        "Name": "WindowArrangementActive",
+        "Value": "1",
+        "Type": "String",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/windowsnapping"
+  },
+  "WPFToggleStandbyFix": {
+    "Content": "S0 Uyku Modunda Ağ Bağlantısı",
+    "Description": "Modern dizüstü bilgisayarlarda düşük güç uyku modunda (S0) ağ bağlantısını açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\SOFTWARE\\Policies\\Microsoft\\Power\\PowerSettings\\f15576e8-98b7-4186-b944-eafa664402d9",
+        "Name": "ACSettingIndex",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/standbyfix"
+  },
+  "WPFToggleS3Sleep": {
+    "Content": "Klasik S3 Uyku Modu",
+    "Description": "Modern Bekleme (Modern Standby) yerine işlemci gücünü kesen klasik S3 Uyku moduna geçişi kontrol eder.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Power",
+        "Name": "PlatformAoAcOverride",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/s3sleep"
+  },
+  "WPFToggleHideSettingsHome": {
+    "Content": "Ayarlar Giriş Sayfası",
+    "Description": "Windows Ayarlar uygulamasındaki Giriş sayfasını gösterir veya gizler.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer",
+        "Name": "SettingsPageVisibility",
+        "Value": "show:home",
+        "Type": "String",
+        "OriginalValue": "hide:home",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/hidesettingshome"
+  },
+  "WPFToggleBingSearch": {
+    "Content": "Başlat Menüsü Bing Web Araması",
+    "Description": "Windows Arama'daki Bing web arama sonuçlarını açar veya kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+        "Name": "BingSearchEnabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/bingsearch"
+  },
+  "WPFToggleLoginBlur": {
+    "Content": "Oturum Açma Ekranı Bulanıklık Efekti",
+    "Description": "Oturum açma ekranı arka planındaki akrilik bulanıklık efektini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+        "Name": "DisableAcrylicBackgroundOnLogon",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/loginblur"
+  },
+  "WPFToggleDisableLockscreen": {
+    "Content": "Kilit Ekranı - Devre Dışı Bırak",
+    "Description": "Açılışta ve uyanmada kilit ekranını atlayarak doğrudan oturum açma ekranına gider.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Personalization",
+        "Name": "NoLockScreen",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "<RemoveEntry>"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/disablelockscreen"
+  },
+  "WPFToggleStartMenuRecommendations": {
+    "Content": "Başlat Menüsü Önerileri",
+    "Description": "Başlat Menüsü'ndeki Önerilenler bölümünü açar/kapatır. UYARI: Kilit ekranındaki Windows Spot Işığı özelliğini de devre dışı bırakır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\Start",
+        "Name": "HideRecommendedSection",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Microsoft\\PolicyManager\\current\\device\\Education",
+        "Name": "IsEducationEnvironment",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\Explorer",
+        "Name": "HideRecommendedSection",
+        "Value": "0",
+        "Type": "DWord",
+        "OriginalValue": "1",
+        "DefaultState": "true"
+      }
+    ],
+    "InvokeScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "UndoScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/startmenurecommendations"
+  },
+  "WPFToggleStickyKeys": {
+    "Content": "Yapışkan Tuşlar",
+    "Description": "Shift tuşuna art arda basıldığında açılan Yapışkan Tuşlar özelliğini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Control Panel\\Accessibility\\StickyKeys",
+        "Name": "Flags",
+        "Value": "506",
+        "Type": "DWord",
+        "OriginalValue": "58",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/stickykeys"
+  },
+  "WPFToggleTaskbarAlignment": {
+    "Content": "Görev Çubuğu Simgeleri Ortada",
+    "Description": "Görev çubuğu simgelerinin ortada mı yoksa solda mı hizalanacağını değiştirir.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "TaskbarAl",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "InvokeScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "UndoScript": [
+      "\n      Invoke-WinUtilExplorerUpdate -action \"restart\"\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/taskbaralignment"
+  },
+  "WPFToggleTaskbarSearch": {
+    "Content": "Görev Çubuğu Arama Simgesi",
+    "Description": "Görev çubuğundaki Arama düğmesini gösterir veya gizler.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Search",
+        "Name": "SearchboxTaskbarMode",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/taskbarsearch"
+  },
+  "WPFToggleTaskView": {
+    "Content": "Görev Çubuğu Görev Görünümü Simgesi",
+    "Description": "Görev çubuğundaki Görev Görünümü düğmesini gösterir veya gizler.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+        "Name": "ShowTaskViewButton",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/taskview"
+  },
+  "WPFToggleGameMode": {
+    "Content": "Oyun Modu",
+    "Description": "Windows'un sistem kaynaklarını oyunlara önceliklendirmesini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\GameBar",
+        "Name": "AllowAutoGameMode",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      },
+      {
+        "Path": "HKCU:\\Software\\Microsoft\\GameBar",
+        "Name": "AutoGameModeEnabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "true"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/gamemode"
+  },
+  "WPFToggleLongPaths": {
+    "Content": "Uzun Dosya Yollarını Etkinleştir",
+    "Description": "Dosya Gezgini'nde 260 karakterden uzun dosya yolları desteğini açar/kapatır.",
+    "category": "a__Tercihleri Özelleştir",
+    "panel": "2",
+    "Type": "Toggle",
+    "registry": [
+      {
+        "Path": "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
+        "Name": "LongPathsEnabled",
+        "Value": "1",
+        "Type": "DWord",
+        "OriginalValue": "0",
+        "DefaultState": "false"
+      }
+    ],
+    "link": "https://winutil.christitus.com/code-reference/tweaks/customize-preferences/longpaths"
+  },
+  "WPFOOSUbutton": {
+    "Content": "O&O ShutUp10++ - Çalıştır",
+    "Description": "Her tıklamada oo-software.com adresinden O&O ShutUp10++ (~82 MB) indirir ve çalıştırır. Kurulum yapmaz; %LocalAppData%\\winutil içine kaydedilir.",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "Type": "Button",
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/oosubutton"
+  },
+  "WPFchangedns": {
+    "Content": "DNS Sunucusu Seç:",
+    "category": "z__Gelişmiş İnce Ayarlar - DİKKAT",
+    "panel": "1",
+    "Type": "Combobox",
+    "ComboItems": "Varsayılan|DHCP|En Hızlı|Google|Cloudflare|Cloudflare_Malware|Cloudflare_Malware_Adult|Open_DNS|Quad9|AdGuard_Ads_Trackers|AdGuard_Ads_Trackers_Malware_Adult",
+    "link": "https://winutil.christitus.com/code-reference/tweaks/z--advanced-tweaks---caution/changedns",
+    "Description": "Aktif ağ bağdaştırıcıları için DNS sunucusunu değiştirir. 'En Hızlı' seçeneği gecikme testi yaparak en hızlı DNS'i otomatik seçer."
+  },
+  "WPFAddUltPerf": {
+    "Content": "Nihai Performans (Ultimate Performance) Profili - Etkinleştir",
+    "category": "b__Performans Planları - DİZÜSTÜLER İÇİN DEĞİLDİR",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "link": "https://winutil.christitus.com/code-reference/tweaks/performance-plans---not-for-laptops/addultperf"
+  },
+  "WPFRemoveUltPerf": {
+    "Content": "Nihai Performans (Ultimate Performance) Profili - Devre Dışı Bırak",
+    "category": "b__Performans Planları - DİZÜSTÜLER İÇİN DEĞİLDİR",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "link": "https://winutil.christitus.com/code-reference/tweaks/performance-plans---not-for-laptops/removeultperf"
+  }
+}

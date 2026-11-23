@@ -1,0 +1,357 @@
+{
+  "WPFFeaturesdotnet": {
+    "Content": ".NET Framework (Sürüm 2, 3, 4) - Etkinleştir",
+    "Description": ".NET ve .NET Framework, farklı türde uygulamalar çalıştırmak ve geliştirmek için gerekli Microsoft altyapısıdır.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "NetFx4-AdvSrvs",
+      "NetFx3"
+    ],
+    "InvokeScript": [],
+    "link": "https://winutil.christitus.com/code-reference/features/features/dotnet"
+  },
+  "WPFFixesNTPPool": {
+    "Content": "NTP Zaman Sunucusu - Etkinleştir",
+    "Description": "Daha doğru ve güvenilir saat eşitlemesi için varsayılan Windows NTP sunucusunu (time.windows.com) pool.ntp.org ile değiştirir.",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFFixesNTPPool",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/ntppool"
+  },
+  "WPFFeatureshyperv": {
+    "Content": "Hyper-V - Etkinleştir",
+    "Description": "Hyper-V, Microsoft'un sanal makineler oluşturup yönetmenizi sağlayan donanım sanallaştırma özelliğidir.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "Microsoft-Hyper-V-All"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/hyperv"
+  },
+  "WPFFeatureslegacymedia": {
+    "Content": "Eski Medya Bileşenleri (WMP, DirectPlay) - Etkinleştir",
+    "Description": "Eski Windows sürümlerine ait medya ve oyun bileşenlerini (Windows Media Player, DirectPlay) etkinleştirir.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "WindowsMediaPlayer",
+      "MediaPlayback",
+      "DirectPlay",
+      "LegacyComponents"
+    ],
+    "InvokeScript": [],
+    "link": "https://winutil.christitus.com/code-reference/features/features/legacymedia"
+  },
+  "WPFFeaturewsl": {
+    "Content": "Linux için Windows Alt Sistemi (WSL) - Etkinleştir",
+    "Description": "Ayrı bir sanal makine veya çift önyükleme gerekmeden Linux programlarını doğrudan Windows üzerinde çalıştırmanızı sağlar.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "VirtualMachinePlatform",
+      "Microsoft-Windows-Subsystem-Linux"
+    ],
+    "InvokeScript": [],
+    "link": "https://winutil.christitus.com/code-reference/features/features/wsl"
+  },
+  "WPFFeaturenfs": {
+    "Content": "Ağ Dosya Sistemi (NFS) - Etkinleştir",
+    "Description": "Ağ üzerinden dosya depolama ve paylaşım için NFS istemci desteğini etkinleştirir.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "ServicesForNFS-ClientOnly",
+      "ClientForNFS-Infrastructure",
+      "NFS-Administration"
+    ],
+    "InvokeScript": [
+      "nfsadmin client stop",
+      "Set-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\ClientForNFS\\CurrentVersion\\Default' -Name 'AnonymousUID' -Type DWord -Value 0",
+      "Set-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\ClientForNFS\\CurrentVersion\\Default' -Name 'AnonymousGID' -Type DWord -Value 0",
+      "nfsadmin client start",
+      "nfsadmin client localhost config fileaccess=755 SecFlavors=+sys -krb5 -krb5i"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/nfs"
+  },
+  "WPFFeatureRegBackup": {
+    "Content": "Kayıt Defteri Yedeği (Her Gün 00:30) - Etkinleştir",
+    "Description": "Windows 10 1803 ile kapatılan günlük otomatik Kayıt Defteri (Registry) yedeklemesini yeniden etkinleştirir.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [],
+    "InvokeScript": [
+      "\n      New-ItemProperty -Path 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager' -Name 'EnablePeriodicBackup' -Type DWord -Value 1 -Force\n      New-ItemProperty -Path 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Configuration Manager' -Name 'BackupCount' -Type DWord -Value 2 -Force\n      $action = New-ScheduledTaskAction -Execute 'schtasks' -Argument '/run /i /tn \"\\Microsoft\\Windows\\Registry\\RegIdleBackup\"'\n      $trigger = New-ScheduledTaskTrigger -Daily -At 00:30\n      Register-ScheduledTask -Action $action -Trigger $trigger -TaskName 'AutoRegBackup' -Description 'Create System Registry Backups' -User 'System'\n      "
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/regbackup"
+  },
+  "WPFFeatureEnableLegacyRecovery": {
+    "Content": "Eski F8 Önyükleme Kurtarma Menüsü - Etkinleştir",
+    "Description": "Başlangıçta F8 ile gelişmiş sorun giderme ve güvenli mod ekranına erişmenizi sağlar.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [],
+    "InvokeScript": [
+      "bcdedit /set bootmenupolicy legacy"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/enablelegacyrecovery"
+  },
+  "WPFFeatureDisableLegacyRecovery": {
+    "Content": "Eski F8 Önyükleme Kurtarma Menüsü - Devre Dışı Bırak",
+    "Description": "Gelişmiş F8 önyükleme menüsünü kapatarak standart Windows önyükleme davranışına döner.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [],
+    "InvokeScript": [
+      "bcdedit /set bootmenupolicy standard"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/disablelegacyrecovery"
+  },
+  "WPFFeaturesSandbox": {
+    "Content": "Windows Korumalı Alanı (Sandbox) - Etkinleştir",
+    "Description": "Uygulamaları yalıtılmış ve geçici bir masaüstü ortamında güvenle test etmenizi sağlayan hafif sanal makine.",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "feature": [
+      "Containers-DisposableClientVM"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/features/sandbox"
+  },
+  "WPFFeatureInstall": {
+    "Content": "Seçili Özellikleri Kur",
+    "category": "a__Özellikler",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFFeatureInstall",
+    "link": "https://winutil.christitus.com/code-reference/features/features/install"
+  },
+  "WPFPanelAutologin": {
+    "Content": "Otomatik Oturum Açma (AutoLogon) - Çalıştır",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFPanelAutologin",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/autologin"
+  },
+  "WPFFixesUpdate": {
+    "Content": "Windows Update - Sıfırla",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFFixesUpdate",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/update"
+  },
+  "WPFFixesNetwork": {
+    "Content": "Ağ Ayarları - Sıfırla",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFFixesNetwork",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/network"
+  },
+  "WPFPanelDISM": {
+    "Content": "Sistem Dosyası Onarım Taraması (DISM/SFC) - Çalıştır",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFSystemRepair",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/dism"
+  },
+  "WPFFixesWinget": {
+    "Content": "WinGet - Yeniden Kur",
+    "category": "b__Onarımlar",
+    "panel": "1",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFFixesWinget",
+    "link": "https://winutil.christitus.com/code-reference/features/fixes/winget"
+  },
+  "WPFPanelComputer": {
+    "Content": "Bilgisayar Yönetimi",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "compmgmt.msc"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/computer"
+  },
+  "WPFPanelControl": {
+    "Content": "Denetim Masası",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "control"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/control"
+  },
+  "WPFPanelMouse": {
+    "Content": "Fare Özellikleri",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "main.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/mouse"
+  },
+  "WPFPanelNetwork": {
+    "Content": "Ağ Bağlantıları",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "ncpa.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/network"
+  },
+  "WPFPanelPower": {
+    "Content": "Güç Seçenekleri",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "powercfg.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/power"
+  },
+  "WPFPanelPrinter": {
+    "Content": "Yazıcılar ve Aygıtlar",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "Start-Process 'shell:::{A8A91A66-3A7D-4424-8D24-04E180695C7A}'"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/printer"
+  },
+  "WPFPanelPrograms": {
+    "Content": "Programlar ve Özellikler",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "appwiz.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/programs"
+  },
+  "WPFPanelRegion": {
+    "Content": "Bölge Ayarları",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "intl.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/region"
+  },
+  "WPFPanelSecurity": {
+    "Content": "Güvenlik ve Bakım",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "wscui.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/security"
+  },
+  "WPFPanelSound": {
+    "Content": "Ses Ayarları",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "mmsys.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/sound"
+  },
+  "WPFPanelSystem": {
+    "Content": "Sistem Özellikleri",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "sysdm.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/system"
+  },
+  "WPFPanelTimedate": {
+    "Content": "Tarih ve Saat",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "timedate.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/timedate"
+  },
+  "WPFPanelFirewall": {
+    "Content": "Windows Defender Güvenlik Duvarı",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "firewall.cpl"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/firewall"
+  },
+  "WPFPanelRestore": {
+    "Content": "Sistem Geri Yükleme",
+    "category": "a__Eski Windows Panelleri",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "InvokeScript": [
+      "rstrui.exe"
+    ],
+    "link": "https://winutil.christitus.com/code-reference/features/legacy-windows-panels/restore"
+  },
+  "WPFWinUtilInstallPSProfile": {
+    "Content": "CTT PowerShell Profili - Kur",
+    "category": "b__PowerShell Profili (Yalnızca PowerShell 7+)",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WinUtilInstallPSProfile",
+    "link": "https://winutil.christitus.com/code-reference/features/powershell-profile-powershell-7--only/installpsprofile"
+  },
+  "WPFWinUtilUninstallPSProfile": {
+    "Content": "CTT PowerShell Profili - Kaldır",
+    "category": "b__PowerShell Profili (Yalnızca PowerShell 7+)",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WinUtilUninstallPSProfile",
+    "link": "https://winutil.christitus.com/code-reference/features/powershell-profile-powershell-7--only/uninstallpsprofile"
+  },
+  "WPFWinUtilSSHServer": {
+    "Content": "OpenSSH Sunucusu - Etkinleştir",
+    "category": "c__Uzaktan Erişim",
+    "panel": "2",
+    "Type": "Button",
+    "ButtonWidth": "300",
+    "function": "Invoke-WPFSSHServer",
+    "link": "https://winutil.christitus.com/code-reference/features/remote-access/sshserver"
+  }
+}

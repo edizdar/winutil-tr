@@ -1,0 +1,271 @@
+{
+  "WPFAppxMicrosoft_WindowsFeedbackHub": {
+    "Category": "Microsoft Uygulamaları",
+    "Content": "Geri Bildirim Merkezi",
+    "Description": "Hata raporları, özellik önerileri ve tanılama verilerini doğrudan Microsoft'a göndermeye yarar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsFeedbackHub",
+    "StoreId": "9NBLGGH4R32N"
+  },
+  "WPFAppxMicrosoft_GetHelp": {
+    "Category": "Microsoft Uygulamaları",
+    "Content": "Yardım Al",
+    "Description": "Otomatik sorun giderme rehberleri, destek belgeleri ve Microsoft müşteri desteğine erişim sağlar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.GetHelp",
+    "StoreId": "9PKDZBMV1H3T"
+  },
+  "WPFAppxMicrosoft_OutlookForWindows": {
+    "Category": "Microsoft Uygulamaları",
+    "Content": "Windows için Outlook",
+    "Description": "Modern e-posta yönetimi, takvim planlama ve kişi düzenleme özellikleri sunar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.OutlookForWindows",
+    "StoreId": "9NRX63209R7B"
+  },
+  "WPFAppxMSTeams": {
+    "Category": "Microsoft Uygulamaları",
+    "Content": "Microsoft Teams",
+    "Description": "Anlık mesajlaşma, görüntülü toplantı, dosya paylaşımı ve ekip içi iş birliği sağlar.",
+    "Panel": "0",
+    "PackageId": "MSTeams",
+    "StoreId": "XP8BT8DW290MPQ"
+  },
+  "WPFAppxClipchamp_Clipchamp": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Clipchamp",
+    "Description": "Hazır şablonlar, efektler ve zaman çizelgesi araçlarıyla kullanıcı dostu video düzenleyici.",
+    "Panel": "0",
+    "PackageId": "Clipchamp.Clipchamp",
+    "StoreId": "9P1J8S7CCWWT"
+  },
+  "WPFAppxMicrosoft_MicrosoftOfficeHub": {
+    "Category": "Microsoft Uygulamaları",
+    "Content": "Microsoft 365",
+    "Description": "Bulut tabanlı Microsoft 365 uygulamalarına ve son belgelere erişmek için merkezi başlatıcı.",
+    "Panel": "0",
+    "PackageId": "Microsoft.MicrosoftOfficeHub",
+    "StoreId": "9WZDNCRD29V9"
+  },
+  "WPFAppxMicrosoft_ZuneMusic": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Medya Oynatıcı",
+    "Description": "Yerel ses ve video dosyalarını modern çalma listesi yönetimiyle oynatır.",
+    "Panel": "0",
+    "PackageId": "Microsoft.ZuneMusic",
+    "StoreId": "9WZDNCRFJ3PT"
+  },
+  "WPFAppxMicrosoft_BingSearch": {
+    "Category": "Bing ve Web Servisleri",
+    "Content": "Bing Arama",
+    "Description": "Microsoft Bing arama özelliklerini ve web servislerini doğrudan işletim sistemine entegre eder.",
+    "Panel": "1",
+    "PackageId": "Microsoft.BingSearch",
+    "StoreId": "9NZBF4GT040C"
+  },
+  "WPFAppxMicrosoftCorporationII_QuickAssist": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Hızlı Yardım",
+    "Description": "İnternet üzerinden güvenli uzaktan teknik destek ve ekran paylaşımı sağlar.",
+    "Panel": "0",
+    "PackageId": "MicrosoftCorporationII.QuickAssist",
+    "StoreId": "9P7BP5VNWKX5"
+  },
+  "WPFAppxMicrosoft_WindowsDevHome": {
+    "Category": "Geliştirici Araçları",
+    "Content": "Dev Home",
+    "Description": "Yazılım geliştiricileri için ortam kurulumu, depo eşitleme ve donanım araçları sunan kontrol paneli.",
+    "Panel": "1",
+    "PackageId": "Microsoft.Windows.DevHome",
+    "StoreId": "9N8MHTPHNGVV"
+  },
+  "WPFAppxMicrosoft_WindowsCrossDevice": {
+    "Category": "Microsoft Ekosistemi",
+    "Content": "Mobil Cihazlar",
+    "Description": "Eşleştirilmiş mobil cihazlarla arka plan bağlantısını yönetir. Kaldırılması telefon ekranı yansıtma, dosya aktarımı ve mobil erişim noktası özelliklerini devre dışı bırakabilir.",
+    "Panel": "0",
+    "PackageId": "MicrosoftWindows.CrossDevice",
+    "StoreId": "9NTXGKQ8P7N0"
+  },
+  "WPFAppxMicrosoft_Todos": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Microsoft To Do",
+    "Description": "Kişisel görevler, akıllı listeler ve günlük hatırlatıcılar oluşturup eşitler.",
+    "Panel": "0",
+    "PackageId": "Microsoft.Todos",
+    "StoreId": "9NBLGGH5R558"
+  },
+  "WPFAppxMicrosoft_PowerAutomateDesktop": {
+    "Category": "Geliştirici Araçları",
+    "Content": "Power Automate",
+    "Description": "Görsel akışlarla tekrarlayan masaüstü görevlerini otomatikleştirir.",
+    "Panel": "1",
+    "PackageId": "Microsoft.PowerAutomateDesktop",
+    "StoreId": "9NFTCH6J7FHV"
+  },
+  "WPFAppxMicrosoft_YourPhone": {
+    "Category": "Microsoft Ekosistemi",
+    "Content": "Telefon Bağlantısı",
+    "Description": "Mobil cihazınızdaki SMS'leri, bildirimleri, fotoğrafları ve aramaları bilgisayarla eşitler.",
+    "Panel": "0",
+    "PackageId": "Microsoft.YourPhone",
+    "StoreId": "9NMPJ99VJBWV"
+  },
+  "WPFAppxMicrosoft_MicrosoftStickyNotes": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Yapışkan Notlar",
+    "Description": "Masaüstünde hızlı, cihazlar arası eşitlenen yapışkan metin notları oluşturur.",
+    "Panel": "0",
+    "PackageId": "Microsoft.MicrosoftStickyNotes",
+    "StoreId": "9NBLGGH4QGHW"
+  },
+  "WPFAppxMicrosoft_WindowsSoundRecorder": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Ses Kaydedici",
+    "Description": "Mikrofondan canlı ses kaydı yapar ve temel kırpma işlemleri sunar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsSoundRecorder",
+    "StoreId": "9WZDNCRFHWKN"
+  },
+  "WPFAppxMicrosoft_WindowsAlarms": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Saat",
+    "Description": "Dünya saatleri, alarmlar, geri sayım sayaçları, kronometre ve odak oturumları içerir.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsAlarms",
+    "StoreId": "9WZDNCRFJ3PR"
+  },
+  "WPFAppxMicrosoft_Paint": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Paint",
+    "Description": "Yerleşik dijital çizim ve temel görsel düzenleme aracı.",
+    "Panel": "0",
+    "PackageId": "Microsoft.Paint",
+    "StoreId": "9PCFS5B6T72H"
+  },
+  "WPFAppxMicrosoft_WindowsNotepad": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Not Defteri",
+    "Description": "Düz metin dosyaları ve kod parçacıkları için çok sekmeli hafif metin düzenleyici.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsNotepad",
+    "StoreId": "9MSMLRH6LZF3"
+  },
+  "WPFAppxMicrosoft_ScreenSketch": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Ekran Alıntısı Aracı",
+    "Description": "İşaretleme, kırpma ve metin tanıma (OCR) özellikleriyle ekran görüntüsü ve ekran kaydı alır.",
+    "Panel": "0",
+    "PackageId": "Microsoft.ScreenSketch",
+    "StoreId": "9MZ95KL8MR0L"
+  },
+  "WPFAppxMicrosoft_Copilot": {
+    "Category": "Bing ve Web Servisleri",
+    "Content": "Copilot",
+    "Description": "Bağlamsal yanıtlar, yazı desteği ve akıllı web araması için Microsoft yapay zeka asistanı.",
+    "Panel": "1",
+    "PackageId": "Microsoft.Copilot",
+    "StoreId": "9NHT9RB2F4HD"
+  },
+  "WPFAppxMicrosoft_WindowsCalculator": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Hesap Makinesi",
+    "Description": "Standart, bilimsel, programcı hesaplamaları ve birim dönüştürme işlemleri yapar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsCalculator",
+    "StoreId": "9WZDNCRFHVN5"
+  },
+  "WPFAppxMicrosoft_WindowsCamera": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Kamera",
+    "Description": "Bağlı web kameraları üzerinden fotoğraf çeker ve video kaydeder.",
+    "Panel": "0",
+    "PackageId": "Microsoft.WindowsCamera",
+    "StoreId": "9WZDNCRFJBBG"
+  },
+  "WPFAppxMicrosoft_WindowsPhotos": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Fotoğraflar",
+    "Description": "Yerel görselleri düzenler, görüntüler, kırpar ve temel renk ayarları yapar.",
+    "Panel": "0",
+    "PackageId": "Microsoft.Windows.Photos",
+    "StoreId": "9WZDNCRFJBH4"
+  },
+  "WPFAppxMicrosoft_BingNews": {
+    "Category": "Bing ve Web Servisleri",
+    "Content": "Haberler",
+    "Description": "Son dakika haber başlıklarını, kişiselleştirilmiş makale akışlarını ve gündemi gösterir.",
+    "Panel": "1",
+    "PackageId": "Microsoft.BingNews",
+    "StoreId": "9WZDNCRFHVFW"
+  },
+  "WPFAppxMicrosoft_BingWeather": {
+    "Category": "Bing ve Web Servisleri",
+    "Content": "Hava Durumu",
+    "Description": "Yerel canlı hava durumu, radar haritaları ve hava tahminlerini görüntüler.",
+    "Panel": "1",
+    "PackageId": "Microsoft.BingWeather",
+    "StoreId": "9WZDNCRFJ3Q2"
+  },
+  "WPFAppxMicrosoft_GamingApp": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Xbox Uygulaması",
+    "Description": "Oyun kütüphanesi yöneticisi, topluluk arayüzü ve PC Game Pass kontrol paneli.",
+    "Panel": "1",
+    "PackageId": "Microsoft.GamingApp",
+    "StoreId": "9MV0B5HZVK9Z"
+  },
+  "WPFAppxMicrosoft_XboxGamingOverlay": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Xbox Game Bar",
+    "Description": "Oyun içi durum araçları, ses karıştırıcı, sistem izleme ve oyun kaydı özellikleri sunar.",
+    "Panel": "1",
+    "PackageId": "Microsoft.XboxGamingOverlay",
+    "StoreId": "9NZKPSTSNW4P"
+  },
+  "WPFAppxMicrosoft_XboxIdentityProvider": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Xbox Kimlik Sağlayıcısı",
+    "Description": "Xbox ağı kullanıcı oturum açma ve hesap doğrulamasını yönetir. Uyarı: Kaldırılması bazı oyun ve uygulamalarda Microsoft hesabı ile giriş yapmayı bozabilir.",
+    "Panel": "1",
+    "PackageId": "Microsoft.XboxIdentityProvider",
+    "StoreId": "9WZDNCRD1HKW"
+  },
+  "WPFAppxMicrosoft_XboxSpeechToTextOverlay": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Xbox Konuşmadan Metne Katmanı",
+    "Description": "Oyun sohbetleri için canlı erişilebilirlik altyazıları ve sesten metne çeviri sağlar.",
+    "Panel": "1",
+    "PackageId": "Microsoft.XboxSpeechToTextOverlay"
+  },
+  "WPFAppxMicrosoft_Xbox_TCUI": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Xbox TCUI",
+    "Description": "Oyunlarda tek oturum açma (SSO) arayüz bileşenlerini sağlar. Uyarı: Kaldırılması Xbox uygulaması gerektirmeyen oyun ve uygulamalarda Microsoft hesabı doğrulamasını bozabilir.",
+    "Panel": "1",
+    "PackageId": "Microsoft.Xbox.TCUI"
+  },
+  "WPFAppxMicrosoft_StartExperiencesApp": {
+    "Category": "Bing ve Web Servisleri",
+    "Content": "Başlat Deneyimleri (Widget Altyapısı)",
+    "Description": "Windows Widget panosunu çalıştırarak haber, hava durumu, spor ve finans akışları sunar.",
+    "Panel": "1",
+    "PackageId": "Microsoft.StartExperiencesApp",
+    "StoreId": "9PC1H9VN18CM"
+  },
+  "WPFAppxMicrosoft_MicrosoftSolitaireCollection": {
+    "Category": "Xbox ve Oyun",
+    "Content": "Solitaire Koleksiyonu",
+    "Description": "Klondike, Spider, FreeCell, Pyramid ve TriPeaks kart oyunlarını içerir.",
+    "Panel": "1",
+    "PackageId": "Microsoft.MicrosoftSolitaireCollection"
+  },
+  "WPFAppxMicrosoft_ZuneVideo": {
+    "Category": "Yardımcı Programlar ve Üretkenlik",
+    "Content": "Filmler ve TV",
+    "Description": "Varsayılan video oynatıcı ve medya kiralama/satın alma mağazası.",
+    "Panel": "0",
+    "PackageId": "Microsoft.ZuneVideo",
+    "StoreId": "9WZDNCRFJ3P2"
+  }
+}
