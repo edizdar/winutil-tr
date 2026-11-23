@@ -7,7 +7,7 @@
     #>
 
     if ($null -eq $sync.selectedFeatures -or $sync.selectedFeatures.Count -eq 0) {
-        Show-WinUtilMessage -Message "Hiçbir Windows özelliği seçilmedi." -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning"
+        Show-WinUtilMessage -Message (Get-WinUtilString -Key "MsgNoFeatureSelected") -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning"
         return
     }
 

@@ -9,7 +9,7 @@
     $tweaks = $sync.selectedTweaks
 
     if ($tweaks.count -eq 0) {
-        Show-WinUtilMessage -Message "Lütfen geri almak istediğiniz ince ayarları işaretleyin." -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning"
+        Show-WinUtilMessage -Message (Get-WinUtilString -Key "MsgSelectTweaksUndo") -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning"
         return
     }
 

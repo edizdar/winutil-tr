@@ -10,14 +10,14 @@
     #>
 
     if ($PackagesToUninstall.Count -eq 0) {
-        $WarningMsg = "Lütfen kaldırmak istediğiniz programları seçin."
-        Show-WinUtilMessage -Message $WarningMsg -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning"
+        $WarningMsg = Get-WinUtilString -Key "MsgSelectAppsUninstall"
+        Show-WinUtilMessage -Message $WarningMsg -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning"
         return
     }
 
     $ButtonType = "YesNo"
-    $MessageboxTitle = "Emin misiniz?"
-    $Messageboxbody = ("Aşağıdaki uygulamalar kaldırılacaktır:`n$($PackagesToUninstall | Select-Object Name, Description | Out-String)")
+    $MessageboxTitle = Get-WinUtilString -Key "MsgAreYouSure"
+    $Messageboxbody = Get-WinUtilString -Key "MsgUninstallConfirm" -Args @(($PackagesToUninstall | Select-Object Name, Description | Out-String))
     $MessageIcon = "Information"
 
     $confirm = Show-WinUtilMessage -Message $Messageboxbody -Title $MessageboxTitle -Button $ButtonType -Icon $MessageIcon

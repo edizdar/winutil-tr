@@ -7,7 +7,7 @@
     #>
 
     if ($null -eq $sync.selectedAppx -or $sync.selectedAppx.Count -eq 0) {
-        Show-WinUtilMessage -Message "Hiçbir AppX paketi seçilmedi." -Title "Hata" -Button "OK" -Icon "Error"
+        Show-WinUtilMessage -Message (Get-WinUtilString -Key "MsgNoAppxSelected") -Title (Get-WinUtilString -Key "ErrorTitle") -Button "OK" -Icon "Error"
         return
     }
 

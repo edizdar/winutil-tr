@@ -45,6 +45,14 @@ $iconsObject = [pscustomobject]$icons
 $sync.configs["icons"] = $iconsObject
 $script += "`$sync.configs.icons = @'`r`n$($iconsObject | ConvertTo-Json)`r`n'@ | ConvertFrom-Json"
 
+# Embed Turkish & English locale packs for automatic system-language detection and live switching
+$localesScript = "`$sync.configs.locales = @{}`r`n"
+Get-ChildItem config\locales -File -Filter *.json | ForEach-Object {
+    $locRaw = Get-Content -Path $_.FullName -Raw -Encoding UTF8
+    $localesScript += "`$sync.configs.locales.$($_.BaseName) = @'`r`n$locRaw`r`n'@ | ConvertFrom-Json`r`n"
+}
+$script += $localesScript
+
 $xaml = Get-Content -Path xaml\inputXML.xaml -Raw -Encoding UTF8
 $script += "`$inputXML = @'`r`n$xaml`r`n'@"
 

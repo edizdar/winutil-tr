@@ -15,7 +15,7 @@
   $isDefaultDns = ($dnsProvider -eq "Default" -or $dnsProvider -eq "Varsayılan")
 
   if ($Tweaks.count -eq 0 -and $isDefaultDns) {
-    Show-WinUtilMessage -Message "Lütfen uygulamak istediğiniz ince ayarları işaretleyin." -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning"
+    Show-WinUtilMessage -Message (Get-WinUtilString -Key "MsgSelectTweaks") -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning"
     return
   }
 

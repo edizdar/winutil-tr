@@ -47,7 +47,7 @@
     $badge.Width = $Size
     $badge.Height = $Size
     $badge.Child = $artwork
-    $badge.ToolTip = "Özgür ve Açık Kaynaklı Yazılım"
+    $badge.ToolTip = Get-WinUtilString -Key "FossTip"
 
     return $badge
 }

@@ -109,7 +109,7 @@
 function Update-WinUtilAppliedTweakBadges {
     <#
     .SYNOPSIS
-        Refreshes the green "✓ Uygulu" badges next to tweaks that are currently applied on the system.
+        Refreshes the green applied badges next to tweaks that are currently applied on the system.
     #>
     if ($null -eq $sync.TweakStatusBadges -or $sync.TweakStatusBadges.Count -eq 0) {
         return
@@ -147,7 +147,7 @@ function Update-WinUtilAppliedTweakBadges {
 function Update-WinUtilInstalledAppxBadges {
     <#
     .SYNOPSIS
-        Refreshes the green "✓ Kurulu" badges next to AppX packages currently installed on the system.
+        Refreshes the green installed badges next to AppX packages currently installed on the system.
     #>
     if ($null -eq $sync.AppxStatusBadges -or $sync.AppxStatusBadges.Count -eq 0) {
         return
@@ -253,7 +253,7 @@ function Get-WinUtilDetectedEnabledFeatures {
 function Update-WinUtilEnabledFeatureBadges {
     <#
     .SYNOPSIS
-        Refreshes the green "✓ Etkin" badges next to Windows features currently enabled on the system.
+        Refreshes the green enabled badges next to Windows features currently enabled on the system.
     #>
     if ($null -eq $sync.FeatureStatusBadges -or $sync.FeatureStatusBadges.Count -eq 0) {
         return

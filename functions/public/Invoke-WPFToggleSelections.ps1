@@ -14,7 +14,7 @@
     $toggles = @($sync.selectedToggles)
 
     if ($toggles.Count -eq 0) {
-        Show-WinUtilMessage -Message "Hiçbir tercih seçilmedi." -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning" | Out-Null
+        Show-WinUtilMessage -Message (Get-WinUtilString -Key "MsgNoTogglesSelected") -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning" | Out-Null
         return
     }
 

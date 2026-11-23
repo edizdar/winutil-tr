@@ -561,16 +561,16 @@
                             $statusBadge.VerticalAlignment = "Center"
                             $statusBadge.Visibility = [Windows.Visibility]::Collapsed
                             $statusBadge.ToolTip = switch ($targetGridName) {
-                                "appxpanel"     { "Bu uygulama sisteminizde şu anda kurulu." }
-                                "featurespanel" { "Bu Windows özelliği sisteminizde şu anda etkin." }
-                                default         { "Bu ince ayar sisteminizde şu anda uygulanmış durumda." }
+                                "appxpanel"     { Get-WinUtilString -Key "BadgeInstalledTip" }
+                                "featurespanel" { Get-WinUtilString -Key "BadgeEnabledTip" }
+                                default         { Get-WinUtilString -Key "BadgeAppliedTip" }
                             }
 
                             $statusText = New-Object Windows.Controls.TextBlock
                             $statusText.Text = switch ($targetGridName) {
-                                "appxpanel"     { "✓ Kurulu" }
-                                "featurespanel" { "✓ Etkin" }
-                                default         { "✓ Uygulu" }
+                                "appxpanel"     { Get-WinUtilString -Key "BadgeInstalled" }
+                                "featurespanel" { Get-WinUtilString -Key "BadgeEnabled" }
+                                default         { Get-WinUtilString -Key "BadgeApplied" }
                             }
                             $statusText.Foreground = [Windows.Media.Brushes]::White
                             $statusText.Background = [Windows.Media.Brushes]::Transparent

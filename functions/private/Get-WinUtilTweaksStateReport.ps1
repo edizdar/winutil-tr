@@ -7,13 +7,17 @@
 
     $categoryFieldNames = [ordered]@{
         "Temel İnce Ayarlar"                                    = "essentialTweaks"
+        "Essential Tweaks"                                      = "essentialTweaks"
         "a__Tercihleri Özelleştir"                              = "customizePreferences"
+        "Customize Preferences"                                 = "customizePreferences"
         "z__Gelişmiş İnce Ayarlar - DİKKAT"                     = "advancedTweaks"
+        "z__Advanced Tweaks - CAUTION"                          = "advancedTweaks"
         "b__Performans Planları - DİZÜSTÜLER İÇİN DEĞİLDİR"     = "performancePlans"
+        "Performance Plans - NOT FOR LAPTOPS"                   = "performancePlans"
     }
 
     $grouped = [ordered]@{}
-    foreach ($fieldName in $categoryFieldNames.Values) {
+    foreach ($fieldName in ($categoryFieldNames.Values | Select-Object -Unique)) {
         $grouped[$fieldName] = [ordered]@{}
     }
     $notEvaluable = [System.Collections.Generic.List[string]]::new()

@@ -191,7 +191,7 @@ function Update-WinUtilJobQueueUI {
         return
     }
 
-    $sync.JobQueueRunning.Text = if ($running) { "Çalışıyor: $running" } else { "Çalışan işlem yok" }
+    $sync.JobQueueRunning.Text = if ($running) { Get-WinUtilString -Key "QueueRunning" -Args @($running) } else { Get-WinUtilString -Key "QueueIdle" }
     $sync.JobQueueItems.Children.Clear()
 
     for ($index = 0; $index -lt $queued.Count; $index++) {
@@ -214,9 +214,9 @@ function Update-WinUtilJobQueueUI {
 
         $column = 1
         foreach ($action in @(
-            @{ Glyph = 0xE70E; Tip = "Yukarı al"; Enabled = $index -gt 0; Click = { Move-WinUtilQueuedJob -Id $this.Tag -Direction Up } },
-            @{ Glyph = 0xE70D; Tip = "Aşağı al"; Enabled = $index -lt ($queued.Count - 1); Click = { Move-WinUtilQueuedJob -Id $this.Tag -Direction Down } },
-            @{ Glyph = 0xE711; Tip = "İptal et"; Enabled = $true; Click = { Remove-WinUtilQueuedJob -Id $this.Tag } }
+            @{ Glyph = 0xE70E; Tip = (Get-WinUtilString -Key "QueueUp"); Enabled = $index -gt 0; Click = { Move-WinUtilQueuedJob -Id $this.Tag -Direction Up } },
+            @{ Glyph = 0xE70D; Tip = (Get-WinUtilString -Key "QueueDown"); Enabled = $index -lt ($queued.Count - 1); Click = { Move-WinUtilQueuedJob -Id $this.Tag -Direction Down } },
+            @{ Glyph = 0xE711; Tip = (Get-WinUtilString -Key "QueueCancel"); Enabled = $true; Click = { Remove-WinUtilQueuedJob -Id $this.Tag } }
         )) {
             $button = New-Object Windows.Controls.Button
             $button.FontFamily = "Segoe MDL2 Assets"

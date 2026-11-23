@@ -1,0 +1,50 @@
+name: Publish GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_NAME: ${{ github.ref_name }}
+        run: |
+          VER=$(cat VERSION | tr -d '\r\n')
+          cat <<EOF > release_notes.md
+          ## WinUtil Türkçe ${TAG_NAME}
+
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) uygulama kurulum, ince ayar, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
+
+          ### Öne Çıkan Özellikler
+          - **Çift Dil Desteği (Türkçe / English):** Windows sistem dili Türkçe ise otomatik Türkçe, diğer tüm sistem dillerinde otomatik İngilizce açılır. Sağ üstteki **Ayarlar (⚙️)** menüsünden yeniden başlatmadan anlık dil değiştirilebilir.
+          - **Tek Dosya Taşınabilir \`.exe\` (\`WinUtil-TR.exe\`):** Ek kurulum gerekmeden çift tıklayıp yönetici izniyle (UAC) çalışır.
+          - **PowerShell Tek Satır Desteği:**
+            \`\`\`powershell
+            irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
+            \`\`\`
+          - **Canlı Sistem Durumu Rozetleri:** İnce Ayarlar'da \`✓ Uygulu\`, Yapılandırma'da \`✓ Etkin\`, AppX'te \`✓ Kurulu\` rozetleri otomatik gösterilir.
+          - **Ayrıntılı Türkçe Rehber:** Tüm sekmelerin ve ayarların açıklamaları [rehber/](https://github.com/edizdar/winutil-tr/tree/main/rehber) klasöründe yer alır.
+
+          **Sürüm:** \`v${VER}\` · **Hazırlayan:** Erol Dizdar (https://www.eroldizdar.tr/) · **Esinlenme:** [ChrisTitusTech](https://github.com/christitustech/winutil)
+          EOF
+
+          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            gh release edit "$TAG_NAME" --title "WinUtil Türkçe ${TAG_NAME}" --notes-file release_notes.md --latest
+            gh release upload "$TAG_NAME" WinUtil-TR.exe winutil.ps1 --clobber
+          else
+            gh release create "$TAG_NAME" WinUtil-TR.exe winutil.ps1 \
+              --title "WinUtil Türkçe ${TAG_NAME}" \
+              --notes-file release_notes.md \
+              --latest
+          fi

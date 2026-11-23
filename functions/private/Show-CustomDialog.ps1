@@ -156,7 +156,7 @@
     $stackPanel.Children.Add((Invoke-WinUtilAssets -Type "logo" -Size $LogoSize))
 
     $winutilTextBlock = New-Object Windows.Controls.TextBlock
-    $winutilTextBlock.Text = "WinUtil Türkçe"
+    $winutilTextBlock.Text = Get-WinUtilString -Key "WindowTitle"
     $winutilTextBlock.FontSize = $HeaderFontSize
     $winutilTextBlock.Foreground = $LogoColor
     $winutilTextBlock.Margin = New-Object Windows.Thickness(10, 10, 10, 5)
@@ -241,7 +241,7 @@
 
     # Add OK button
     $okButton = New-Object Windows.Controls.Button
-    $okButton.Content = "Tamam"
+    $okButton.Content = Get-WinUtilString -Key "AboutOk"
     $okButton.FontSize = $FontSize
     $okButton.Width = 80
     $okButton.Height = 30

@@ -75,7 +75,7 @@
                     "Install" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = "Kur veya Güncelle: $($appObject.content)"
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInstallTip" -Args @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -85,7 +85,7 @@
                     "Uninstall" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = "Kaldır: $($appObject.content)"
+                            $this.ToolTip = Get-WinUtilString -Key "PopupUninstallTip" -Args @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -95,7 +95,7 @@
                     "Info" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = "Uygulamanın web sitesini tarayıcınızda açın`n$($appObject.link)"
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInfoTip" -Args @($appObject.link)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)

@@ -443,16 +443,28 @@
         Invoke-WPFPopup -Action "Hide" -Popups @("Settings")
         Invoke-WPFExportEnvironmentReport
     })
+    $sync["LangAutoMenuItem"].Add_Click({
+        Invoke-WPFPopup -Action "Hide" -Popups @("Settings")
+        Invoke-WinUtilLanguageChange -Preference "Auto"
+    })
+    $sync["LangTrMenuItem"].Add_Click({
+        Invoke-WPFPopup -Action "Hide" -Popups @("Settings")
+        Invoke-WinUtilLanguageChange -Preference "tr"
+    })
+    $sync["LangEnMenuItem"].Add_Click({
+        Invoke-WPFPopup -Action "Hide" -Popups @("Settings")
+        Invoke-WinUtilLanguageChange -Preference "en"
+    })
     $sync["AboutMenuItem"].Add_Click({
         Invoke-WPFPopup -Action "Hide" -Popups @("Settings")
 
         $authorInfo = @"
-Geliştirici : Erol Dizdar
-Web         : <a href="https://www.eroldizdar.tr/">https://www.eroldizdar.tr/</a>
-Esinlenme   : <a href="https://github.com/christitustech">ChrisTitusTech</a>
-Sürüm       : $($sync.version) (Türkçe)
+$(Get-WinUtilString -Key "AboutDeveloper") : Erol Dizdar
+$(Get-WinUtilString -Key "AboutWeb") : <a href="https://www.eroldizdar.tr/">https://www.eroldizdar.tr/</a>
+$(Get-WinUtilString -Key "AboutInspired") : <a href="https://github.com/christitustech">ChrisTitusTech</a>
+$(Get-WinUtilString -Key "AboutVersion") : $($sync.version) ($(Get-WinUtilString -Key "AboutLangTag"))
 "@
-        Show-CustomDialog -Title "Hakkında" -Message $authorInfo
+        Show-CustomDialog -Title (Get-WinUtilString -Key "AboutTitle") -Message $authorInfo
     })
 
     # Font Scaling Event Handlers
@@ -534,6 +546,9 @@ Sürüm       : $($sync.version) (Türkçe)
         $sinceStart = [int]((Get-Date) - $sync.StartedAt).TotalMilliseconds
         Write-WinUtilLog -Level "DEBUG" -Component "UI" -Message "timing: interface ready for input $sinceStart ms after start."
     }) | Out-Null
+
+    # Apply detected or saved language to all XAML controls before building default tab and showing window
+    Apply-WinUtilLanguageToUI
 
     # The default tab is built before the window is shown, in one pass nothing is waiting on, so it
     # opens with the app list in place instead of filling in. Offline starts on another tab.

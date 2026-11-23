@@ -1081,7 +1081,7 @@
         </Grid.ColumnDefinitions>
         <!-- Offline banner -->
         <Border Name="WPFOfflineBanner" Grid.Row="0" Background="#8B0000" Visibility="Collapsed" Padding="6,4">
-            <TextBlock Text="&#x26A0; Çevrimdışı Mod - İnternet Bağlantısı Yok" Foreground="White" FontWeight="Bold"
+            <TextBlock Name="WPFOfflineBannerText" Text="&#x26A0; Çevrimdışı Mod - İnternet Bağlantısı Yok" Foreground="White" FontWeight="Bold"
                 HorizontalAlignment="Center" FontSize="13" Background="Transparent"/>
         </Border>
         <Grid Grid.Row="1" Background="Transparent">
@@ -1097,41 +1097,31 @@
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonInstallBackgroundColor}" Foreground="white" FontWeight="Bold" Name="WPFTab1BT">
                     <ToggleButton.Content>
-                        <TextBlock FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonInstallForegroundColor}" >
-                            <Underline>K</Underline>urulum
-                        </TextBlock>
+                        <TextBlock Name="WPFNavTab1Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonInstallForegroundColor}" Text="Kurulum"/>
                     </ToggleButton.Content>
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonTweaksBackgroundColor}" Foreground="{DynamicResource ButtonTweaksForegroundColor}" FontWeight="Bold" Name="WPFTab2BT">
                     <ToggleButton.Content>
-                        <TextBlock FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonTweaksForegroundColor}">
-                            <Underline>İ</Underline>nce Ayarlar
-                        </TextBlock>
+                        <TextBlock Name="WPFNavTab2Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonTweaksForegroundColor}" Text="İnce Ayarlar"/>
                     </ToggleButton.Content>
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonConfigBackgroundColor}" Foreground="{DynamicResource ButtonConfigForegroundColor}" FontWeight="Bold" Name="WPFTab3BT">
                     <ToggleButton.Content>
-                        <TextBlock FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonConfigForegroundColor}">
-                            <Underline>Y</Underline>apılandırma
-                        </TextBlock>
+                        <TextBlock Name="WPFNavTab3Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonConfigForegroundColor}" Text="Yapılandırma"/>
                     </ToggleButton.Content>
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonUpdatesBackgroundColor}" Foreground="{DynamicResource ButtonUpdatesForegroundColor}" FontWeight="Bold" Name="WPFTab4BT">
                     <ToggleButton.Content>
-                        <TextBlock FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonUpdatesForegroundColor}">
-                            <Underline>G</Underline>üncellemeler
-                        </TextBlock>
+                        <TextBlock Name="WPFNavTab4Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonUpdatesForegroundColor}" Text="Güncellemeler"/>
                     </ToggleButton.Content>
                 </ToggleButton>
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonWin11ISOBackgroundColor}" Foreground="{DynamicResource ButtonWin11ISOForegroundColor}" FontWeight="Bold" Name="WPFTab5BT">
                     <ToggleButton.Content>
-                        <TextBlock FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonWin11ISOForegroundColor}">
-                            <Underline>W</Underline>in11 Oluşturucu
-                        </TextBlock>
+                        <TextBlock Name="WPFNavTab5Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonWin11ISOForegroundColor}" Text="Win11 Oluşturucu"/>
                     </ToggleButton.Content>
                 </ToggleButton>
             </StackPanel>
@@ -1268,7 +1258,7 @@
                     HorizontalAlignment="Right" VerticalAlignment="Top">
                     <Border Background="{DynamicResource MainBackgroundColor}" BorderBrush="{DynamicResource MainForegroundColor}" BorderThickness="1" CornerRadius="0" Margin="0">
                         <StackPanel Background="{DynamicResource MainBackgroundColor}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="220">
-                            <TextBlock Text="Yazı Boyutu Ölçeği"
+                            <TextBlock Name="WPFFontScalingTitle" Text="Yazı Boyutu Ölçeği"
                                        FontSize="{DynamicResource ButtonFontSize}"
                                        Foreground="{DynamicResource MainForegroundColor}"
                                        HorizontalAlignment="Center"
@@ -1276,7 +1266,7 @@
                                        FontWeight="Bold"/>
                             <Separator Margin="5,0,5,5"/>
                             <StackPanel Orientation="Horizontal" Margin="10,5,10,10">
-                                <TextBlock Text="Küçük"
+                                <TextBlock Name="WPFFontSmall" Text="Küçük"
                                            FontSize="{DynamicResource ButtonFontSize}"
                                            Foreground="{DynamicResource MainForegroundColor}"
                                            VerticalAlignment="Center"
@@ -1293,7 +1283,7 @@
                                         Width="120"
                                         VerticalAlignment="Center"
                                         AutomationProperties.Name="Yazı Boyutu Ölçeği"/>
-                                <TextBlock Text="Büyük"
+                                <TextBlock Name="WPFFontLarge" Text="Büyük"
                                            FontSize="{DynamicResource ButtonFontSize}"
                                            Foreground="{DynamicResource MainForegroundColor}"
                                            VerticalAlignment="Center"
@@ -1356,6 +1346,14 @@
                                     <ToolTip Content="Sorun giderme için salt okunur bir sistem tanılama raporu dışa aktarır."/>
                                 </MenuItem.ToolTip>
                             </MenuItem>
+                            <Separator/>
+                            <MenuItem FontSize="{DynamicResource ButtonFontSize}" Header="&#x2713; Otomatik (Sistem Dili)" Name="LangAutoMenuItem" Foreground="{DynamicResource MainForegroundColor}">
+                                <MenuItem.ToolTip>
+                                    <ToolTip Content="Windows sistem dili Türkçe ise Türkçe, diğer dillerde İngilizce açılır."/>
+                                </MenuItem.ToolTip>
+                            </MenuItem>
+                            <MenuItem FontSize="{DynamicResource ButtonFontSize}" Header="   Türkçe" Name="LangTrMenuItem" Foreground="{DynamicResource MainForegroundColor}"/>
+                            <MenuItem FontSize="{DynamicResource ButtonFontSize}" Header="   English" Name="LangEnMenuItem" Foreground="{DynamicResource MainForegroundColor}"/>
                             <Separator/>
                             <MenuItem FontSize="{DynamicResource ButtonFontSize}" Header="Hakkında" Name="AboutMenuItem" Foreground="{DynamicResource MainForegroundColor}"/>
                         </StackPanel>
@@ -1433,7 +1431,7 @@
 
                     <!-- Category filters. Click one to filter, ctrl click to combine several. -->
                     <WrapPanel Grid.Row="0" Orientation="Horizontal" Margin="5,5,5,5" Name="WPFSearchChips">
-                        <TextBlock Text="&#xE71C;"
+                        <TextBlock Name="WPFFilterIcon" Text="&#xE71C;"
                                    FontFamily="Segoe MDL2 Assets"
                                    FontSize="{DynamicResource IconFontSize}"
                                    Foreground="{DynamicResource LabelboxForegroundColor}"
@@ -1521,7 +1519,7 @@
                                            TextWrapping="Wrap"
                                            Margin="0,0,0,6"
                                            Text="Kuruluyor..."/>
-                                <TextBlock FontSize="{DynamicResource FontSize}"
+                                <TextBlock Name="WPFInstallWorkingSubLabel" FontSize="{DynamicResource FontSize}"
                                            Foreground="{DynamicResource MainForegroundColor}"
                                            Background="Transparent"
                                            Opacity="0.75"
@@ -1553,7 +1551,7 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Background="Transparent" Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
-                                <Label Content="Önerilen Seçimler:" FontSize="{DynamicResource FontSize}" VerticalAlignment="Center" Margin="2"/>
+                                <Label Name="WPFTweaksRecommendedLabel" Content="Önerilen Seçimler:" FontSize="{DynamicResource FontSize}" VerticalAlignment="Center" Margin="2"/>
                                 <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,2,0,0">
                                     <Button Name="WPFstandard" Content=" Standart " Margin="2" Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"/>
                                     <Button Name="WPFminimal" Content=" Minimal " Margin="2" Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"/>
@@ -1571,8 +1569,8 @@
                             <Border Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="0" Style="{StaticResource BorderStyle}">
                                 <StackPanel Background="Transparent" Orientation="Horizontal" HorizontalAlignment="Left">
                                     <TextBlock Padding="10">
-                                        Not: Ayrıntılı açıklama görmek için öğelerin üzerine fare ile gelin. Bu ayarların çoğu sistemde köklü değişiklikler yapar, lütfen dikkatli olun.
-                                        <LineBreak/>Önerilen seçimler normal kullanıcılar içindir; emin olmadığınız ayarları İŞARETLEMEYİN!
+                                        <Run Name="WPFTweaksNote1" Text="Not: Ayrıntılı açıklama görmek için öğelerin üzerine fare ile gelin. Bu ayarların çoğu sistemde köklü değişiklikler yapar, lütfen dikkatli olun."/>
+                                        <LineBreak/><Run Name="WPFTweaksNote2" Text="Önerilen seçimler normal kullanıcılar içindir; emin olmadığınız ayarları İŞARETLEMEYİN!"/>
                                     </TextBlock>
                                 </StackPanel>
                             </Border>
@@ -1639,7 +1637,7 @@
                                        TextWrapping="Wrap"
                                        Margin="0,0,0,6"
                                        Text="İnce ayarlar uygulanıyor..."/>
-                            <TextBlock FontSize="{DynamicResource FontSize}"
+                            <TextBlock Name="WPFTweaksWorkingSubLabel" FontSize="{DynamicResource FontSize}"
                                        Foreground="{DynamicResource MainForegroundColor}"
                                        Background="Transparent"
                                        Opacity="0.75"
@@ -1669,11 +1667,11 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" Margin="10,10,10,14">
-                            <TextBlock Text="Windows Update Profilleri"
+                            <TextBlock Name="WPFUpdatesTitle" Text="Windows Update Profilleri"
                                        FontSize="24"
                                        FontWeight="Bold"
                                        Foreground="{DynamicResource MainForegroundColor}"/>
-                            <TextBlock Text="Windows'un güncellemeleri nasıl alacağını seçin. Her profil, WinUtil tarafından yönetilen Windows Update ayarlarının yerini alır."
+                            <TextBlock Name="WPFUpdatesSubtitle" Text="Windows'un güncellemeleri nasıl alacağını seçin. Her profil, WinUtil tarafından yönetilen Windows Update ayarlarının yerini alır."
                                        Margin="0,6,0,0"
                                        FontSize="13"
                                        TextWrapping="Wrap"
@@ -1693,21 +1691,21 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Text="Önerilen"
+                                        <TextBlock Name="WPFUpdRecTitle" Text="Önerilen"
                                                    FontSize="20"
                                                    FontWeight="Bold"
                                                    Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="Dengeli güvenlik ve kararlılık"
+                                        <TextBlock Name="WPFUpdRecSub" Text="Dengeli güvenlik ve kararlılık"
                                                    Margin="0,4,0,0"
                                                    FontSize="13"
                                                    Foreground="{DynamicResource MainForegroundColor}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Row="1">
-                                        <TextBlock Text="- Özellik güncellemelerini 365 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- Kalite (güvenlik) güncellemelerini 4 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- Sürücüleri kalite güncellemelerinden hariç tutar" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- İndirilen güncellemeler kuruluma hazır olduğunda bildirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="Windows Pro, Enterprise ve Education sürümlerinde kullanılabilir."
+                                        <TextBlock Name="WPFUpdRecB1" Text="- Özellik güncellemelerini 365 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdRecB2" Text="- Kalite (güvenlik) güncellemelerini 4 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdRecB3" Text="- Sürücüleri kalite güncellemelerinden hariç tutar" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdRecB4" Text="- İndirilen güncellemeler kuruluma hazır olduğunda bildirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdRecNote" Text="Windows Pro, Enterprise ve Education sürümlerinde kullanılabilir."
                                                    FontSize="11"
                                                    FontStyle="Italic"
                                                    TextWrapping="Wrap"
@@ -1730,20 +1728,20 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Text="Windows Varsayılanı"
+                                        <TextBlock Name="WPFUpdDefTitle" Text="Windows Varsayılanı"
                                                    FontSize="20"
                                                    FontWeight="Bold"
                                                    Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="Kontrolü Windows'a geri ver"
+                                        <TextBlock Name="WPFUpdDefSub" Text="Kontrolü Windows'a geri ver"
                                                    Margin="0,4,0,0"
                                                    FontSize="13"
                                                    Foreground="{DynamicResource MainForegroundColor}"/>
                                     </StackPanel>
                                     <StackPanel Grid.Row="1">
-                                        <TextBlock Text="- WinUtil tarafından uygulanan güncelleme ilkelerini kaldırır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- Güncelleme hizmeti başlangıç ayarlarını geri yükler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- Zamanlanmış güncelleme görevlerini yeniden etkinleştirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="Önerilen veya Devre Dışı profilini geri almak için bunu kullanın."
+                                        <TextBlock Name="WPFUpdDefB1" Text="- WinUtil tarafından uygulanan güncelleme ilkelerini kaldırır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDefB2" Text="- Güncelleme hizmeti başlangıç ayarlarını geri yükler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDefB3" Text="- Zamanlanmış güncelleme görevlerini yeniden etkinleştirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDefNote" Text="Önerilen veya Devre Dışı profilini geri almak için bunu kullanın."
                                                    FontSize="11"
                                                    FontStyle="Italic"
                                                    TextWrapping="Wrap"
@@ -1766,21 +1764,21 @@
                                         <RowDefinition Height="Auto"/>
                                     </Grid.RowDefinitions>
                                     <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Text="Güncellemeleri Kapat"
+                                        <TextBlock Name="WPFUpdDisTitle" Text="Güncellemeleri Kapat"
                                                    FontSize="20"
                                                    FontWeight="Bold"
                                                    Foreground="Red"/>
-                                        <TextBlock Text="Yalnızca ileri düzey kullanıcılar için"
+                                        <TextBlock Name="WPFUpdDisSub" Text="Yalnızca ileri düzey kullanıcılar için"
                                                    Margin="0,4,0,0"
                                                    FontSize="13"
                                                    FontWeight="SemiBold"
                                                    Foreground="Red"/>
                                     </StackPanel>
                                     <StackPanel Grid.Row="1">
-                                        <TextBlock Text="- Otomatik güncelleme ilkesini devre dışı bırakır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- Güncelleme hizmetlerini ve zamanlanmış görevleri durdurur" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="- İndirilmiş güncelleme dosyalarını temizler" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Text="Bu profil etkinken güvenlik güncellemeleri yüklenmeyecektir."
+                                        <TextBlock Name="WPFUpdDisB1" Text="- Otomatik güncelleme ilkesini devre dışı bırakır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDisB2" Text="- Güncelleme hizmetlerini ve zamanlanmış görevleri durdurur" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDisB3" Text="- İndirilmiş güncelleme dosyalarını temizler" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdDisNote" Text="Bu profil etkinken güvenlik güncellemeleri yüklenmeyecektir."
                                                    FontSize="11"
                                                    FontStyle="Italic"
                                                    TextWrapping="Wrap"
@@ -1798,7 +1796,7 @@
                         </UniformGrid>
 
                         <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Margin="8,14,8,8" Padding="12">
-                            <TextBlock Text="Değişiklikler sistem genelinde uygulanır. Profil değiştirdikten sonra Windows'u yeniden başlatın. WinUtil ilkelerini geri almak için Varsayılanlara Dön seçeneğini kullanın."
+                            <TextBlock Name="WPFUpdFooter" Text="Değişiklikler sistem genelinde uygulanır. Profil değiştirdikten sonra Windows'u yeniden başlatın. WinUtil ilkelerini geri almak için Varsayılanlara Dön seçeneğini kullanın."
                                        TextWrapping="Wrap"
                                        HorizontalAlignment="Center"
                                        Foreground="{DynamicResource MainForegroundColor}"/>
@@ -2061,15 +2059,12 @@
                             <TabItem Name="WPFWin11ISOSelectSection" Tag="&#xE958;" Header="1   ISO Seç">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE958;" Style="{StaticResource Win11StepHero}"/>
-                                    <TextBlock Style="{StaticResource Win11StepTitle}" Text="Windows 11 ISO dosyanızı seçin"/>
-                                    <TextBlock Style="{StaticResource Win11StepSubtitle}">
-                                        Microsoft'tan indirilen resmi bir Windows 11 ISO dosyası seçin. Herhangi bir
-                                        değişiklik yapılmadan önce bağlanıp doğrulanacaktır.
-                                    </TextBlock>
+                                    <TextBlock Name="WPFWin11Step1Title" Style="{StaticResource Win11StepTitle}" Text="Windows 11 ISO dosyanızı seçin"/>
+                                    <TextBlock Name="WPFWin11Step1Sub" Style="{StaticResource Win11StepSubtitle}" Text="Microsoft'tan indirilen resmi bir Windows 11 ISO dosyası seçin. Herhangi bir değişiklik yapılmadan önce bağlanıp doğrulanacaktır."/>
 
                                     <Border Style="{StaticResource Win11FormPanel}" Margin="0,0,0,16">
                                         <StackPanel>
-                                            <TextBlock Style="{StaticResource Win11StepLabel}" Text="ISO dosyası"/>
+                                            <TextBlock Name="WPFWin11IsoFileLabel" Style="{StaticResource Win11StepLabel}" Text="ISO dosyası"/>
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
@@ -2106,16 +2101,10 @@
                                         <StackPanel>
                                             <TextBlock Style="{StaticResource Win11StepLabel}" Foreground="OrangeRed" Margin="0,0,0,10">
                                                 <Run FontFamily="Segoe MDL2 Assets" Text="&#xE7BA;"/>
-                                                <Run Text=" Resmi bir Microsoft ISO dosyası kullanmalısınız"/>
+                                                <Run Name="WPFWin11OfficialWarn" Text=" Resmi bir Microsoft ISO dosyası kullanmalısınız"/>
                                             </TextBlock>
-                                            <TextBlock Style="{StaticResource Win11StepBody}">
-                                                Üçüncü taraf, önceden düzenlenmiş veya resmi olmayan kalıplar desteklenmez
-                                                ve hatalı sonuçlara yol açabilir. Bu araç yalnızca temiz ve yeni
-                                                Windows kurulumları içindir.
-                                            </TextBlock>
-                                            <TextBlock Style="{StaticResource Win11StepBody}" Margin="0,0,0,12">
-                                                İndirme sayfasında Windows 11, dilinizi ve 64-bit (x64) seçeneğini seçin.
-                                            </TextBlock>
+                                            <TextBlock Name="WPFWin11OfficialBody1" Style="{StaticResource Win11StepBody}" Text="Üçüncü taraf, önceden düzenlenmiş veya resmi olmayan kalıplar desteklenmez ve hatalı sonuçlara yol açabilir. Bu araç yalnızca temiz ve yeni Windows kurulumları içindir."/>
+                                            <TextBlock Name="WPFWin11OfficialBody2" Style="{StaticResource Win11StepBody}" Margin="0,0,0,12" Text="İndirme sayfasında Windows 11, dilinizi ve 64-bit (x64) seçeneğini seçin."/>
                                             <Button Name="WPFWin11ISODownloadLink"
                                                     Style="{StaticResource Win11StepButton}" Tag="&#xE8A7;" Content="Microsoft İndirme Sayfasını Aç"/>
                                         </StackPanel>
@@ -2127,11 +2116,8 @@
                             <TabItem Name="WPFWin11ISOModifySection" IsEnabled="False" Tag="&#xE713;" Header="2   Kalıbı Düzenle">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE713;" Style="{StaticResource Win11StepHero}"/>
-                                    <TextBlock Style="{StaticResource Win11StepTitle}" Text="Kalıbı düzenle"/>
-                                    <TextBlock Style="{StaticResource Win11StepSubtitle}">
-                                        Kalıba dahil edilecek seçenekleri belirleyin ve başlatın. Bu işlem donanımınıza
-                                        bağlı olarak birkaç dakika sürer.
-                                    </TextBlock>
+                                    <TextBlock Name="WPFWin11Step2Title" Style="{StaticResource Win11StepTitle}" Text="Kalıbı düzenle"/>
+                                    <TextBlock Name="WPFWin11Step2Sub" Style="{StaticResource Win11StepSubtitle}" Text="Kalıba dahil edilecek seçenekleri belirleyin ve başlatın. Bu işlem donanımınıza bağlı olarak birkaç dakika sürer."/>
 
                                     <Border Name="WPFWin11ISOVerifyResultPanel"
                                             Style="{StaticResource Win11InfoPanel}"
@@ -2147,10 +2133,10 @@
                                                        VerticalAlignment="Center" Margin="12,0,0,0"/>
                                             <StackPanel Grid.Column="0" Orientation="Horizontal">
                                                 <TextBlock Text="&#xE958;" Style="{StaticResource Win11StepIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepCaption}" Text="Bağlı sürücü"/>
+                                                <TextBlock Name="WPFWin11MountedAt" Style="{StaticResource Win11StepCaption}" Text="Bağlı sürücü"/>
                                                 <TextBlock Name="WPFWin11ISOMountDriveLetter" Style="{StaticResource Win11StepValue}"/>
                                                 <TextBlock Text="&#xE8A5;" Style="{StaticResource Win11StepIcon}" Margin="22,0,8,0"/>
-                                                <TextBlock Style="{StaticResource Win11StepCaption}" Text="Kalıp dosyası"/>
+                                                <TextBlock Name="WPFWin11ImageFile" Style="{StaticResource Win11StepCaption}" Text="Kalıp dosyası"/>
                                                 <TextBlock Name="WPFWin11ISOImageFile" Style="{StaticResource Win11StepValue}"/>
                                             </StackPanel>
                                         </Grid>
@@ -2158,7 +2144,7 @@
 
                                     <Border Style="{StaticResource Win11FormPanel}" Margin="0,0,0,16">
                                         <StackPanel>
-                                            <TextBlock Style="{StaticResource Win11StepLabel}" Text="Windows sürümü"/>
+                                            <TextBlock Name="WPFWin11EditionLabel" Style="{StaticResource Win11StepLabel}" Text="Windows sürümü"/>
                                             <ComboBox Name="WPFWin11ISOEditionComboBox"
                                                       AutomationProperties.Name="Windows sürümü"
                                                       FontSize="{DynamicResource FontSize}"
@@ -2183,30 +2169,30 @@
 
                                     <Border Style="{StaticResource Win11InfoPanel}">
                                         <StackPanel>
-                                            <TextBlock Style="{StaticResource Win11StepLabel}" Margin="0,0,0,12" Text="Bu işlem kalıpta neler yapar?"/>
+                                            <TextBlock Name="WPFWin11WhatItDoes" Style="{StaticResource Win11StepLabel}" Margin="0,0,0,12" Text="Bu işlem kalıpta neler yapar?"/>
                                             <StackPanel Style="{StaticResource Win11SummaryRow}">
                                                 <TextBlock Text="&#xE74D;" Style="{StaticResource Win11SummaryIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepBody}" Margin="0"
+                                                <TextBlock Name="WPFWin11Does1" Style="{StaticResource Win11StepBody}" Margin="0"
                                                            Text="Önceden yüklü gereksiz uygulamaları ve OneDrive kurulumunu kaldırır"/>
                                             </StackPanel>
                                             <StackPanel Style="{StaticResource Win11SummaryRow}">
                                                 <TextBlock Text="&#xE950;" Style="{StaticResource Win11SummaryIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepBody}" Margin="0"
+                                                <TextBlock Name="WPFWin11Does2" Style="{StaticResource Win11StepBody}" Margin="0"
                                                            Text="TPM, Secure Boot, CPU, RAM ve depolama gereksinim kontrollerini atlar"/>
                                             </StackPanel>
                                             <StackPanel Style="{StaticResource Win11SummaryRow}">
                                                 <TextBlock Text="&#xE77B;" Style="{StaticResource Win11SummaryIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepBody}" Margin="0"
+                                                <TextBlock Name="WPFWin11Does3" Style="{StaticResource Win11StepBody}" Margin="0"
                                                            Text="Yerel hesap kullanabilmeniz için Microsoft hesabı ekranını atlar"/>
                                             </StackPanel>
                                             <StackPanel Style="{StaticResource Win11SummaryRow}">
                                                 <TextBlock Text="&#xE7EE;" Style="{StaticResource Win11SummaryIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepBody}" Margin="0"
+                                                <TextBlock Name="WPFWin11Does4" Style="{StaticResource Win11StepBody}" Margin="0"
                                                            Text="Telemetri, Copilot, sohbet simgesi ve arama kutusu önerilerini kapatır"/>
                                             </StackPanel>
                                             <StackPanel Style="{StaticResource Win11SummaryRow}" Margin="0">
                                                 <TextBlock Text="&#xE8EF;" Style="{StaticResource Win11SummaryIcon}"/>
-                                                <TextBlock Style="{StaticResource Win11StepBody}" Margin="0"
+                                                <TextBlock Name="WPFWin11Does5" Style="{StaticResource Win11StepBody}" Margin="0"
                                                            Text="Kurulumun başka bir sürüm seçmemesi için yukarıda seçtiğiniz sürümü sabitler"/>
                                             </StackPanel>
                                         </StackPanel>
@@ -2218,11 +2204,8 @@
                             <TabItem Name="WPFWin11ISOOutputSection" IsEnabled="False" Tag="&#xE88E;" Header="3   Çıktı">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE88E;" Style="{StaticResource Win11StepHero}"/>
-                                    <TextBlock Style="{StaticResource Win11StepTitle}" Text="Kalıbınız hazır"/>
-                                    <TextBlock Style="{StaticResource Win11StepSubtitle}">
-                                        Düzenlenmiş kalıbı bir ISO dosyası olarak kaydedin veya doğrudan önyüklenebilir
-                                        bir USB belleğe yazın.
-                                    </TextBlock>
+                                    <TextBlock Name="WPFWin11Step3Title" Style="{StaticResource Win11StepTitle}" Text="Kalıbınız hazır"/>
+                                    <TextBlock Name="WPFWin11Step3Sub" Style="{StaticResource Win11StepSubtitle}" Text="Düzenlenmiş kalıbı bir ISO dosyası olarak kaydedin veya doğrudan önyüklenebilir bir USB belleğe yazın."/>
 
                                     <Border Name="WPFWin11ISODonePanel"
                                             Style="{StaticResource Win11InfoPanel}"
@@ -2248,9 +2231,9 @@
                                             Margin="0,14,0,0">
                                         <StackPanel>
                                             <TextBlock Style="{StaticResource Win11StepBody}">
-                                                <Run FontWeight="Bold" Foreground="OrangeRed">!! Seçilen USB bellekteki tüm veriler kalıcı olarak silinecektir !!</Run>
+                                                <Run Name="WPFWin11UsbWarn" FontWeight="Bold" Foreground="OrangeRed" Text="!! Seçilen USB bellekteki tüm veriler kalıcı olarak silinecektir !!"/>
                                             </TextBlock>
-                                            <TextBlock Style="{StaticResource Win11StepLabel}" Text="USB sürücü"/>
+                                            <TextBlock Name="WPFWin11UsbDriveLabel" Style="{StaticResource Win11StepLabel}" Text="USB sürücü"/>
                                             <Grid Margin="0,0,0,12">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="*"/>
@@ -2275,7 +2258,7 @@
                                     <Border BorderBrush="{DynamicResource BorderColor}" BorderThickness="0,1,0,0"
                                             Margin="0,20,0,0" Padding="0,14,0,0">
                                         <StackPanel>
-                                            <TextBlock Style="{StaticResource Win11StepSubtitle}" Margin="0,0,0,10"
+                                            <TextBlock Name="WPFWin11ResetSub" Style="{StaticResource Win11StepSubtitle}" Margin="0,0,0,10"
                                                        Text="Bu kalıpla işiniz bitti mi? Geçici dosyaları temizleyip 1. adımdan yeniden başlayın."/>
                                             <Button Name="WPFWin11ISOCleanResetButton"
                                                     HorizontalAlignment="Center" MinWidth="240"
@@ -2348,7 +2331,7 @@
                                     <TextBlock Name="WPFWin11ISOWorkingLabel"
                                                Style="{StaticResource Win11StepTitle}"
                                                Text="İşleniyor..."/>
-                                    <TextBlock Style="{StaticResource Win11StepSubtitle}"
+                                    <TextBlock Name="WPFWin11WorkingSub" Style="{StaticResource Win11StepSubtitle}"
                                                Margin="0"
                                                Text="Bu işlem birkaç dakika sürebilir. İlerleme durum günlüğüne yazılmaktadır."/>
                                 </StackPanel>
@@ -2370,7 +2353,7 @@
                                            Background="Transparent"
                                            Foreground="{DynamicResource LabelboxForegroundColor}"
                                            VerticalAlignment="Center" Margin="0,0,8,0"/>
-                                <TextBlock FontSize="{DynamicResource FontSize}"
+                                <TextBlock Name="WPFWin11StatusLogTitle" FontSize="{DynamicResource FontSize}"
                                            FontWeight="Bold"
                                            Background="Transparent"
                                            Foreground="{DynamicResource LabelboxForegroundColor}"
@@ -2421,7 +2404,7 @@
                             </Grid.RowDefinitions>
 
                             <StackPanel Background="Transparent" Orientation="Vertical" Grid.Row="0" Grid.Column="0" Margin="5">
-                                <Label Content="Seçimler:" FontSize="{DynamicResource FontSize}" VerticalAlignment="Center" Margin="2"/>
+                                <Label Name="WPFAppxSelectionsLabel" Content="Seçimler:" FontSize="{DynamicResource FontSize}" VerticalAlignment="Center" Margin="2"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,2,0,0">
                                     <Button Name="WPFDefaultAppxSelection" Content=" Varsayılan " Margin="2" Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"/>
                                     <Button Name="WPFGetInstalledAppx" Content=" Yüklü Olanları Seç " Margin="2" Width="{DynamicResource ButtonWidth}" Height="{DynamicResource ButtonHeight}"/>
@@ -2436,9 +2419,9 @@
                             <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Margin="5,15,5,5">
                                 <WrapPanel Background="Transparent" Orientation="Horizontal" HorizontalAlignment="Left">
                                     <TextBlock Padding="10" TextWrapping="Wrap" Foreground="{DynamicResource MainForegroundColor}">
-                                        Not: Kurmak veya kaldırmak istediğiniz Windows AppX paketlerini seçin.
-                                        <LineBreak/>'Seçilileri Kur' mevcut olduğunda yerel bildirimi kaydeder, yoksa Microsoft Store'a yönlendirir.
-                                        <LineBreak/>'Seçilileri Kaldır' paketleri tüm kullanıcılar için kaldırır ve yeni kullanıcı profillerine otomatik kurulmasını engeller.
+                                        <Run Name="WPFAppxNote1" Text="Not: Kurmak veya kaldırmak istediğiniz Windows AppX paketlerini seçin."/>
+                                        <LineBreak/><Run Name="WPFAppxNote2" Text="'Seçilileri Kur' mevcut olduğunda yerel bildirimi kaydeder, yoksa Microsoft Store'a yönlendirir."/>
+                                        <LineBreak/><Run Name="WPFAppxNote3" Text="'Seçilileri Kaldır' paketleri tüm kullanıcılar için kaldırır ve yeni kullanıcı profillerine otomatik kurulmasını engeller."/>
                                     </TextBlock>
                                 </WrapPanel>
                             </Border>

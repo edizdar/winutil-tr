@@ -9,8 +9,8 @@
     )
 
     if ($PackagesToInstall.Count -eq 0) {
-        $WarningMsg = "Lütfen kurmak veya güncellemek istediğiniz programları seçin."
-        Show-WinUtilMessage -Message $WarningMsg -Title "WinUtil Türkçe" -Button "OK" -Icon "Warning"
+        $WarningMsg = Get-WinUtilString -Key "MsgSelectAppsInstall"
+        Show-WinUtilMessage -Message $WarningMsg -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning"
         return
     }
 

@@ -65,8 +65,8 @@
 
 function Confirm-WPFUpdatesdisable {
     $confirmation = Show-WinUtilMessage `
-        -Message "Windows Update'i devre dışı bırakmak güncelleme hizmetlerini durdurur, zamanlanmış görevleri kapatır ve indirilmiş güncelleme dosyalarını temizler. Varsayılanlar geri yüklenene kadar güvenlik güncellemeleri kurulmayacaktır. Devam edilsin mi?" `
-        -Title "Windows Update Kapatılsın mı?" `
+        -Message (Get-WinUtilString -Key "MsgDisableUpdatesBody") `
+        -Title (Get-WinUtilString -Key "MsgDisableUpdatesTitle") `
         -Button "YesNo" `
         -Icon "Warning"
 
