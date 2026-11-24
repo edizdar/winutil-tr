@@ -17,7 +17,8 @@ function Start-WinUtilTabWarmup {
     # prompt while the user is on another tab. That check belongs to opening the tab, not warming
     # it.
     $pending = [System.Collections.Queue]::new()
-    foreach ($tab in @("Tweaks", "Config", "AppX")) {
+    $warmupOrder = if ($PARAM_OFFLINE) { @("Config", "AppX") } else { @("Config", "AppX", "Install") }
+    foreach ($tab in $warmupOrder) {
         if (-not $sync.InitializedTabs[$tab]) {
             $pending.Enqueue($tab)
         }

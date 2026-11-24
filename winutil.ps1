@@ -3,7 +3,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 1.7
+    Version        : 1.8
 #>
 
 param (
@@ -224,7 +224,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
-$sync.version = "1.7"
+$sync.version = "1.8"
 $sync.IsLocalCompile = "true" -eq "true"
 $sync.configs = @{}
 $sync.Buttons = [System.Collections.Generic.List[PSObject]]::new()
@@ -253,7 +253,7 @@ $sync.selectedApps = [System.Collections.Generic.List[string]]::new()
 $sync.selectedTweaks = [System.Collections.Generic.List[string]]::new()
 $sync.selectedToggles = [System.Collections.Generic.List[string]]::new()
 $sync.selectedFeatures = [System.Collections.Generic.List[string]]::new()
-$sync.currentTab = "Install"
+$sync.currentTab = "Tweaks"
 
 $dateTime = Get-Date -Format "yyyy-MM-dd_HH-mm-ss"
 $winutildir = "$env:LocalAppData\winutil"
@@ -11035,7 +11035,8 @@ function Start-WinUtilTabWarmup {
     # prompt while the user is on another tab. That check belongs to opening the tab, not warming
     # it.
     $pending = [System.Collections.Queue]::new()
-    foreach ($tab in @("Tweaks", "Config", "AppX")) {
+    $warmupOrder = if ($PARAM_OFFLINE) { @("Config", "AppX") } else { @("Config", "AppX", "Install") }
+    foreach ($tab in $warmupOrder) {
         if (-not $sync.InitializedTabs[$tab]) {
             $pending.Enqueue($tab)
         }
@@ -11370,11 +11371,11 @@ function Start-WinUtilUserInterface {
             Invoke-WPFTab "WPFTab2BT" -Yield  # Switch to Tweaks tab instead
         }
         else {
-            # Online - ensure install tab is enabled
+            # Online - ensure install tab is enabled, open on Tweaks tab by default
             $sync.WPFTab1BT.IsEnabled = $true
             $sync.WPFTab1BT.Opacity = 1.0
             $sync.WPFTab1BT.ToolTip = $null
-            Invoke-WPFTab "WPFTab1BT" -Yield  # Default to install tab
+            Invoke-WPFTab "WPFTab2BT" -Yield  # Default to Tweaks tab
         }
 
         $sync["Form"].Focus()
@@ -11609,15 +11610,12 @@ $(Get-WinUtilString -Key "AboutVersion") : $($sync.version) ($(Get-WinUtilString
     # Apply detected or saved language to all XAML controls before building default tab and showing window
     Apply-WinUtilLanguageToUI
 
-    # The default tab is built before the window is shown, in one pass nothing is waiting on, so it
-    # opens with the app list in place instead of filling in. Offline starts on another tab.
-    if (-not $PARAM_OFFLINE) {
-        $sync.BuildingBeforeShow = $true
-        try {
-            Measure-WinUtilStep -Scope "UI" -Name "build default tab before show" -ScriptBlock { Invoke-WPFTab "WPFTab1BT" }
-        } finally {
-            $sync.BuildingBeforeShow = $false
-        }
+    # The default tab (Tweaks) is built before the window is shown so it opens ready immediately.
+    $sync.BuildingBeforeShow = $true
+    try {
+        Measure-WinUtilStep -Scope "UI" -Name "build default tab before show" -ScriptBlock { Invoke-WPFTab "WPFTab2BT" }
+    } finally {
+        $sync.BuildingBeforeShow = $false
     }
 
     $sync["Form"].ShowDialog() | Out-Null
@@ -22477,12 +22475,6 @@ $inputXML = @'
                 <StackPanel Name="NavLogoPanel" Orientation="Horizontal" HorizontalAlignment="Left" Background="Transparent" SnapsToDevicePixels="True" Margin="10,0,20,0">
                 </StackPanel>
                 <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
-                    Background="{DynamicResource ButtonInstallBackgroundColor}" Foreground="white" FontWeight="Bold" Name="WPFTab1BT">
-                    <ToggleButton.Content>
-                        <TextBlock Name="WPFNavTab1Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonInstallForegroundColor}" Text="Kurulum"/>
-                    </ToggleButton.Content>
-                </ToggleButton>
-                <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonTweaksBackgroundColor}" Foreground="{DynamicResource ButtonTweaksForegroundColor}" FontWeight="Bold" Name="WPFTab2BT">
                     <ToggleButton.Content>
                         <TextBlock Name="WPFNavTab2Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonTweaksForegroundColor}" Text="İnce Ayarlar"/>
@@ -22510,6 +22502,12 @@ $inputXML = @'
                     Background="{DynamicResource ButtonConfigBackgroundColor}" Foreground="{DynamicResource ButtonConfigForegroundColor}" FontWeight="Bold" Name="WPFTab7BT">
                     <ToggleButton.Content>
                         <TextBlock Name="WPFNavTab7Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonConfigForegroundColor}" Text="Sistem &amp; Bakım"/>
+                    </ToggleButton.Content>
+                </ToggleButton>
+                <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
+                    Background="{DynamicResource ButtonInstallBackgroundColor}" Foreground="white" FontWeight="Bold" Name="WPFTab1BT">
+                    <ToggleButton.Content>
+                        <TextBlock Name="WPFNavTab1Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonInstallForegroundColor}" Text="Kurulum"/>
                     </ToggleButton.Content>
                 </ToggleButton>
             </StackPanel>

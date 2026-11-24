@@ -24,13 +24,11 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) ince ayarlar, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, sistem yapılandırma, Windows Update profil yönetimi, özel Windows 11 ISO/USB oluşturma ve **240+ toplu uygulama kurulum** aracı.
 
-          ### ${TAG_NAME} Sürümündeki Yenilikler ve Düzeltmeler
-          - **Yeni \`Yüklü Programlar\` ve Derin Kaldırıcı (\`Sistem & Bakım\` 5. Alt Sekme):** Bilgisayarınızdaki **tüm Windows Program Ekle/Kaldır uygulamalarını** canlı aramayla listeler; program kaldırıldıktan sonra geride kalan **Kurulum Klasörü, AppData/ProgramData, Kayıt Defteri (Regedit) ve TEMP** artıklarını tarayıp önizleme onayıyla güvenle temizler.
-          - **Canlı Çalışma Ekranı (Spinner) Düzeltmesi:** Kurulum, Kaldırma, Katalog Taraması ve İnce Ayarlar çalışırken Türkçe iş adlarıyla da canlı bekleme ekranının görünmesi sağlandı.
-          - **Kaldırma Onay Penceresi ve Meşgul Uyarısı Düzeltmesi:** Kaldırma onayında boş görünen uygulama adları düzeltildi; meşgul işlem uyarısı ve O&O ShutUp10++ durumları tam Türkçe/İngilizce yapıldı.
-          - **Kurulum Sekmesi Netleştirme:** Katalog tarama butonu **"Katalogdan Kurulu Olanları Seç"** olarak güncellendi ve tarama sonunda net bilgilendirme eklendi.
+          ### ${TAG_NAME} Sürümündeki Yenilikler
+          - **Açılış Ekranı \`İnce Ayarlar\`:** Uygulama artık doğrudan **İnce Ayarlar** ekranıyla açılır ve sisteminizde kurulu ayarlar anında \`✓ Uygulu\` rozetleriyle gösterilir.
+          - **Yenilenen Sekme Sıralaması:** **Kurulum** sekmesi üst menünün en sağına alındı (\`İnce Ayarlar\` → \`Yapılandırma\` → \`Güncellemeler\` → \`Win11 Oluşturucu\` → \`Sistem & Bakım\` → \`Kurulum\`); arka planda ön yüklenerek tıklandığında anında açılır.
 
           ### Hızlı Kullanım
           - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.

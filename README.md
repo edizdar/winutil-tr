@@ -1,6 +1,6 @@
 # WinUtil Türkçe
 
-[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.7-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
+[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.8-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)](#hızlı-başlangıç)
 [![Dil](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e%20%7C%20English-E84A4A?style=flat-square)](#öne-çıkan-özellikler)
 [![Lisans](https://img.shields.io/badge/Lisans-MIT-green?style=flat-square)](LICENSE)

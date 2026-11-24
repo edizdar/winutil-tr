@@ -313,11 +313,11 @@
             Invoke-WPFTab "WPFTab2BT" -Yield  # Switch to Tweaks tab instead
         }
         else {
-            # Online - ensure install tab is enabled
+            # Online - ensure install tab is enabled, open on Tweaks tab by default
             $sync.WPFTab1BT.IsEnabled = $true
             $sync.WPFTab1BT.Opacity = 1.0
             $sync.WPFTab1BT.ToolTip = $null
-            Invoke-WPFTab "WPFTab1BT" -Yield  # Default to install tab
+            Invoke-WPFTab "WPFTab2BT" -Yield  # Default to Tweaks tab
         }
 
         $sync["Form"].Focus()
@@ -552,15 +552,12 @@ $(Get-WinUtilString -Key "AboutVersion") : $($sync.version) ($(Get-WinUtilString
     # Apply detected or saved language to all XAML controls before building default tab and showing window
     Apply-WinUtilLanguageToUI
 
-    # The default tab is built before the window is shown, in one pass nothing is waiting on, so it
-    # opens with the app list in place instead of filling in. Offline starts on another tab.
-    if (-not $PARAM_OFFLINE) {
-        $sync.BuildingBeforeShow = $true
-        try {
-            Measure-WinUtilStep -Scope "UI" -Name "build default tab before show" -ScriptBlock { Invoke-WPFTab "WPFTab1BT" }
-        } finally {
-            $sync.BuildingBeforeShow = $false
-        }
+    # The default tab (Tweaks) is built before the window is shown so it opens ready immediately.
+    $sync.BuildingBeforeShow = $true
+    try {
+        Measure-WinUtilStep -Scope "UI" -Name "build default tab before show" -ScriptBlock { Invoke-WPFTab "WPFTab2BT" }
+    } finally {
+        $sync.BuildingBeforeShow = $false
     }
 
     $sync["Form"].ShowDialog() | Out-Null

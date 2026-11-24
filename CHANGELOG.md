@@ -4,6 +4,13 @@
 
 ---
 
+## v1.8 — 2026-11-24
+### Arayüz ve Başlangıç Deneyimi İyileştirmesi
+- **Açılış Ekranı `İnce Ayarlar` Oldu:** WinUtil Türkçe artık doğrudan **İnce Ayarlar** sekmesiyle açılır ve bilgisayarınızda zaten uygulanan ayarlar anında yeşil `✓ Uygulu` rozetleriyle görünür.
+- **Sekme Sıralaması Yenilendi:** **Kurulum** sekmesi üst menüde en sağa taşındı (`İnce Ayarlar` → `Yapılandırma` → `Güncellemeler` → `Win11 Oluşturucu` → `Sistem & Bakım` → `Kurulum`); `Kurulum` sekmesi arka planda otomatik ön yüklenerek (warm-up) tıklandığında gecikmesiz açılır.
+
+---
+
 ## v1.7 — 2026-11-24
 ### Yeni Özellik: Yüklü Programlar ve Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)
 - **Yeni 5. Alt Sekme (`Sistem & Bakım -> Yüklü Programlar`):**
