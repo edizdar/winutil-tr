@@ -4,6 +4,15 @@
 
 ---
 
+## v1.6 — 2026-11-24
+### Kapsamlı Kod Denetimi, Kararlılık ve Çift Dil İyileştirmeleri
+- **Sürücü Temizleyici (`DriverStore`) Güvenli Sürüm Ayrıştırma:** `Invoke-WinUtilSystemHealth.ps1` içindeki eski sürücü temizliği artık standart dışı OEM sürücü sürüm numaralarında hata vermeden güvenli `[version]::TryParse` yedeklemesiyle çalışır.
+- **Tam Çift Dilli İpuçları (ToolTip):** İngilizce arayüze geçildiğinde Türkçe kalan pencere büyütme ipucu (`WPFMaximizeButton`), İnce Ayarlar DNS açılır liste açıklaması (`WPFchangedns`) ve `Sistem & Bakım` sekmesindeki tüm 24 araç ipucu (ToolTip) tam **Türkçe / English** desteğine kavuşturuldu.
+- **Canlı Dil Değişiminde Başlangıç Listesi Senkronizasyonu:** Dil değiştirildiğinde `Sistem & Bakım` başlangıç listesi önbelleği sıfırlanarak yeni dilde yenilenir.
+- **%100 PowerShell 5.1 Kodlama Hijyeni:** `xaml/inputXML.xaml` içindeki XML yorumlarından Windows-1254 akıllı tırnak baytı (`0x94`) taşıyan karakterler temizlendi; derlenen `winutil.ps1` artık hem `ParseFile` hem de `irm | iex` (`ParseInput`) denetimlerinden **0 hata** ve **0 riskli bayt** ile geçer.
+
+---
+
 ## v1.5 — 2026-11-24
 ### Büyük Güncelleme: 4 Alt Sekmeli Wintoys Tarzı `Sistem & Bakım` Merkezi
 - **Yeni 4 Alt Sekmeli Düzen:** `Sistem & Bakım` sekmesi **Özet & Donanım**, **Performans & Oyun**, **Temizlik & Ağ** ve **Başlangıç & Ayarlar** olmak üzere 4 temiz alt sekmeye ayrıldı; tüm yeni kontroller tam **Türkçe / English** canlı dil desteğiyle eklendi.

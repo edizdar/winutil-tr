@@ -990,7 +990,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <!-- Filter Chip Style — used by the Install tab category filter buttons -->
+        <!-- Filter Chip Style - used by the Install tab category filter buttons -->
         <Style x:Key="FilterChipStyle" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
             <Setter Property="Margin" Value="2"/>
             <Setter Property="Padding" Value="12,0,12,0"/>
@@ -1472,7 +1472,7 @@
                             </Grid>
                         </Grid>
 
-                        <!-- ─── Install working view: shown while Install/Uninstall/Upgrade runs ─── -->
+                        <!-- === Install working view: shown while Install/Uninstall/Upgrade runs === -->
                         <Grid Name="WPFInstallWorkingPanel" Visibility="Collapsed" Background="Transparent"
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <StackPanel MaxWidth="620" HorizontalAlignment="Stretch" VerticalAlignment="Center">
@@ -1589,7 +1589,7 @@
                         </WrapPanel>
                     </Border>
 
-                    <!-- ─── Tweaks working view: shown while Tweaks/Undo runs ─── -->
+                    <!-- === Tweaks working view: shown while Tweaks/Undo runs === -->
                     <Grid Name="WPFTweaksWorkingPanel" Grid.Row="0" Grid.RowSpan="2" Visibility="Collapsed"
                           Background="{DynamicResource MainBackgroundColor}"
                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -2061,7 +2061,7 @@
                                 </Style>
                             </TabControl.Resources>
 
-                            <!-- ─── STEP 1 : Select Windows 11 ISO ─────────────── -->
+                            <!-- === STEP 1 : Select Windows 11 ISO =============== -->
                             <TabItem Name="WPFWin11ISOSelectSection" Tag="&#xE958;" Header="1   ISO Seç">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE958;" Style="{StaticResource Win11StepHero}"/>
@@ -2118,7 +2118,7 @@
                                 </StackPanel>
                             </TabItem>
 
-                            <!-- ─── STEP 2 : Modify install.wim ───────────────────── -->
+                            <!-- === STEP 2 : Modify install.wim ===================== -->
                             <TabItem Name="WPFWin11ISOModifySection" IsEnabled="False" Tag="&#xE713;" Header="2   Kalıbı Düzenle">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE713;" Style="{StaticResource Win11StepHero}"/>
@@ -2206,7 +2206,7 @@
                                 </StackPanel>
                             </TabItem>
 
-                            <!-- ─── STEP 3 : Output Options ───────────────────────── -->
+                            <!-- === STEP 3 : Output Options ========================= -->
                             <TabItem Name="WPFWin11ISOOutputSection" IsEnabled="False" Tag="&#xE88E;" Header="3   Çıktı">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <TextBlock Text="&#xE88E;" Style="{StaticResource Win11StepHero}"/>
@@ -2275,7 +2275,7 @@
                                 </StackPanel>
                             </TabItem>
 
-                            <!-- ─── Working page: selected while a step runs, no header of its own ─── -->
+                            <!-- === Working page: selected while a step runs, no header of its own === -->
                             <TabItem Name="WPFWin11ISOWorkingSection" Visibility="Collapsed">
                                 <StackPanel Style="{StaticResource Win11StepColumn}">
                                     <!-- BitmapCache because this is text: without it WPF re-rasterises the
@@ -2346,7 +2346,7 @@
                         </Grid>
                     </Border>
 
-                    <!-- ─── Status log ─── -->
+                    <!-- === Status log === -->
                     <Border Grid.Column="1" Style="{StaticResource BorderStyle}" Padding="20,16">
                         <Grid>
                             <Grid.RowDefinitions>

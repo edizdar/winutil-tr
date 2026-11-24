@@ -256,6 +256,7 @@ function Apply-WinUtilLanguageToUI {
 
     Set-WinUtilNamedControlText -Name "AboutMenuItem" -Value $ui.AboutHeader -Property "Header"
     Set-WinUtilNamedControlText -Name "WPFMinimizeButton" -Value $ui.MinimizeTip -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFMaximizeButton" -Value $ui.MaximizeTip -Property "ToolTip"
     Set-WinUtilNamedControlText -Name "WPFCloseButton" -Value $ui.CloseTip -Property "ToolTip"
 
     # Install tab chips & tags
@@ -479,6 +480,32 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFSysToolEventVwr" -Value $ui.SysToolEventVwr -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysBtnGodMode" -Value $ui.SysBtnGodMode -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysActionStatus" -Value $ui.SysActionReady -Property "Text"
+
+    # System & Health ToolTips (bilingual)
+    Set-WinUtilNamedControlText -Name "WPFSysBtnBatteryReport" -Value $ui.SysTipBatteryReport -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblHAGS" -Value $ui.SysTipHAGS -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblVBS" -Value $ui.SysTipVBS -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblFastStartup" -Value $ui.SysTipFastStartup -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblGameMode" -Value $ui.SysTipGameMode -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblWindowedGames" -Value $ui.SysTipWindowedGames -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblMPO" -Value $ui.SysTipMPO -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblGameDVR" -Value $ui.SysTipGameDVR -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblAnimations" -Value $ui.SysTipAnimations -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysLblTransparency" -Value $ui.SysTipTransparency -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnCleanRam" -Value $ui.SysTipCleanRam -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnRestartGpu" -Value $ui.SysTipRestartGpu -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnQuickClean" -Value $ui.SysTipQuickClean -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnBrowserClean" -Value $ui.SysTipBrowserClean -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnCleanWinUpdate" -Value $ui.SysTipCleanWinUpdate -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnCleanDrivers" -Value $ui.SysTipCleanDrivers -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnWinSxS" -Value $ui.SysTipWinSxS -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnOptimizeDrive" -Value $ui.SysTipOptimizeDrive -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnSystemRepair" -Value $ui.SysTipSystemRepair -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnDefenderScan" -Value $ui.SysTipDefenderScan -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnStoreReset" -Value $ui.SysTipStoreReset -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnRepairIcons" -Value $ui.SysTipRepairIcons -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnNetReset" -Value $ui.SysTipNetReset -Property "ToolTip"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnGodMode" -Value $ui.SysTipGodMode -Property "ToolTip"
 }
 
 function Invoke-WinUtilLanguageChange {
@@ -516,6 +543,7 @@ function Invoke-WinUtilLanguageChange {
     }
 
     $sync.InitializedTabs = @{}
+    $sync.SysHealthStartupLoaded = $false
     $sync.TweakStatusBadges = [Hashtable]::Synchronized(@{})
     $sync.FeatureStatusBadges = [Hashtable]::Synchronized(@{})
     $sync.AppxStatusBadges = [Hashtable]::Synchronized(@{})

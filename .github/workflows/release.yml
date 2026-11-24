@@ -26,12 +26,11 @@ jobs:
 
           Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **4 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
 
-          ### ${TAG_NAME} Sürümündeki Büyük Yenilikler
-          - **4 Alt Sekmeli Yeni \`Sistem & Bakım\` Merkezi:** **Özet & Donanım**, **Performans & Oyun**, **Temizlik & Ağ** ve **Başlangıç & Ayarlar** olarak tamamen yenilendi (tam Türkçe / English destekli).
-          - **Özet & Donanım+:** **Pil Sağlığı (%) + HTML Pil Raporu**, Anakart / BIOS / Secure Boot / TPM / **Windows Lisans Özeti**, tüm sabit sürücülerin canlı doluluk çubukları ve **SSD S.M.A.R.T. sağlık/sıcaklık/aşınma** göstergeleri eklendi.
-          - **Performans & Oyun+:** **Windows Oyun Modu**, **Pencereli Oyun Optimizasyonu (Win11)**, **MPO** anahtarları, **Canlı Güç Planı Seçici**, **Hazırda Bekletme (\`hiberfil.sys\`) boyutu & aç/kapa**, **Anlık RAM Temizleme** ve **GPU Sürücü Yenileme (\`Win+Ctrl+Shift+B\`)** eklendi.
-          - **Temizlik & Ağ+:** **Tarayıcı Önbellek Temizleyici** (Chrome/Edge/Brave/Vivaldi/Opera/Firefox — şifreler korunur), **Windows Update Önbellek (\`SoftwareDistribution\`)**, **Eski Sürücü Temizliği (\`DriverStore\`)**, **Simge Önbelleği Onarımı**, **Tek Tıkla DNS Değiştirici** (Cloudflare, Google, AdGuard, Quad9, Otomatik), **Canlı DNS Ping Testi (ms)** ve **Ağ Sıfırlama** eklendi.
-          - **Başlangıç & Ayarlar+:** Görev Yöneticisi uyumlu **Canlı Başlangıç (Startup) Uygulamaları Yöneticisi**, 5 yeni Gezgin/Gizlilik anahtarı (*Bu Bilgisayar ile aç, dosya uzantıları, gizli dosyalar, klasik sağ tık menüsü, Pano Geçmişi*) ve tek tıkla **Tanrı Modu (God Mode)** klasörü oluşturucu eklendi.
+          ### ${TAG_NAME} Sürümündeki Kararlılık ve Kalite Güncellemeleri
+          - **Sürücü Temizleyici (`DriverStore`) Dayanıklılık Düzeltmesi:** Standart dışı OEM sürücü sürüm biçimlerinde hata oluşmasını önleyen güvenli sürüm ayrıştırma (`TryParse`) eklendi.
+          - **%100 Çift Dilli Araç İpuçları (ToolTips):** İngilizce modda Türkçe kalan pencere büyütme ipucu, İnce Ayarlar DNS açıklaması ve `Sistem & Bakım` sekmesindeki tüm 24 araç ipucu tam Türkçe / İngilizce olarak eşitlendi.
+          - **PowerShell 5.1 Kodlama Hijyeni:** XAML yorumlarındaki Windows-1254 riskli karakterler temizlendi; tüm 133 betik ve derlenmiş `winutil.ps1` **0 AST hatası** ve **0 riskli bayt** ile doğrulandı.
+          - **Canlı Uçtan Uca (E2E) Doğrulama:** Tüm 7 sekme, 4 alt sekme, Türkçe/İngilizce canlı geçiş, Dark/Light tema, arama/seçim sayaçları ve kayıt defteri dokunulmazlığı otomatik testlerle **%100 geçer** olarak doğrulandı.
 
           ### Hızlı Kullanım
           - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.

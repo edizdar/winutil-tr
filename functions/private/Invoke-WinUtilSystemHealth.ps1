@@ -1310,7 +1310,14 @@ public static class WinUtilGpuKeyHelper {
                         $dt = $matches[1]; $ver = $matches[2]
                     }
                     if ($pub -and $orig -and $ver) {
-                        $parsed += [pscustomobject]@{ Published = $pub; Original = $orig; Version = [version]$ver }
+                        $parsedVer = $null
+                        if (-not [version]::TryParse($ver, [ref]$parsedVer)) {
+                            $parts = @($ver -split '\.' | Select-Object -First 4)
+                            while ($parts.Count -lt 2) { $parts += "0" }
+                            $null = [version]::TryParse(($parts -join '.'), [ref]$parsedVer)
+                        }
+                        if ($null -eq $parsedVer) { $parsedVer = [version]"0.0" }
+                        $parsed += [pscustomobject]@{ Published = $pub; Original = $orig; Version = $parsedVer }
                     }
                 }
                 $removed = 0
