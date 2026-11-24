@@ -1,8 +1,10 @@
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
 
 # ⚙️ İnce Ayarlar (Tweaks) Sekmesi Rehberi
 
 **İnce Ayarlar** sekmesi; Windows'un gereksiz arka plan telemetrisini kapatmak, sistem performansını artırmak, gizliliği güçlendirmek ve görünüm tercihlerini özelleştirmek için kullanılır.
+
+![WinUtil Türkçe — İnce Ayarlar Sekmesi](gorseller/02-ince-ayarlar.png)
 
 ## Nasıl Çalışır? (Güvenli Kullanım)
 
@@ -162,4 +164,4 @@
 
 ---
 
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)

@@ -1,4 +1,4 @@
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
 
 # ❓ Sık Sorulan Sorular (SSS) ve Sorun Giderme
 
@@ -46,6 +46,9 @@ Her çalıştırmanın ayrıntılı günlüğü şu klasöre kaydedilir:
 ```
 Bir hata yaşarsanız en son tarihli `.log` dosyasını inceleyebilirsiniz.
 
+### 9. Uygulama dilini (Türkçe / İngilizce) nasıl değiştiririm?
+WinUtil Türkçe ilk açıldığında Windows sistem dilinizi otomatik algılar (**Türkçe** sistemlerde Türkçe, diğer tüm dillerde **English** açılır). İstediğiniz zaman sağ üstteki **Ayarlar (⚙️)** simgesine tıklayarak **Otomatik (Sistem Dili)**, **Türkçe** veya **English** seçeneklerinden birini seçebilirsiniz; arayüz yeniden başlatmaya gerek kalmadan anında değişir ve tercihiniz `%LocalAppData%\winutil\language.txt` dosyasına kaydedilir.
+
 ---
 
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)

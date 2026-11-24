@@ -24,19 +24,25 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) uygulama kurulum, ince ayar, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **Wintoys tarzı Sistem & Bakım merkezi**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
 
-          ### Öne Çıkan Özellikler
-          - **Yeni "Sistem & Bakım" Sekmesi (Wintoys Tarzı Yönetim Merkezi):** Canlı donanım özeti (OS, CPU, RAM, GPU, Disk C:), Performans/Hızlandırma anahtarları (HAGS, VBS/Çekirdek Yalıtım, Hızlı Başlatma, Oyun DVR, Animasyonlar, Şeffaflık), Sistem Sağlığı ve Temizlik araçları (TEMP/Shader/Geri Dönüşüm temizliği, WinSxS DISM, SSD TRIM, Defender Hızlı Tarama, Store Reset, DNS temizliği), hızlı masaüstü/gizlilik ayarları (Bu Bilgisayar simgesi, saat saniyesi, kompakt gezgin, kısayol okunu kaldırma, kilit ekranı/Windows ipuçları) ve 8 hızlı sistem aracı kısayolu eklendi!
-          - **Wintoys Eklendi (240 Uygulama):** Popüler Windows optimizasyon ve bakım aracı **Wintoys** (`msstore:9P8LTPGCBZXD`) kendi simgesi ve Türkçe/İngilizce açıklamasıyla Kurulum sekmesine eklendi.
-          - **Çift Dil Desteği (Türkçe / English):** Windows sistem dili Türkçe ise otomatik Türkçe, diğer tüm sistem dillerinde otomatik İngilizce açılır. Sağ üstteki **Ayarlar (⚙️)** menüsünden yeniden başlatmadan anlık dil değiştirilebilir.
-          - **Tek Dosya Taşınabilir \`.exe\` (\`WinUtil-TR.exe\`):** Ek kurulum gerekmeden çift tıklayıp yönetici izniyle (UAC) çalışır.
+          ### ${TAG_NAME} Sürümündeki Yenilikler ve Düzeltmeler
+          - **Gerçek Arayüz Ekran Görüntüleri:** Tüm 7 sekmenin ekran görüntüleri \`README.md\` ve \`rehber/\` dokümantasyon sayfalarına eklendi.
+          - **Sürüm Değişiklik Günlüğü:** Tüm sürümlerin geçmişini içeren [CHANGELOG.md](https://github.com/edizdar/winutil-tr/blob/main/CHANGELOG.md) eklendi ve tüm rehber sayfaları eşitlendi.
+          - **Akıllı Ekran Kartı (GPU) Tespiti:** \`Sistem & Bakım\` sekmesinde sanal görüntü bağdaştırıcıları filtrelenerek doğrudan fiziksel harici GPU (NVIDIA / AMD / Intel Arc) gösterilir.
+          - **Kararlılık ve Arayüz Düzeltmeleri:** Sekme geçişlerinde \`Sistem & Bakım\` canlı anahtarlarının sıfırlanması ve \`Seçili Uygulamalar: 0\` biçimlendirme hatası düzeltildi; 1320×820 pencere yerleşimi optimize edildi.
+
+          ### Temel Özellikler
+          - **Sistem & Bakım Sekmesi (Wintoys Tarzı):** Canlı donanım özeti (OS, CPU, RAM, GPU, Disk C:), Performans/Hızlandırma anahtarları (HAGS, VBS, Hızlı Başlatma, Oyun DVR, Animasyonlar, Şeffaflık), Sistem Sağlığı ve Temizlik (TEMP/Shader/Geri Dönüşüm, WinSxS DISM, SSD TRIM, DISM+SFC, Defender Hızlı Tarama, WSReset, DNS temizliği), hızlı masaüstü/gizlilik ayarları ve 8 sistem aracı kısayolu.
+          - **240+ Uygulama (Wintoys Dahil):** WinGet veya Chocolatey ile tek tıkla sessiz kurulum, güncelleme ve kaldırma.
+          - **Çift Dil Desteği (Türkçe / English):** Windows sistem dilini otomatik algılar; sağ üst **Ayarlar (⚙️)** menüsünden anında değiştirilebilir.
+          - **Canlı Sistem Durumu Rozetleri:** İnce Ayarlar'da \`✓ Uygulu\`, Yapılandırma'da \`✓ Etkin\`, AppX'te \`✓ Kurulu\` rozetleri otomatik gösterilir.
           - **PowerShell Tek Satır Desteği:**
             \`\`\`powershell
             irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
             \`\`\`
-          - **Canlı Sistem Durumu Rozetleri:** İnce Ayarlar'da \`✓ Uygulu\`, Yapılandırma'da \`✓ Etkin\`, AppX'te \`✓ Kurulu\` rozetleri otomatik gösterilir.
-          - **Ayrıntılı Türkçe Rehber:** Tüm sekmelerin ve ayarların açıklamaları [rehber/](https://github.com/edizdar/winutil-tr/tree/main/rehber) klasöründe yer alır.
+
+          📚 **Ayrıntılı Türkçe Rehber:** [rehber/](https://github.com/edizdar/winutil-tr/tree/main/rehber) · 📋 **Tüm Sürüm Geçmişi:** [CHANGELOG.md](https://github.com/edizdar/winutil-tr/blob/main/CHANGELOG.md)
 
           **Sürüm:** \`v${VER}\` · **Hazırlayan:** Erol Dizdar (https://www.eroldizdar.tr/) · **Esinlenme:** [ChrisTitusTech](https://github.com/christitustech/winutil)
           EOF

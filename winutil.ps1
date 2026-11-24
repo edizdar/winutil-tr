@@ -3,7 +3,7 @@
     Author         : Chris Titus @christitustech
     Runspace Author: @DeveloperDurp
     GitHub         : https://github.com/ChrisTitusTech
-    Version        : 1.3
+    Version        : 1.4
 #>
 
 param (
@@ -224,7 +224,7 @@ if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 # Variable to sync between runspaces
 $sync = [Hashtable]::Synchronized(@{})
-$sync.version = "1.3"
+$sync.version = "1.4"
 $sync.IsLocalCompile = "true" -eq "true"
 $sync.configs = @{}
 $sync.Buttons = [System.Collections.Generic.List[PSObject]]::new()
@@ -5464,7 +5464,7 @@ function Get-WinUtilEffectiveLanguage {
 function Get-WinUtilString {
     param(
         [Parameter(Mandatory)][string]$Key,
-        [object[]]$Args
+        [object[]]$FormatArgs
     )
 
     $val = $null
@@ -5478,8 +5478,8 @@ function Get-WinUtilString {
     }
     if ($null -eq $val) { $val = $Key }
 
-    if ($Args -and $Args.Count -gt 0) {
-        return ($val -f $Args)
+    if ($null -ne $FormatArgs -and $FormatArgs.Count -gt 0) {
+        return ($val -f $FormatArgs)
     }
     return $val
 }
@@ -5902,7 +5902,7 @@ function Invoke-WinUtilLanguageChange {
     }
     Invoke-WPFTab $tabButton
     if ($sync.WPFselectedAppsButton) {
-        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -Args @($sync.selectedApps.Count)
+        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($sync.selectedApps.Count)
     }
 }
 
@@ -6140,8 +6140,16 @@ function Get-WinUtilSystemHealthSnapshot {
     $gpuText = "-"
     $gpuSub  = ""
     try {
-        $gpus = @(Get-CimInstance Win32_VideoController -ErrorAction Stop | Where-Object { $_.Name -notmatch 'Basic Display|Remote' })
-        $gpu = if ($gpus.Count -gt 0) { $gpus[0] } else { Get-CimInstance Win32_VideoController -ErrorAction Stop | Select-Object -First 1 }
+        $allGpus = @(Get-CimInstance Win32_VideoController -ErrorAction Stop)
+        $physicalGpus = @($allGpus | Where-Object { $_.Name -notmatch 'Basic Display|Remote|Virtual|Indirect|Parsec|Citrix|Meta|IddSample' })
+        $discreteGpus = @($physicalGpus | Where-Object { $_.Name -match 'NVIDIA|GeForce|RTX|GTX|Radeon|AMD|Arc' })
+        $gpu = if ($discreteGpus.Count -gt 0) {
+            $discreteGpus[0]
+        } elseif ($physicalGpus.Count -gt 0) {
+            $physicalGpus[0]
+        } else {
+            $allGpus | Select-Object -First 1
+        }
         if ($gpu) {
             $gpuText = $gpu.Name.Trim()
             $gpuSub  = if ($isTr) { "Sürücü: $($gpu.DriverVersion)" } else { "Driver: $($gpu.DriverVersion)" }
@@ -7318,7 +7326,7 @@ function Reset-WPFCheckBoxes {
     }
     foreach ($syncEntry in $syncEntries) {
         $checkBox = $syncEntry.Value
-        if ($checkBox -is [System.Windows.Controls.CheckBox] -and -not $syncEntry.Key.StartsWith("WPFToggle") -and ($checkboxfilterpattern -eq "**" -or $syncEntry.Key -like $checkboxfilterpattern)) {
+        if ($checkBox -is [System.Windows.Controls.CheckBox] -and -not $syncEntry.Key.StartsWith("WPFToggle") -and -not $syncEntry.Key.StartsWith("WPFSysToggle") -and ($checkboxfilterpattern -eq "**" -or $syncEntry.Key -like $checkboxfilterpattern)) {
             # Assigning the state a box already has is not free for the hundreds of boxes the
             # Install tab adds, so only the ones that differ are touched
             $selected = $selectedSet.Contains($syncEntry.Key)
@@ -7332,7 +7340,7 @@ function Reset-WPFCheckBoxes {
     # whichever tab is built first: offline starts on Tweaks, so they are not there yet.
     if ($sync.selectedAppsstackPanel) {
         $count = $sync.SelectedApps.Count
-        $sync.WPFselectedAppsButton.Content = "Selected Apps: $count"
+        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($count)
         # On every change, remove all entries inside the Popup Menu. This is done, so we can keep the alphabetical order even if elements are selected in a random way
         $sync.selectedAppsstackPanel.Children.Clear()
         $sync.selectedApps | Foreach-Object { Add-SelectedAppsMenuItem -name $($sync.configs.applicationsHashtable.$_.Content) -key $_ }
@@ -9251,7 +9259,7 @@ function Update-WinUtilJobQueueUI {
         return
     }
 
-    $sync.JobQueueRunning.Text = if ($running) { Get-WinUtilString -Key "QueueRunning" -Args @($running) } else { Get-WinUtilString -Key "QueueIdle" }
+    $sync.JobQueueRunning.Text = if ($running) { Get-WinUtilString -Key "QueueRunning" -FormatArgs @($running) } else { Get-WinUtilString -Key "QueueIdle" }
     $sync.JobQueueItems.Children.Clear()
 
     for ($index = 0; $index -lt $queued.Count; $index++) {
@@ -11478,7 +11486,7 @@ function Initialize-WPFUI {
                     "Install" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupInstallTip" -Args @($appObject.content)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInstallTip" -FormatArgs @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -11488,7 +11496,7 @@ function Initialize-WPFUI {
                     "Uninstall" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupUninstallTip" -Args @($appObject.content)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupUninstallTip" -FormatArgs @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -11498,7 +11506,7 @@ function Initialize-WPFUI {
                     "Info" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupInfoTip" -Args @($appObject.link)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInfoTip" -FormatArgs @($appObject.link)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -12959,7 +12967,7 @@ function Invoke-WPFSelectedCheckboxesUpdate ($type, $checkboxName) {
     }
 
     if ($listName -eq "selectedApps" -and $selectionChanged) {
-        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -Args @($sync.selectedApps.Count)
+        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($sync.selectedApps.Count)
         $sync.selectedAppsstackPanel.Children.Clear()
         $sync.selectedApps | Sort-Object | ForEach-Object {
             Add-SelectedAppsMenuItem -name $sync.configs.applicationsHashtable.$_.Content -key $_
@@ -14145,7 +14153,7 @@ function Invoke-WPFUnInstall {
 
     $ButtonType = "YesNo"
     $MessageboxTitle = Get-WinUtilString -Key "MsgAreYouSure"
-    $Messageboxbody = Get-WinUtilString -Key "MsgUninstallConfirm" -Args @(($PackagesToUninstall | Select-Object Name, Description | Out-String))
+    $Messageboxbody = Get-WinUtilString -Key "MsgUninstallConfirm" -FormatArgs @(($PackagesToUninstall | Select-Object Name, Description | Out-String))
     $MessageIcon = "Information"
 
     $confirm = Show-WinUtilMessage -Message $Messageboxbody -Title $MessageboxTitle -Button $ButtonType -Icon $MessageIcon
@@ -22096,13 +22104,13 @@ $inputXML = @'
                         </Grid.RowDefinitions>
 
                         <!-- Top Live System Summary Dashboard -->
-                        <Border Grid.Row="0" Style="{StaticResource BorderStyle}" Padding="14" Margin="4,4,4,8">
+                        <Border Grid.Row="0" Style="{StaticResource BorderStyle}" Padding="10" Margin="4,2,4,6">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <DockPanel Grid.Row="0" Margin="0,0,0,10">
+                                <DockPanel Grid.Row="0" Margin="0,0,0,6">
                                     <Button Name="WPFSysRefreshBtn" DockPanel.Dock="Right" Content="Yenile" Width="110" Height="28" Padding="8,2"/>
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock Name="WPFSysDashTitle" Text="Sistem Özeti ve Bakım Merkezi" FontSize="18" FontWeight="Bold" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
@@ -22150,97 +22158,97 @@ $inputXML = @'
                         </Border>
 
                         <!-- Row 1: Boost (Left) & Health/Cleanup (Right) -->
-                        <Grid Grid.Row="1" Margin="0,0,0,8">
+                        <Grid Grid.Row="1" Margin="0,0,0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <!-- Boost Card -->
-                            <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,4,0">
+                            <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Padding="11" Margin="4,0,4,0">
                                 <StackPanel>
-                                    <TextBlock Name="WPFSysBoostTitle" Text="Performans ve Hızlandırma" FontSize="15" FontWeight="Bold" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                    <TextBlock Name="WPFSysBoostTitle" Text="Performans ve Hızlandırma" FontSize="15" FontWeight="Bold" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
 
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleHAGS" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblHAGS" Content="Donanım Hızlandırmalı GPU Zamanlaması (HAGS)" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Oyunlarda gecikmeyi azaltmak için GPU bellek yönetimini donanıma devreder (yeniden başlatma gerektirir)."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleVBS" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblVBS" Content="Çekirdek Yalıtım / Bellek Bütünlüğü (VBS)" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Güvenlik için açık bırakılır; oyun performansını artırmak için kapatılabilir (yeniden başlatma gerektirir)."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleFastStartup" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblFastStartup" Content="Hızlı Başlatma (Fast Startup)" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Kapanışta çekirdek oturumunu kaydederek açılışı hızlandırır. Çift işletim sistemi (dual-boot) kullananlar kapatmalıdır."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleGameDVR" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblGameDVR" Content="Oyun DVR / Arka Plan Video Kaydı" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Kapatılması oyunlarda FPS kararlılığını artırabilir."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleAnimations" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblAnimations" Content="Pencere Animasyonları" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Kapatıldığında pencereler anında açılıp kapanır ve sistem daha seri hissedilir."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleTransparency" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblTransparency" Content="Şeffaflık Efektleri" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Görev çubuğu ve menülerdeki yarı saydamlık efektlerini açar veya kapatır."/>
                                     </DockPanel>
 
-                                    <UniformGrid Columns="2" Margin="0,12,0,0">
-                                        <Button Name="WPFSysBtnRestartExplorer" Content="Dosya Gezgini'ni Yeniden Başlat" Width="Auto" Height="30" Margin="0,0,4,0" Padding="8,2"/>
-                                        <Button Name="WPFSysBtnFlushDns" Content="DNS Önbelleğini Temizle" Width="Auto" Height="30" Margin="4,0,0,0" Padding="8,2"/>
+                                    <UniformGrid Columns="2" Margin="0,8,0,0">
+                                        <Button Name="WPFSysBtnRestartExplorer" Content="Dosya Gezgini'ni Yeniden Başlat" Width="Auto" Height="28" Margin="0,0,4,0" Padding="8,2"/>
+                                        <Button Name="WPFSysBtnFlushDns" Content="DNS Önbelleğini Temizle" Width="Auto" Height="28" Margin="4,0,0,0" Padding="8,2"/>
                                     </UniformGrid>
                                 </StackPanel>
                             </Border>
 
                             <!-- Health & Cleanup Card -->
-                            <Border Grid.Column="1" Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,4,0">
+                            <Border Grid.Column="1" Style="{StaticResource BorderStyle}" Padding="11" Margin="4,0,4,0">
                                 <StackPanel>
-                                    <TextBlock Name="WPFSysHealthTitle" Text="Sistem Sağlığı ve Temizlik" FontSize="15" FontWeight="Bold" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                    <TextBlock Name="WPFSysHealthTitle" Text="Sistem Sağlığı ve Temizlik" FontSize="15" FontWeight="Bold" Margin="0,0,0,8" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
 
-                                    <Button Name="WPFSysBtnQuickClean" Content="Hızlı Çöp, TEMP, Shader ve Geri Dönüşüm Temizliği" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0,0,0,6" Padding="10,2" ToolTip="Kullanıcı/Sistem TEMP, DirectX Shader önbelleği, Prefetch ve Geri Dönüşüm Kutusu'nu temizler."/>
-                                    <Button Name="WPFSysBtnWinSxS" Content="WinSxS Bileşen Deposu Temizliği (DISM)" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0,0,0,6" Padding="10,2" ToolTip="Eski Windows güncelleme bileşenlerini güvenle temizleyerek diskte yer açar."/>
-                                    <Button Name="WPFSysBtnOptimizeDrive" Content="Sistem Sürücüsünü Optimize Et (SSD TRIM / C:)" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0,0,0,6" Padding="10,2" ToolTip="SSD için TRIM, HDD için disk birleştirme çalıştırır."/>
-                                    <Button Name="WPFSysBtnSystemRepair" Content="Sistem Dosyası Onarımı (DISM + SFC)" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0,0,0,6" Padding="10,2" ToolTip="Bozuk sistem dosyalarını tarayıp onarır."/>
-                                    <Button Name="WPFSysBtnDefenderScan" Content="Windows Defender Hızlı Tarama Başlat" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0,0,0,6" Padding="10,2" ToolTip="Yerleşik Windows Defender ile hızlı zararlı yazılım taraması yapar."/>
-                                    <Button Name="WPFSysBtnStoreReset" Content="Microsoft Store Önbelleğini Sıfırla (WSReset)" Width="Auto" HorizontalAlignment="Stretch" Height="32" Margin="0" Padding="10,2" ToolTip="Microsoft Store açılmama veya indirme takılma sorunlarını giderir."/>
+                                    <Button Name="WPFSysBtnQuickClean" Content="Hızlı Çöp, TEMP, Shader ve Geri Dönüşüm Temizliği" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,5" Padding="10,2" ToolTip="Kullanıcı/Sistem TEMP, DirectX Shader önbelleği, Prefetch ve Geri Dönüşüm Kutusu'nu temizler."/>
+                                    <Button Name="WPFSysBtnWinSxS" Content="WinSxS Bileşen Deposu Temizliği (DISM)" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,5" Padding="10,2" ToolTip="Eski Windows güncelleme bileşenlerini güvenle temizleyerek diskte yer açar."/>
+                                    <Button Name="WPFSysBtnOptimizeDrive" Content="Sistem Sürücüsünü Optimize Et (SSD TRIM / C:)" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,5" Padding="10,2" ToolTip="SSD için TRIM, HDD için disk birleştirme çalıştırır."/>
+                                    <Button Name="WPFSysBtnSystemRepair" Content="Sistem Dosyası Onarımı (DISM + SFC)" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,5" Padding="10,2" ToolTip="Bozuk sistem dosyalarını tarayıp onarır."/>
+                                    <Button Name="WPFSysBtnDefenderScan" Content="Windows Defender Hızlı Tarama Başlat" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0,0,0,5" Padding="10,2" ToolTip="Yerleşik Windows Defender ile hızlı zararlı yazılım taraması yapar."/>
+                                    <Button Name="WPFSysBtnStoreReset" Content="Microsoft Store Önbelleğini Sıfırla (WSReset)" Width="Auto" HorizontalAlignment="Stretch" Height="30" Margin="0" Padding="10,2" ToolTip="Microsoft Store açılmama veya indirme takılma sorunlarını giderir."/>
                                 </StackPanel>
                             </Border>
                         </Grid>
 
                         <!-- Row 2: Quick Desktop/Privacy Tweaks (Left) & Quick Admin Tools (Right) -->
-                        <Grid Grid.Row="2" Margin="0,0,0,8">
+                        <Grid Grid.Row="2" Margin="0,0,0,6">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <!-- Quick Tweaks Card -->
-                            <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,4,0">
+                            <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Padding="11" Margin="4,0,4,0">
                                 <StackPanel>
-                                    <TextBlock Name="WPFSysQuickTweaksTitle" Text="Hızlı Masaüstü ve Gizlilik Ayarları" FontSize="15" FontWeight="Bold" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                    <TextBlock Name="WPFSysQuickTweaksTitle" Text="Hızlı Masaüstü ve Gizlilik Ayarları" FontSize="15" FontWeight="Bold" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
 
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleThisPC" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblThisPC" Content="Masaüstünde 'Bu Bilgisayar' Simgesini Göster" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Masaüstüne klasik Bu Bilgisayar simgesini ekler veya kaldırır."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleClockSeconds" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblClockSeconds" Content="Görev Çubuğu Saatinde Saniyeleri Göster" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Sistem tepsisindeki saatte saniyelerin görünmesini açar veya kapatır."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleCompactExplorer" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblCompactExplorer" Content="Dosya Gezgini Kompakt Görünüm" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Dosya Gezgini'ndeki satır boşluklarını daraltarak ekranda daha fazla dosya görmenizi sağlar."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleShortcutArrow" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblShortcutArrow" Content="Kısayol Simgelerindeki Oku Kaldır" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Masaüstü kısayollarındaki küçük ok işaretini kaldırır (Dosya Gezgini'ni yeniden başlatır)."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleLockScreenAds" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblLockScreenAds" Content="Kilit Ekranı Reklam ve İpuçlarını Kapat" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Kilit ekranındaki Windows eğlenceli bilgiler ve öneri yazılarını gizler."/>
                                     </DockPanel>
-                                    <DockPanel Margin="0,3">
+                                    <DockPanel Margin="0,1">
                                         <CheckBox Name="WPFSysToggleWindowsTips" DockPanel.Dock="Right" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center"/>
                                         <Label Name="WPFSysLblWindowsTips" Content="Windows İpuçları ve Önerilerini Kapat" VerticalAlignment="Center" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Ayarlar ve bildirimlerde çıkan 'Windows'tan en iyi şekilde yararlanın' önerilerini kapatır."/>
                                     </DockPanel>
@@ -22248,25 +22256,25 @@ $inputXML = @'
                             </Border>
 
                             <!-- Quick System Tools Card -->
-                            <Border Grid.Column="1" Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,4,0">
+                            <Border Grid.Column="1" Style="{StaticResource BorderStyle}" Padding="11" Margin="4,0,4,0">
                                 <StackPanel>
-                                    <TextBlock Name="WPFSysToolsTitle" Text="Hızlı Sistem Araçları" FontSize="15" FontWeight="Bold" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                    <TextBlock Name="WPFSysToolsTitle" Text="Hızlı Sistem Araçları" FontSize="15" FontWeight="Bold" Margin="0,0,0,8" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
                                     <UniformGrid Columns="2">
-                                        <Button Name="WPFSysToolTaskMgr" Content="Görev Yöneticisi" Width="Auto" Height="34" Margin="0,0,4,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolServices" Content="Hizmetler (Services)" Width="Auto" Height="34" Margin="4,0,0,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolRegedit" Content="Kayıt Defteri (Regedit)" Width="Auto" Height="34" Margin="0,0,4,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolDevMgmt" Content="Aygıt Yöneticisi" Width="Auto" Height="34" Margin="4,0,0,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolDiskMgmt" Content="Disk Yönetimi" Width="Auto" Height="34" Margin="0,0,4,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolStartup" Content="Başlangıç Uygulamaları" Width="Auto" Height="34" Margin="4,0,0,6" Padding="8,2"/>
-                                        <Button Name="WPFSysToolStorage" Content="Depolama Ayarları" Width="Auto" Height="34" Margin="0,0,4,0" Padding="8,2"/>
-                                        <Button Name="WPFSysToolEventVwr" Content="Olay Görüntüleyici" Width="Auto" Height="34" Margin="4,0,0,0" Padding="8,2"/>
+                                        <Button Name="WPFSysToolTaskMgr" Content="Görev Yöneticisi" Width="Auto" Height="32" Margin="0,0,4,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolServices" Content="Hizmetler (Services)" Width="Auto" Height="32" Margin="4,0,0,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolRegedit" Content="Kayıt Defteri (Regedit)" Width="Auto" Height="32" Margin="0,0,4,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolDevMgmt" Content="Aygıt Yöneticisi" Width="Auto" Height="32" Margin="4,0,0,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolDiskMgmt" Content="Disk Yönetimi" Width="Auto" Height="32" Margin="0,0,4,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolStartup" Content="Başlangıç Uygulamaları" Width="Auto" Height="32" Margin="4,0,0,5" Padding="8,2"/>
+                                        <Button Name="WPFSysToolStorage" Content="Depolama Ayarları" Width="Auto" Height="32" Margin="0,0,4,0" Padding="8,2"/>
+                                        <Button Name="WPFSysToolEventVwr" Content="Olay Görüntüleyici" Width="Auto" Height="32" Margin="4,0,0,0" Padding="8,2"/>
                                     </UniformGrid>
                                 </StackPanel>
                             </Border>
                         </Grid>
 
                         <!-- Status Strip -->
-                        <Border Grid.Row="3" Style="{StaticResource BorderStyle}" Padding="10,8" Margin="4,0,4,4">
+                        <Border Grid.Row="3" Style="{StaticResource BorderStyle}" Padding="10,6" Margin="4,0,4,2">
                             <TextBlock Name="WPFSysActionStatus" Text="Hazır. Tüm anahtarlar sisteminizdeki canlı durumu yansıtır." FontSize="12" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
                         </Border>
                     </Grid>

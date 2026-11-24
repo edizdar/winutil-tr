@@ -25,7 +25,7 @@
     }
 
     if ($listName -eq "selectedApps" -and $selectionChanged) {
-        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -Args @($sync.selectedApps.Count)
+        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($sync.selectedApps.Count)
         $sync.selectedAppsstackPanel.Children.Clear()
         $sync.selectedApps | Sort-Object | ForEach-Object {
             Add-SelectedAppsMenuItem -name $sync.configs.applicationsHashtable.$_.Content -key $_

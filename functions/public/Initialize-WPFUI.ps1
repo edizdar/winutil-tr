@@ -75,7 +75,7 @@
                     "Install" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupInstallTip" -Args @($appObject.content)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInstallTip" -FormatArgs @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -85,7 +85,7 @@
                     "Uninstall" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupUninstallTip" -Args @($appObject.content)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupUninstallTip" -FormatArgs @($appObject.content)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
@@ -95,7 +95,7 @@
                     "Info" {
                         $newButton.Add_MouseEnter({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)
-                            $this.ToolTip = Get-WinUtilString -Key "PopupInfoTip" -Args @($appObject.link)
+                            $this.ToolTip = Get-WinUtilString -Key "PopupInfoTip" -FormatArgs @($appObject.link)
                         })
                         $newButton.Add_Click({
                             $appObject = $sync.configs.applicationsHashtable.$($sync.appPopupSelectedApp)

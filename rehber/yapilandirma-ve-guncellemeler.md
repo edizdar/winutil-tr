@@ -1,10 +1,12 @@
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
 
 # 🛠️ Yapılandırma ve 🔄 Güncellemeler Rehberi
 
 ## Bölüm 1: Yapılandırma (Config) Sekmesi
 
 **Yapılandırma** sekmesi; isteğe bağlı Windows özelliklerini kurmak, sistem/ağ/güncelleme sorunlarını tek tıkla onarmak ve klasik Denetim Masası panellerine hızlıca erişmek için kullanılır.
+
+![WinUtil Türkçe — Yapılandırma Sekmesi](gorseller/03-yapilandirma.png)
 
 > 🟢 **Otomatik Durum Tespiti:** Sekme açıldığında bilgisayarınızda zaten etkin olan Windows özellikleri (WSL, Hyper-V, .NET, Sandbox vb.) otomatik taranır ve yanlarında yeşil **`✓ Etkin`** rozeti gösterilir.
 
@@ -72,6 +74,8 @@
 
 **Güncellemeler** sekmesi, Windows Update davranışını tek tıkla üç hazır profilden birine geçirmenizi sağlar. Değişikliklerin tam olarak geçerli olması için profil seçtikten sonra **bilgisayarınızı yeniden başlatın**.
 
+![WinUtil Türkçe — Güncellemeler Sekmesi](gorseller/04-guncellemeler.png)
+
 | Profil | Ne Yapar? | Kimler Seçmeli? |
 | :--- | :--- | :--- |
 | **Önerilen** *(Tavsiye Edilen)* | • Büyük özellik güncellemelerini (yeni Windows sürümleri) **365 gün** erteler.<br>• Kalite ve güvenlik güncellemelerini olası hatalara karşı **4 gün** erteler.<br>• Sürücü güncellemelerini Windows Update dışında bırakır.<br>• Güncellemeler indirildiğinde kurulum öncesi bildirim verir. | Güvenliği kaybetmeden kararlı ve sorunsuz bir Windows isteyen **çoğu kullanıcı** *(Windows Pro, Enterprise ve Education sürümlerinde desteklenir)*. |
@@ -80,4 +84,4 @@
 
 ---
 
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)

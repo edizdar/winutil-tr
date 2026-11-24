@@ -4,6 +4,8 @@
 
 **Sistem & Bakım** (*System & Health*) sekmesi, popüler **Wintoys** aracının en sevilen özelliklerini doğrudan **WinUtil Türkçe** içine entegre eder: canlı donanım/sistem özeti, performans ve oyun hızlandırma anahtarları, tek tıkla sağlık/temizlik araçları, hızlı masaüstü gizlilik ayarları ve sistem yönetim kısayolları.
 
+![WinUtil Türkçe — Sistem & Bakım Sekmesi](gorseller/06-sistem-ve-bakim.png)
+
 ---
 
 ## 1. 📊 Canlı Sistem Özeti (Dashboard)

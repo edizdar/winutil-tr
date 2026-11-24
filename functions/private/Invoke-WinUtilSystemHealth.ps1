@@ -80,8 +80,16 @@ function Get-WinUtilSystemHealthSnapshot {
     $gpuText = "-"
     $gpuSub  = ""
     try {
-        $gpus = @(Get-CimInstance Win32_VideoController -ErrorAction Stop | Where-Object { $_.Name -notmatch 'Basic Display|Remote' })
-        $gpu = if ($gpus.Count -gt 0) { $gpus[0] } else { Get-CimInstance Win32_VideoController -ErrorAction Stop | Select-Object -First 1 }
+        $allGpus = @(Get-CimInstance Win32_VideoController -ErrorAction Stop)
+        $physicalGpus = @($allGpus | Where-Object { $_.Name -notmatch 'Basic Display|Remote|Virtual|Indirect|Parsec|Citrix|Meta|IddSample' })
+        $discreteGpus = @($physicalGpus | Where-Object { $_.Name -match 'NVIDIA|GeForce|RTX|GTX|Radeon|AMD|Arc' })
+        $gpu = if ($discreteGpus.Count -gt 0) {
+            $discreteGpus[0]
+        } elseif ($physicalGpus.Count -gt 0) {
+            $physicalGpus[0]
+        } else {
+            $allGpus | Select-Object -First 1
+        }
         if ($gpu) {
             $gpuText = $gpu.Name.Trim()
             $gpuSub  = if ($isTr) { "Sürücü: $($gpu.DriverVersion)" } else { "Driver: $($gpu.DriverVersion)" }

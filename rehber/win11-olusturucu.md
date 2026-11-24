@@ -1,8 +1,10 @@
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
 
 # 💿 Win11 Oluşturucu (Özel Windows 11 ISO / USB) Rehberi
 
 **Win11 Oluşturucu** (orijinal adıyla *MicroWin*), mevcut kurulu Windows sisteminize **hiç dokunmadan**; temiz format atarken kullanmak üzere Microsoft'un resmi Windows 11 ISO dosyasından **hafifletilmiş, gereksiz uygulamalardan arındırılmış ve donanım engelleri kaldırılmış özel bir Windows 11 kurulum kalıbı** oluşturur.
+
+![WinUtil Türkçe — Win11 Oluşturucu Sekmesi](gorseller/05-win11-olusturucu.png)
 
 ## Kalıba Otomatik Olarak Neler Uygulanır?
 
@@ -40,4 +42,4 @@
 
 ---
 
-[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)
+[🏠 Ana Sayfa](../README.md) · [📦 Kurulum](kurulum.md) · [⚙️ İnce Ayarlar](ince-ayarlar.md) · [🛠️ Yapılandırma & Güncellemeler](yapilandirma-ve-guncellemeler.md) · [💿 Win11 Oluşturucu](win11-olusturucu.md) · [🩺 Sistem & Bakım](sistem-ve-bakim.md) · [📱 AppX Yönetimi](appx-yonetimi.md) · [❓ SSS](sss.md)

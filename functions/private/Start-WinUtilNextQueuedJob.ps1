@@ -191,7 +191,7 @@ function Update-WinUtilJobQueueUI {
         return
     }
 
-    $sync.JobQueueRunning.Text = if ($running) { Get-WinUtilString -Key "QueueRunning" -Args @($running) } else { Get-WinUtilString -Key "QueueIdle" }
+    $sync.JobQueueRunning.Text = if ($running) { Get-WinUtilString -Key "QueueRunning" -FormatArgs @($running) } else { Get-WinUtilString -Key "QueueIdle" }
     $sync.JobQueueItems.Children.Clear()
 
     for ($index = 0; $index -lt $queued.Count; $index++) {

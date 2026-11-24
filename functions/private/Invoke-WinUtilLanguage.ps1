@@ -44,7 +44,7 @@ function Get-WinUtilEffectiveLanguage {
 function Get-WinUtilString {
     param(
         [Parameter(Mandatory)][string]$Key,
-        [object[]]$Args
+        [object[]]$FormatArgs
     )
 
     $val = $null
@@ -58,8 +58,8 @@ function Get-WinUtilString {
     }
     if ($null -eq $val) { $val = $Key }
 
-    if ($Args -and $Args.Count -gt 0) {
-        return ($val -f $Args)
+    if ($null -ne $FormatArgs -and $FormatArgs.Count -gt 0) {
+        return ($val -f $FormatArgs)
     }
     return $val
 }
@@ -482,6 +482,6 @@ function Invoke-WinUtilLanguageChange {
     }
     Invoke-WPFTab $tabButton
     if ($sync.WPFselectedAppsButton) {
-        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -Args @($sync.selectedApps.Count)
+        $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($sync.selectedApps.Count)
     }
 }
