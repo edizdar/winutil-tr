@@ -4,6 +4,14 @@
 
 ---
 
+## v2.0 — 2026-11-24
+### Yeni Üst Sekme: `Uygulamalarım` (Canlı `github.com/edizdar` Açık Kaynak Kataloğu)
+- **Canlı GitHub Senkronizasyonu:** Üst menüye eklenen **Uygulamalarım** (*My Apps*, kısayol `Alt+U`) sekmesi, [github.com/edizdar?tab=repositories](https://github.com/edizdar?tab=repositories) üzerindeki tüm herkese açık projeleri, açıklamalarını, programlama dillerini ve en güncel GitHub Release sürümlerini **API hız limitine takılmadan** canlı olarak listeler.
+- **Tek Tıkla İndir ve Çalıştır:** Windows (`.exe` / `.msi`) yayını bulunan projelerde (**İndir ve Çalıştır**) dosyayı canlı ilerleme çubuğuyla `İndirilenler\ErolDizdar\<Proje>\` klasörüne indirip isteğe bağlı olarak hemen başlatır; Android (`.apk`) yayını bulunan projelerde en güncel sürümü indirip klasörde seçili olarak açar.
+- **Platform Filtreleri & Tam Çift Dil:** *Tümü*, *Windows (.exe / .msi)*, *Android (.apk)* ve *Kaynak Kod / Diğer* filtre çipleri + tam Türkçe / English desteği eklendi.
+
+---
+
 ## v1.9 — 2026-11-24
 ### Sadeleştirilmiş 5 Sekmeli Üst Menü ve Birleştirilmiş `Güncellemeler` Alt Sekmesi
 - **Güncellemeler Artık `Sistem & Bakım` Altında:** Windows Update profil yönetimi (*Önerilen*, *Windows Varsayılanı*, *Güncellemeleri Kapat*) **Sistem & Bakım** merkezinin 6. alt sekmesi (**Güncellemeler**) olarak entegre edildi; `Alt+G` kısayolu doğrudan bu alt sekmeye yönlendirir.

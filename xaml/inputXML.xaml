@@ -1130,6 +1130,12 @@
                         <TextBlock Name="WPFNavTab1Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonInstallForegroundColor}" Text="Kurulum"/>
                     </ToggleButton.Content>
                 </ToggleButton>
+                <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
+                    Background="{DynamicResource ButtonConfigBackgroundColor}" Foreground="{DynamicResource ButtonConfigForegroundColor}" FontWeight="Bold" Name="WPFTab8BT">
+                    <ToggleButton.Content>
+                        <TextBlock Name="WPFNavTab8Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonConfigForegroundColor}" Text="Uygulamalarım"/>
+                    </ToggleButton.Content>
+                </ToggleButton>
             </StackPanel>
 
             <!-- Search Bar and Action Buttons -->
@@ -2913,6 +2919,55 @@
                     <!-- Row 2: Persistent Bottom Status Strip -->
                     <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Padding="10,6" Margin="4,2,4,2">
                         <TextBlock Name="WPFSysActionStatus" Text="Hazır. Tüm anahtarlar sisteminizdeki canlı durumu yansıtır." FontSize="12" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem Header="MyApps" Visibility="Collapsed" Name="WPFTab8">
+                <Grid MaxWidth="1320" HorizontalAlignment="Stretch" Margin="{DynamicResource TabContentMargin}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Row 0: Header + Filter Chips -->
+                    <Border Grid.Row="0" Style="{StaticResource BorderStyle}" Padding="12,10" Margin="4,2,4,6">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <DockPanel Grid.Row="0" Margin="0,0,0,8">
+                                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Button Name="WPFMyAppsBtnOpenGitHub" Content="GitHub Profilini Aç" Width="Auto" Height="28" Padding="12,2" Margin="0,0,6,0"/>
+                                    <Button Name="WPFMyAppsBtnRefresh" Content="Yenile" Width="95" Height="28" Padding="8,2"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Name="WPFMyAppsTitle" Text="Erol Dizdar - Açık Kaynak Uygulamalarım" FontSize="18" FontWeight="Bold" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                    <TextBlock Name="WPFMyAppsSubtitle" Text="github.com/edizdar üzerindeki herkese açık tüm projeler ve en güncel sürümler canlı listelenir." FontSize="12" Opacity="0.8" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                </StackPanel>
+                            </DockPanel>
+                            <WrapPanel Grid.Row="1" Orientation="Horizontal">
+                                <ToggleButton Name="WPFMyAppsFilterAll" Content="Tümü" IsChecked="True" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
+                                <ToggleButton Name="WPFMyAppsFilterWin" Content="Windows (.exe / .msi)" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
+                                <ToggleButton Name="WPFMyAppsFilterAndroid" Content="Android (.apk)" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
+                                <ToggleButton Name="WPFMyAppsFilterOther" Content="Kaynak Kod / Diğer" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0"/>
+                            </WrapPanel>
+                        </Grid>
+                    </Border>
+
+                    <!-- Row 1: Scrollable 2-Column Repo Cards -->
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <UniformGrid Name="WPFMyAppsCards" Columns="2" VerticalAlignment="Top" Margin="2,0,2,4">
+                            <Border Style="{StaticResource BorderStyle}" Padding="14" Margin="4">
+                                <TextBlock Name="WPFMyAppsLoadingText" Text="github.com/edizdar üzerindeki açık kaynak projeler yükleniyor..." FontSize="12.5" Opacity="0.8" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                            </Border>
+                        </UniformGrid>
+                    </ScrollViewer>
+
+                    <!-- Row 2: Bottom Status Strip -->
+                    <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Padding="10,6" Margin="4,2,4,2">
+                        <TextBlock Name="WPFMyAppsStatus" Text="Hazır. Tüm projeler doğrudan github.com/edizdar üzerinden canlı çekilir." FontSize="12" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
                     </Border>
                 </Grid>
             </TabItem>

@@ -229,6 +229,7 @@
                 "Y" { Invoke-WPFButton "WPFTab3BT"; $keyEventArgs.Handled = $true } # Yapılandırma sekmesi
                 "G" { Invoke-WPFButton "WPFTab4BT"; $keyEventArgs.Handled = $true } # Güncellemeler sekmesi
                 "W" { Invoke-WPFButton "WPFTab5BT"; $keyEventArgs.Handled = $true } # Win11 Oluşturucu sekmesi
+                "U" { Invoke-WPFButton "WPFTab8BT"; $keyEventArgs.Handled = $true } # Uygulamalarım sekmesi
             }
         }
         # Handle Ctrl key combinations for specific actions
@@ -537,6 +538,7 @@ $(Get-WinUtilString -Key "AboutVersion") : $($sync.version) ($(Get-WinUtilString
     })
 
     Initialize-WinUtilSystemHealthHandlers
+    Initialize-WinUtilMyAppsHandlers
 
     $buildClock.Stop()
     Write-WinUtilLog -Level "DEBUG" -Component "UI" -Message "Interface built in $($buildClock.ElapsedMilliseconds) ms, showing the window."

@@ -213,6 +213,7 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFNavTab4Text" -Value $ui.NavTab4 -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFNavTab5Text" -Value $ui.NavTab5 -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFNavTab7Text" -Value $ui.NavTab7 -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFNavTab8Text" -Value $ui.NavMyApps -Property "Text"
     if ($PARAM_OFFLINE -and $sync.WPFTab1BT) {
         $sync.WPFTab1BT.ToolTip = $ui.OfflineInstallTooltip
     }
@@ -514,6 +515,17 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFSysBtnRepairIcons" -Value $ui.SysTipRepairIcons -Property "ToolTip"
     Set-WinUtilNamedControlText -Name "WPFSysBtnNetReset" -Value $ui.SysTipNetReset -Property "ToolTip"
     Set-WinUtilNamedControlText -Name "WPFSysBtnGodMode" -Value $ui.SysTipGodMode -Property "ToolTip"
+
+    # My Apps (github.com/edizdar) tab
+    Set-WinUtilNamedControlText -Name "WPFMyAppsTitle" -Value $ui.MyAppsTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsSubtitle" -Value $ui.MyAppsSubtitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsBtnOpenGitHub" -Value $ui.MyAppsBtnOpenGitHub -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsBtnRefresh" -Value $ui.MyAppsBtnRefresh -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsFilterAll" -Value $ui.MyAppsFilterAll -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsFilterWin" -Value $ui.MyAppsFilterWin -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsFilterAndroid" -Value $ui.MyAppsFilterAndroid -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsFilterOther" -Value $ui.MyAppsFilterOther -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFMyAppsStatus" -Value $ui.MyAppsStatusReady -Property "Text"
 }
 
 function Invoke-WinUtilLanguageChange {
@@ -564,9 +576,13 @@ function Invoke-WinUtilLanguageChange {
         "Win11ISO"     { "WPFTab5BT" }
         "AppX"         { "WPFTab6BT" }
         "SystemHealth" { "WPFTab7BT" }
-        default        { "WPFTab1BT" }
+        "MyApps"       { "WPFTab8BT" }
+        default        { "WPFTab2BT" }
     }
     Invoke-WPFTab $tabButton
+    if ($sync.MyAppsLoaded) {
+        Render-WinUtilMyAppsCards
+    }
     if ($sync.WPFselectedAppsButton) {
         $sync.WPFselectedAppsButton.Content = Get-WinUtilString -Key "SelectedAppsFmt" -FormatArgs @($sync.selectedApps.Count)
     }

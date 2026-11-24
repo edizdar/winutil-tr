@@ -59,6 +59,11 @@ function Initialize-WinUtilTabContent {
                     $sync.Form.Dispatcher.BeginInvoke([System.Windows.Threading.DispatcherPriority]::Background, [action]{ Start-WinUtilSystemHealthRefresh }) | Out-Null
                 }
             }
+            "MyApps" {
+                if (Test-WinUtilUIAlive) {
+                    $sync.Form.Dispatcher.BeginInvoke([System.Windows.Threading.DispatcherPriority]::Background, [action]{ Start-WinUtilMyAppsRefresh }) | Out-Null
+                }
+            }
         }
         # Controls built just now start unchecked, so anything already chosen by an import or a
         # preset has to be applied to them once they exist

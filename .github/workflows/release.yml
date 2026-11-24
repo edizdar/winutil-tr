@@ -24,11 +24,11 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) ince ayarlar, **6 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, Windows Update profilleri, sistem yapılandırma, özel Windows 11 ISO/USB oluşturma ve **240+ toplu uygulama kurulum** aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) ince ayarlar, **6 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, Windows Update profilleri, sistem yapılandırma, özel Windows 11 ISO/USB oluşturma, **240+ toplu uygulama kurulumu** ve **canlı GitHub \`Uygulamalarım\` kataloğu**.
 
-          ### ${TAG_NAME} Sürümündeki Yenilikler
-          - **Güncellemeler \`Sistem & Bakım\` Altında:** Windows Update profilleri (*Önerilen*, *Windows Varsayılanı*, *Güncellemeleri Kapat*) **Sistem & Bakım** merkezinin 6. alt sekmesi olarak taşındı (`Alt+G` kısayolu doğrudan bu alt sekmeyi açar).
-          - **Daha Sade 5 Sekmeli Üst Menü:** \`İnce Ayarlar\` → \`Yapılandırma\` → \`Win11 Oluşturucu\` → \`Sistem & Bakım\` → \`Kurulum\` düzeniyle üst çubuk ve arama kutusu çok daha ferah hale getirildi.
+          ### ${TAG_NAME} Sürümündeki Büyük Yenilik
+          - **Yeni \`Uygulamalarım\` Üst Sekmesi (\`Alt+U\`):** [github.com/edizdar](https://github.com/edizdar?tab=repositories) üzerindeki tüm herkese açık projeleri ve en son GitHub Release sürümlerini canlı olarak çeker (yeni bir proje veya sürüm yayımlandığında uygulama güncellemesi gerekmeden otomatik görünür).
+          - **Tek Tıkla Kur / İndir:** Windows (\`.exe\`/\`.msi\`) projelerini canlı ilerleme çubuğuyla indirip çalıştırma, Android (\`.apk\`) projelerinin en son sürümünü indirip klasörde açma, platform filtreleri (*Tümü / Windows / Android / Kaynak Kod*) ve doğrudan GitHub sayfası kısayolu.
 
           ### Hızlı Kullanım
           - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.
