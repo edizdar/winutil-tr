@@ -2469,7 +2469,8 @@
                                 <ToggleButton Name="WPFSysSubBtnOverview" Content="Özet &amp; Donanım" IsChecked="True" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
                                 <ToggleButton Name="WPFSysSubBtnBoost" Content="Performans &amp; Oyun" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
                                 <ToggleButton Name="WPFSysSubBtnClean" Content="Temizlik &amp; Ağ" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
-                                <ToggleButton Name="WPFSysSubBtnStartup" Content="Başlangıç &amp; Ayarlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0"/>
+                                <ToggleButton Name="WPFSysSubBtnStartup" Content="Başlangıç &amp; Ayarlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
+                                <ToggleButton Name="WPFSysSubBtnApps" Content="Yüklü Programlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0"/>
                             </WrapPanel>
                         </Grid>
                     </Border>
@@ -2846,6 +2847,49 @@
                                         </StackPanel>
                                     </Border>
                                 </StackPanel>
+                            </Grid>
+
+                            <!-- ================= SUB-TAB 5: INSTALLED APPS & DEEP UNINSTALLER ================= -->
+                            <Grid Name="WPFSysPanelApps" Visibility="Collapsed">
+                                <Border Style="{StaticResource BorderStyle}" Padding="12" Margin="4,0,4,0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <DockPanel Grid.Row="0" Margin="0,0,0,8">
+                                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                                                <TextBlock Name="WPFSysAppsCount" Text="" FontSize="12" Opacity="0.8" VerticalAlignment="Center" Margin="0,0,10,0" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <Button Name="WPFSysBtnRefreshApps" Content="Listeyi Yenile" Width="Auto" Height="28" Padding="12,2"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBlock Name="WPFSysAppsTitle" Text="Yüklü Programlar ve Derin Kaldırıcı (Program Ekle/Kaldır)" FontSize="15" FontWeight="Bold" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFSysAppsSubtitle" Text="Bilgisayarınızda kurulu tüm programları listeler; kaldırma sonrası Kayıt Defteri (Regedit), AppData ve TEMP artıklarını güvenle tarayıp temizler." FontSize="11.5" Opacity="0.78" TextWrapping="Wrap" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                            </StackPanel>
+                                        </DockPanel>
+
+                                        <DockPanel Grid.Row="1" Margin="0,0,0,8">
+                                            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center">
+                                                <Label Name="WPFSysLblDeepClean" Content="Kaldırma sonrası Regedit + AppData + TEMP artıklarını tara" VerticalAlignment="Center" Padding="4,2" Foreground="{DynamicResource MainForegroundColor}" FontSize="{DynamicResource FontSize}" ToolTip="Açıkken bir program kaldırıldıktan sonra geride kalan klasör, Kayıt Defteri (Regedit) ve TEMP artıkları otomatik taranır ve onayınızla temizlenir."/>
+                                                <CheckBox Name="WPFSysToggleDeepClean" IsChecked="True" Style="{StaticResource ColorfulToggleSwitchStyle}" VerticalAlignment="Center" Margin="4,0,0,0"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                <TextBlock Name="WPFSysAppsSearchLbl" Text="Program Ara:" FontSize="12.5" VerticalAlignment="Center" Margin="0,0,8,0" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBox Name="WPFSysAppsSearchBox" Width="330" Height="28" Padding="6,3" VerticalContentAlignment="Center"/>
+                                            </StackPanel>
+                                        </DockPanel>
+
+                                        <Border Grid.Row="2" Background="{DynamicResource MainBackgroundColor}" BorderBrush="{DynamicResource BorderColor}" BorderThickness="1" CornerRadius="6" Padding="6" VerticalAlignment="Stretch">
+                                            <ScrollViewer MaxHeight="445" VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                                <StackPanel Name="WPFSysAppsList" VerticalAlignment="Top">
+                                                    <TextBlock Text="Yüklü programlar taranıyor..." FontSize="12" Opacity="0.75" Margin="6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                </StackPanel>
+                                            </ScrollViewer>
+                                        </Border>
+                                    </Grid>
+                                </Border>
                             </Grid>
                         </Grid>
                     </ScrollViewer>

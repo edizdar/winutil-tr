@@ -397,6 +397,13 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnBoost" -Value $ui.SysSubBoost -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnClean" -Value $ui.SysSubClean -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnStartup" -Value $ui.SysSubStartup -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysSubBtnApps" -Value $ui.SysSubApps -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysAppsTitle" -Value $ui.SysAppsTitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysAppsSubtitle" -Value $ui.SysAppsSubtitle -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysAppsSearchLbl" -Value $ui.SysAppsSearchLbl -Property "Text"
+    Set-WinUtilNamedControlText -Name "WPFSysBtnRefreshApps" -Value $ui.SysBtnRefreshApps -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblDeepClean" -Value $ui.SysLblDeepClean -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysLblDeepClean" -Value $ui.SysTipDeepClean -Property "ToolTip"
     Set-WinUtilNamedControlText -Name "WPFSysTileOsLabel" -Value $ui.SysTileOs -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFSysTileCpuLabel" -Value $ui.SysTileCpu -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFSysTileRamLabel" -Value $ui.SysTileRam -Property "Text"
@@ -544,6 +551,7 @@ function Invoke-WinUtilLanguageChange {
 
     $sync.InitializedTabs = @{}
     $sync.SysHealthStartupLoaded = $false
+    $sync.SysHealthAppsLoaded = $false
     $sync.TweakStatusBadges = [Hashtable]::Synchronized(@{})
     $sync.FeatureStatusBadges = [Hashtable]::Synchronized(@{})
     $sync.AppxStatusBadges = [Hashtable]::Synchronized(@{})

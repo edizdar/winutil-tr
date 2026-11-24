@@ -149,7 +149,8 @@
     }
 
     if ($blockedBy) {
-        Show-WinUtilMessage -Message "$blockedBy is still running. Wait for it to finish before starting another action." -Title "WinUtil" -Button "OK" -Icon "Warning" | Out-Null
+        $busyMsg = Get-WinUtilString -Key "MsgJobBusy" -FormatArgs @($blockedBy)
+        Show-WinUtilMessage -Message $busyMsg -Title (Get-WinUtilString -Key "WindowTitle") -Button "OK" -Icon "Warning" | Out-Null
         return $null
     }
 
@@ -165,12 +166,19 @@
         # Tabs with a working view (spinner + live status) swap to it while their
         # jobs run. Adding a new one is a new XAML panel plus one entry here.
         $jobWorkingArea = switch ($Name) {
-            "Install"     { "Install" }
-            "Uninstall"   { "Install" }
-            "Upgrade all Applications" { "Install" }
-            "Tweaks"      { "Tweaks" }
-            "Undo tweaks" { "Tweaks" }
-            default       { $null }
+            "Install"                   { "Install" }
+            "Kurulum"                   { "Install" }
+            "Uninstall"                 { "Install" }
+            "Kaldırma"                  { "Install" }
+            "Upgrade all Applications"  { "Install" }
+            "Tüm Uygulamaları Güncelle" { "Install" }
+            "Yüklü Öğeler"              { "Install" }
+            "Installed Items"           { "Install" }
+            "Tweaks"                    { "Tweaks" }
+            "İnce Ayarlar"              { "Tweaks" }
+            "Undo tweaks"               { "Tweaks" }
+            "Ayarları Geri Al"          { "Tweaks" }
+            default                     { $null }
         }
 
         if ($jobWorkingArea) {

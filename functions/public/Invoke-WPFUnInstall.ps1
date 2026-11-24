@@ -17,7 +17,11 @@
 
     $ButtonType = "YesNo"
     $MessageboxTitle = Get-WinUtilString -Key "MsgAreYouSure"
-    $Messageboxbody = Get-WinUtilString -Key "MsgUninstallConfirm" -FormatArgs @(($PackagesToUninstall | Select-Object Name, Description | Out-String))
+    $appListText = (@($PackagesToUninstall | ForEach-Object {
+        $n = if ($_.content) { $_.content } elseif ($_.Name) { $_.Name } else { $_.winget }
+        " - $n"
+    }) -join "`n")
+    $Messageboxbody = Get-WinUtilString -Key "MsgUninstallConfirm" -FormatArgs @($appListText)
     $MessageIcon = "Information"
 
     $confirm = Show-WinUtilMessage -Message $Messageboxbody -Title $MessageboxTitle -Button $ButtonType -Icon $MessageIcon

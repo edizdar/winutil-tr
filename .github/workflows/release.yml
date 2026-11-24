@@ -24,13 +24,13 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **4 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
 
-          ### ${TAG_NAME} Sürümündeki Kararlılık ve Kalite Güncellemeleri
-          - **Sürücü Temizleyici (`DriverStore`) Dayanıklılık Düzeltmesi:** Standart dışı OEM sürücü sürüm biçimlerinde hata oluşmasını önleyen güvenli sürüm ayrıştırma (`TryParse`) eklendi.
-          - **%100 Çift Dilli Araç İpuçları (ToolTips):** İngilizce modda Türkçe kalan pencere büyütme ipucu, İnce Ayarlar DNS açıklaması ve `Sistem & Bakım` sekmesindeki tüm 24 araç ipucu tam Türkçe / İngilizce olarak eşitlendi.
-          - **PowerShell 5.1 Kodlama Hijyeni:** XAML yorumlarındaki Windows-1254 riskli karakterler temizlendi; tüm 133 betik ve derlenmiş `winutil.ps1` **0 AST hatası** ve **0 riskli bayt** ile doğrulandı.
-          - **Canlı Uçtan Uca (E2E) Doğrulama:** Tüm 7 sekme, 4 alt sekme, Türkçe/İngilizce canlı geçiş, Dark/Light tema, arama/seçim sayaçları ve kayıt defteri dokunulmazlığı otomatik testlerle **%100 geçer** olarak doğrulandı.
+          ### ${TAG_NAME} Sürümündeki Yenilikler ve Düzeltmeler
+          - **Yeni \`Yüklü Programlar\` ve Derin Kaldırıcı (\`Sistem & Bakım\` 5. Alt Sekme):** Bilgisayarınızdaki **tüm Windows Program Ekle/Kaldır uygulamalarını** canlı aramayla listeler; program kaldırıldıktan sonra geride kalan **Kurulum Klasörü, AppData/ProgramData, Kayıt Defteri (Regedit) ve TEMP** artıklarını tarayıp önizleme onayıyla güvenle temizler.
+          - **Canlı Çalışma Ekranı (Spinner) Düzeltmesi:** Kurulum, Kaldırma, Katalog Taraması ve İnce Ayarlar çalışırken Türkçe iş adlarıyla da canlı bekleme ekranının görünmesi sağlandı.
+          - **Kaldırma Onay Penceresi ve Meşgul Uyarısı Düzeltmesi:** Kaldırma onayında boş görünen uygulama adları düzeltildi; meşgul işlem uyarısı ve O&O ShutUp10++ durumları tam Türkçe/İngilizce yapıldı.
+          - **Kurulum Sekmesi Netleştirme:** Katalog tarama butonu **"Katalogdan Kurulu Olanları Seç"** olarak güncellendi ve tarama sonunda net bilgilendirme eklendi.
 
           ### Hızlı Kullanım
           - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.

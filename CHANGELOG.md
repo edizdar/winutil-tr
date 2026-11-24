@@ -4,6 +4,22 @@
 
 ---
 
+## v1.7 — 2026-11-24
+### Yeni Özellik: Yüklü Programlar ve Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)
+- **Yeni 5. Alt Sekme (`Sistem & Bakım -> Yüklü Programlar`):**
+  - Bilgisayarınızda kurulu **tüm Windows programlarını** (64-bit `HKLM`, 32-bit `WOW6432Node` ve kullanıcı `HKCU` Program Ekle/Kaldır kaynaklarından) canlı arama, yayıncı, sürüm ve boyut (MB) bilgisiyle listeler.
+  - **Derin Temizlik ile Kaldırma (`Kaldır`):** Programın resmi kaldırıcısını (MSI/EXE) çalıştırır; tamamlandıktan sonra geride kalan **Kurulum Klasörü**, **AppData / LocalAppData / ProgramData**, **Kayıt Defteri (`Regedit`)** ve **TEMP** artıklarını otomatik tarayıp tam önizleme listesiyle onayınızla siler.
+  - **Artıkları Tara:** Kırık/sahipsiz kayıtlar veya önceden kaldırılmış yazılımlar için doğrudan artık tarama ve temizleme imkânı sunar.
+  - **Koruma Kalkanı:** Windows sistem klasörleri (`C:\Windows`, `Program Files`, `AppData` kökleri) ve genel sistem anahtarları (`Microsoft`, `Windows`, `Google`, `Driver` vb.) sıkı koruma listesiyle engellenir.
+
+### Hata Düzeltmeleri ve Arayüz İyileştirmeleri
+- **Kaldırma Onay Penceresi Düzeltildi:** `Invoke-WPFUnInstall.ps1` içindeki `Name` alan hatası (`content` ile) düzeltilerek onay penceresinde uygulama adlarının eksiksiz listelenmesi sağlandı.
+- **Canlı Çalışma Ekranı (Spinner) Düzeltildi:** `Start-WinUtilJob.ps1` içindeki `$jobWorkingArea` eşleşmesine tüm Türkçe iş adları (`Kurulum`, `Kaldırma`, `Tüm Uygulamaları Güncelle`, `Yüklü Öğeler`, `İnce Ayarlar`, `Ayarları Geri Al`) eklendi; artık uzun süren işlemlerde canlı bekleme ekranı anında görünür.
+- **Meşgul Uyarısı ve OOSU Türkçeleştirildi:** Arka planda işlem sürerken ikinci tıklamada çıkan İngilizce uyarı (`is still running`) ve `O&O ShutUp10++` indirme durumları tam TR/EN çift dilli hale getirildi.
+- **Kurulum Sekmesi Butonu Netleştirildi:** Karışıklığı önlemek için buton **"Katalogdan Kurulu Olanları Seç"** olarak güncellendi ve tarama bitince kaç uygulama bulunduğu + tüm Windows programları için `Sistem & Bakım -> Yüklü Programlar` yönlendirmesi eklendi.
+
+---
+
 ## v1.6 — 2026-11-24
 ### Kapsamlı Kod Denetimi, Kararlılık ve Çift Dil İyileştirmeleri
 - **Sürücü Temizleyici (`DriverStore`) Güvenli Sürüm Ayrıştırma:** `Invoke-WinUtilSystemHealth.ps1` içindeki eski sürücü temizliği artık standart dışı OEM sürücü sürüm numaralarında hata vermeden güvenli `[version]::TryParse` yedeklemesiyle çalışır.

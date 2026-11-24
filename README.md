@@ -1,11 +1,11 @@
 # WinUtil Türkçe
 
-[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.6-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
+[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.7-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)](#hızlı-başlangıç)
 [![Dil](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e%20%7C%20English-E84A4A?style=flat-square)](#öne-çıkan-özellikler)
 [![Lisans](https://img.shields.io/badge/Lisans-MIT-green?style=flat-square)](LICENSE)
 
-**WinUtil Türkçe**; Windows 10 ve Windows 11 sistemlerde toplu uygulama kurulumu (**240+ uygulama**), gizlilik ve performans ince ayarları, **4 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi** (canlı donanım/pil/S.M.A.R.T., oyun boost, derin temizlik, DNS+ping, başlangıç yöneticisi), sistem onarımı, Windows Update profil yönetimi ve özel Windows 11 kurulum kalıbı (**ISO / USB**) oluşturma işlemlerini tek bir **Türkçe / İngilizce** arayüzde toplayan açık kaynaklı araçtır.
+**WinUtil Türkçe**; Windows 10 ve Windows 11 sistemlerde toplu uygulama kurulumu (**240+ uygulama**), gizlilik ve performans ince ayarları, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi** (canlı donanım/pil/S.M.A.R.T., oyun boost, derin temizlik, DNS+ping, başlangıç yöneticisi ve **Regedit + TEMP derin kaldırıcılı Yüklü Programlar yöneticisi**), sistem onarımı, Windows Update profil yönetimi ve özel Windows 11 kurulum kalıbı (**ISO / USB**) oluşturma işlemlerini tek bir **Türkçe / İngilizce** arayüzde toplayan açık kaynaklı araçtır.
 
 > **Hazırlayan:** Erol Dizdar — [https://www.eroldizdar.tr/](https://www.eroldizdar.tr/)  
 > **Esinlenme:** [ChrisTitusTech / winutil](https://github.com/christitustech/winutil) · **Sürüm Geçmişi:** [CHANGELOG.md](CHANGELOG.md)
@@ -40,7 +40,10 @@ irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
 ![WinUtil Türkçe — Sistem & Bakım Özet](rehber/gorseller/06-sistem-ve-bakim.png)
 
 <details>
-<summary><strong>Diğer tüm sekmelerin ve alt sekmelerin ekran görüntülerini aç (7 ekran görüntüsü daha)</strong></summary>
+<summary><strong>Diğer tüm sekmelerin ve alt sekmelerin ekran görüntülerini aç (8 ekran görüntüsü daha)</strong></summary>
+
+#### 📦 Sistem & Bakım — Yüklü Programlar ve Derin Kaldırıcı (Regedit + AppData + TEMP)
+![WinUtil Türkçe — Yüklü Programlar ve Derin Kaldırıcı](rehber/gorseller/06e-yuklu-programlar.png)
 
 #### ⚡ Sistem & Bakım — Performans & Oyun (Boost, Güç Planı, RAM Temizleme, Hiberfil, MPO)
 ![WinUtil Türkçe — Performans ve Oyun](rehber/gorseller/06b-performans-oyun.png)

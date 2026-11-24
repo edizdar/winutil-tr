@@ -2,12 +2,13 @@
 
 # 🩺 Sistem & Bakım (Wintoys Tarzı Yönetim Merkezi) Rehberi
 
-**Sistem & Bakım** (*System & Health*) sekmesi, popüler **Wintoys** aracının en sevilen özelliklerini 4 düzenli alt sekme altında doğrudan **WinUtil Türkçe** içine entegre eder:
+**Sistem & Bakım** (*System & Health*) sekmesi, popüler **Wintoys** aracının en sevilen özelliklerini 5 düzenli alt sekme altında doğrudan **WinUtil Türkçe** içine entegre eder:
 
 1. **Özet & Donanım** — Canlı sistem kartları, pil sağlığı (HTML rapor), anakart/BIOS/TPM/lisans kimliği, tüm diskler ve S.M.A.R.T. sağlığı
 2. **Performans & Oyun** — 9 canlı hızlandırma/oyun anahtarı, canlı güç planı seçici, `hiberfil.sys` yönetimi, anlık RAM temizleme ve GPU sürücü yenileme
 3. **Temizlik & Ağ** — 10 derin temizlik ve bakım aracı (tarayıcı önbelleği, Windows Update, DriverStore, WinSxS, SSD TRIM, DISM+SFC, simge onarımı) + tek tıkla DNS değiştirici, canlı ping testi ve ağ sıfırlama
 4. **Başlangıç & Ayarlar** — Görev Yöneticisi uyumlu canlı Başlangıç Uygulamaları Yöneticisi, 11 hızlı masaüstü/gezgin/gizlilik anahtarı, 8 sistem aracı ve tek tıkla **Tanrı Modu (God Mode)**
+5. **Yüklü Programlar (Derin Kaldırıcı)** — Windows Program Ekle/Kaldır'daki **tüm kurulu programları** canlı aramayla listeler; kaldırma sonrası **Kayıt Defteri (Regedit)**, **AppData / ProgramData** ve **TEMP** artıklarını güvenle tarayıp onayınızla temizler!
 
 ---
 
@@ -100,6 +101,20 @@ Tüm anahtarlar bilgisayarınızın mevcut durumunu otomatik okur ve tıklandı�
 ### Hızlı Sistem Araçları + Tanrı Modu (God Mode)
 - Tek tıkla **Görev Yöneticisi**, **Hizmetler**, **Kayıt Defteri**, **Aygıt Yöneticisi**, **Disk Yönetimi**, **Başlangıç Uygulamaları**, **Depolama Ayarları** ve **Olay Görüntüleyici** açılır.
 - **Masaüstüne 'Tanrı Modu' (God Mode) Klasörü Oluştur:** Tüm Windows yönetim ve Denetim Masası ayarlarını tek pencerede toplayan özel sistem klasörünü masaüstüne oluşturup açar.
+
+---
+
+## 5. 📦 Yüklü Programlar ve Derin Kaldırıcı (Program Ekle/Kaldır)
+
+![WinUtil Türkçe — Yüklü Programlar ve Derin Kaldırıcı](gorseller/06e-yuklu-programlar.png)
+
+- **Tüm Kurulu Programlar Tek Listede:** 64-bit (`HKLM`), 32-bit (`WOW6432Node`) ve kullanıcı (`HKCU`) kayıt defteri kaynaklarından bilgisayarınızda yüklü **tüm Windows programlarını** (ad, yayıncı, sürüm, boyut MB, kapsam) listeler ve anlık **Program Ara** kutusuyla filtreler.
+- **Derin Temizlik ile Kaldırma (`Kaldır`):**
+  1. Programın kendi resmi kaldırıcısını (MSI veya EXE) başlatır ve tamamlanmasını bekler.
+  2. **Derin Temizlik** anahtarı açıksa hemen ardından geride kalan **Kurulum Klasörü**, **AppData / LocalAppData / ProgramData**, **Kayıt Defteri (`HKCU\Software`, `HKLM\SOFTWARE`, `WOW6432Node`, sahipsiz `Uninstall` anahtarı)** ve **TEMP** artıklarını tarar.
+  3. Bulunan her klasör, kayıt defteri anahtarı ve TEMP dosyasını önizleme listesiyle size gösterip **onayınızla** kalıcı olarak siler.
+- **Artıkları Tara:** Daha önce normal yoldan kaldırdığınız veya kırık kaydı kalmış bir program için yalnızca artık taraması ve temizliği başlatabilirsiniz.
+- **Güvenlik Koruması:** Windows sistem klasörleri (`C:\Windows`, `Program Files`, `AppData` kökleri vb.) ve genel sistem anahtarları (`Microsoft`, `Windows`, `Google`, `Driver` vb.) koruma listesiyle engellenir; hiçbir sistem dosyasına dokunulmaz.
 
 ---
 

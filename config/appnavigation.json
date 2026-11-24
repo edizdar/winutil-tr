@@ -60,11 +60,11 @@
     "Description": "Seçili uygulama işaretlerini temizler"
   },
   "WPFGetInstalled": {
-    "Content": "Yüklü Uygulamaları Göster",
+    "Content": "Katalogdan Kurulu Olanları Seç",
     "Category": "__Seçim",
     "Type": "Button",
     "Order": "4",
-    "Description": "Sistemde yüklü olan uygulamaları işaretler"
+    "Description": "Kurulum sekmesindeki 240 katalog uygulamasından bilgisayarınızda kurulu olanları tespit edip işaretler. Tüm Windows programları için 'Sistem & Bakım -> Yüklü Programlar' sekmesini kullanın."
   },
   "WPFselectedAppsButton": {
     "Content": "Seçili Uygulamalar: 0",

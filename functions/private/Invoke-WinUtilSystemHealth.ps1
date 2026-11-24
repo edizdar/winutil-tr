@@ -32,13 +32,14 @@ function Get-WinUtilSysRegValue {
 }
 
 function Set-WinUtilSystemHealthSubTab {
-    param([ValidateSet("Overview", "Boost", "Clean", "Startup")][string]$Tab)
+    param([ValidateSet("Overview", "Boost", "Clean", "Startup", "Apps")][string]$Tab)
 
     $map = @{
         Overview = @{ Btn = "WPFSysSubBtnOverview"; Panel = "WPFSysPanelOverview" }
         Boost    = @{ Btn = "WPFSysSubBtnBoost";    Panel = "WPFSysPanelBoost" }
         Clean    = @{ Btn = "WPFSysSubBtnClean";    Panel = "WPFSysPanelClean" }
         Startup  = @{ Btn = "WPFSysSubBtnStartup";  Panel = "WPFSysPanelStartup" }
+        Apps     = @{ Btn = "WPFSysSubBtnApps";     Panel = "WPFSysPanelApps" }
     }
 
     $sync.SysHealthActiveSubTab = $Tab
@@ -59,6 +60,9 @@ function Set-WinUtilSystemHealthSubTab {
 
     if ($Tab -eq "Startup" -and -not $sync.SysHealthStartupLoaded) {
         Start-WinUtilStartupRefresh
+    }
+    if ($Tab -eq "Apps" -and -not $sync.SysHealthAppsLoaded) {
+        Start-WinUtilInstalledAppsRefresh
     }
 }
 
@@ -1406,6 +1410,8 @@ function Initialize-WinUtilSystemHealthHandlers {
             Start-WinUtilSystemHealthRefresh
             if ($sync.SysHealthActiveSubTab -eq "Startup") {
                 Start-WinUtilStartupRefresh
+            } elseif ($sync.SysHealthActiveSubTab -eq "Apps") {
+                Start-WinUtilInstalledAppsRefresh
             }
         })
     }
@@ -1414,12 +1420,23 @@ function Initialize-WinUtilSystemHealthHandlers {
         $sync.WPFSysBtnRefreshStartup.Add_Click({ Start-WinUtilStartupRefresh })
     }
 
+    if ($sync.WPFSysBtnRefreshApps) {
+        $sync.WPFSysBtnRefreshApps.Add_Click({ Start-WinUtilInstalledAppsRefresh })
+    }
+
+    if ($sync.WPFSysAppsSearchBox) {
+        $sync.WPFSysAppsSearchBox.Add_TextChanged({
+            Render-WinUtilInstalledAppsList -FilterText $sync.WPFSysAppsSearchBox.Text
+        })
+    }
+
     # Sub-Tab Switch Buttons
     $subMap = @{
         WPFSysSubBtnOverview = "Overview"
         WPFSysSubBtnBoost    = "Boost"
         WPFSysSubBtnClean    = "Clean"
         WPFSysSubBtnStartup  = "Startup"
+        WPFSysSubBtnApps     = "Apps"
     }
     foreach ($kv in $subMap.GetEnumerator()) {
         if ($sync[$kv.Key]) {
