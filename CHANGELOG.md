@@ -4,6 +4,29 @@
 
 ---
 
+## v1.5 — 2026-11-24
+### Büyük Güncelleme: 4 Alt Sekmeli Wintoys Tarzı `Sistem & Bakım` Merkezi
+- **Yeni 4 Alt Sekmeli Düzen:** `Sistem & Bakım` sekmesi **Özet & Donanım**, **Performans & Oyun**, **Temizlik & Ağ** ve **Başlangıç & Ayarlar** olmak üzere 4 temiz alt sekmeye ayrıldı; tüm yeni kontroller tam **Türkçe / English** canlı dil desteğiyle eklendi.
+- **Özet & Donanım (Genişletildi):**
+  - **Pil Sağlığı Kartı + HTML Pil Raporu:** Dizüstü bilgisayarlarda pil sağlığı (%), mWh kapasite ve şarj döngüsü gösterimi + `powercfg /batteryreport` tek tıkla açma.
+  - **Sistem Kimliği, BIOS ve Lisans:** Anakart, BIOS/UEFI sürümü, Secure Boot + TPM durumu ve Windows etkinleştirme / lisans kanalı (OEM/Retail/Volume).
+  - **Tüm Diskler ve SSD S.M.A.R.T. Sağlığı:** Tüm sabit disk bölümleri için canlı doluluk çubukları + fiziksel disklerin sağlık, sıcaklık (°C) ve aşınma yüzdesi.
+- **Performans & Oyun (Genişletildi):**
+  - **Yeni Oyun Anahtarları:** Windows Oyun Modu, Pencereli Oyunlar İçin Optimizasyon (Win11) ve Multi-Plane Overlay (MPO) aç/kapa.
+  - **Canlı Güç Planı Seçici:** Dengeli, Yüksek Performans, Güç Tasarrufu ve Nihai Performans arasında tek tıkla geçiş.
+  - **Hazırda Bekletme (`hiberfil.sys`) Yönetimi:** Gerçek dosya boyutunu (GB) gösterme ve tek tıkla açıp kapatma.
+  - **Anlık RAM Temizleme & GPU Sürücü Yenileme:** Çalışma kümelerini temizleyip serbest kalan MB'ı bildirme + `Win+Ctrl+Shift+B` GPU yenileme butonu.
+- **Temizlik & Ağ (Genişletildi):**
+  - **Yeni Derin Temizlik Araçları:** Tarayıcı önbellek temizleyici (Chrome, Edge, Brave, Vivaldi, Opera, Firefox — şifre ve oturumlara dokunmaz), Windows Update indirme önbelleği (`SoftwareDistribution`), eski kullanılmayan sürücü paketleri (`DriverStore` / `pnputil`) ve masaüstü simge önbelleği onarımı.
+  - **Hızlı DNS Değiştirici & Canlı Ping Testi:** Cloudflare, Google, AdGuard (reklam engelleyici), Quad9 ve Otomatik DNS profilleri + canlı ms gecikme ölçümü + Winsock/TCP-IP ağ sıfırlama.
+- **Başlangıç & Ayarlar (Genişletildi):**
+  - **Canlı Başlangıç (Startup) Uygulamaları Yöneticisi:** `HKCU/HKLM Run` ve Başlangıç klasöründeki uygulamaları Görev Yöneticisi ile uyumlu (`StartupApproved`) şekilde tek tıkla açıp kapatma.
+  - **5 Yeni Hızlı Gezgin/Gizlilik Anahtarı:** Dosya Gezgini'ni 'Bu Bilgisayar' ile aç, dosya uzantılarını göster, gizli dosyaları göster, Windows 11 klasik sağ tık menüsü, Pano Geçmişi (`Win+V`).
+  - **Tanrı Modu (God Mode):** Tek tıkla masaüstüne tüm Windows ayarlarını toplayan özel klasör oluşturma.
+- **Dokümantasyon & Ekran Görüntüleri:** Tüm 4 yeni alt sekmenin gerçek ekran görüntüleri `rehber/gorseller/` altına eklendi; `README.md` ve `rehber/sistem-ve-bakim.md` tamamen güncellendi.
+
+---
+
 ## v1.4 — 2026-11-24
 ### Yenilikler ve İyileştirmeler
 - **Gerçek Arayüz Ekran Görüntüleri:** Tüm 7 sekmenin (Kurulum, İnce Ayarlar, Yapılandırma, Güncellemeler, Win11 Oluşturucu, Sistem & Bakım, AppX) gerçek ekran görüntüleri `rehber/gorseller/` altına eklendi ve `README.md` ile tüm rehber sayfalarına yerleştirildi.

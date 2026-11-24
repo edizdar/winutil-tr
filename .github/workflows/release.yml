@@ -24,20 +24,18 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **Wintoys tarzı Sistem & Bakım merkezi**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) toplu uygulama kurulumu (**240+ uygulama**), ince ayarlar, **4 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, sistem yapılandırma, Windows Update profil yönetimi ve özel Windows 11 ISO/USB oluşturma aracı.
 
-          ### ${TAG_NAME} Sürümündeki Yenilikler ve Düzeltmeler
-          - **Gerçek Arayüz Ekran Görüntüleri:** Tüm 7 sekmenin ekran görüntüleri \`README.md\` ve \`rehber/\` dokümantasyon sayfalarına eklendi.
-          - **Sürüm Değişiklik Günlüğü:** Tüm sürümlerin geçmişini içeren [CHANGELOG.md](https://github.com/edizdar/winutil-tr/blob/main/CHANGELOG.md) eklendi ve tüm rehber sayfaları eşitlendi.
-          - **Akıllı Ekran Kartı (GPU) Tespiti:** \`Sistem & Bakım\` sekmesinde sanal görüntü bağdaştırıcıları filtrelenerek doğrudan fiziksel harici GPU (NVIDIA / AMD / Intel Arc) gösterilir.
-          - **Kararlılık ve Arayüz Düzeltmeleri:** Sekme geçişlerinde \`Sistem & Bakım\` canlı anahtarlarının sıfırlanması ve \`Seçili Uygulamalar: 0\` biçimlendirme hatası düzeltildi; 1320×820 pencere yerleşimi optimize edildi.
+          ### ${TAG_NAME} Sürümündeki Büyük Yenilikler
+          - **4 Alt Sekmeli Yeni \`Sistem & Bakım\` Merkezi:** **Özet & Donanım**, **Performans & Oyun**, **Temizlik & Ağ** ve **Başlangıç & Ayarlar** olarak tamamen yenilendi (tam Türkçe / English destekli).
+          - **Özet & Donanım+:** **Pil Sağlığı (%) + HTML Pil Raporu**, Anakart / BIOS / Secure Boot / TPM / **Windows Lisans Özeti**, tüm sabit sürücülerin canlı doluluk çubukları ve **SSD S.M.A.R.T. sağlık/sıcaklık/aşınma** göstergeleri eklendi.
+          - **Performans & Oyun+:** **Windows Oyun Modu**, **Pencereli Oyun Optimizasyonu (Win11)**, **MPO** anahtarları, **Canlı Güç Planı Seçici**, **Hazırda Bekletme (\`hiberfil.sys\`) boyutu & aç/kapa**, **Anlık RAM Temizleme** ve **GPU Sürücü Yenileme (\`Win+Ctrl+Shift+B\`)** eklendi.
+          - **Temizlik & Ağ+:** **Tarayıcı Önbellek Temizleyici** (Chrome/Edge/Brave/Vivaldi/Opera/Firefox — şifreler korunur), **Windows Update Önbellek (\`SoftwareDistribution\`)**, **Eski Sürücü Temizliği (\`DriverStore\`)**, **Simge Önbelleği Onarımı**, **Tek Tıkla DNS Değiştirici** (Cloudflare, Google, AdGuard, Quad9, Otomatik), **Canlı DNS Ping Testi (ms)** ve **Ağ Sıfırlama** eklendi.
+          - **Başlangıç & Ayarlar+:** Görev Yöneticisi uyumlu **Canlı Başlangıç (Startup) Uygulamaları Yöneticisi**, 5 yeni Gezgin/Gizlilik anahtarı (*Bu Bilgisayar ile aç, dosya uzantıları, gizli dosyalar, klasik sağ tık menüsü, Pano Geçmişi*) ve tek tıkla **Tanrı Modu (God Mode)** klasörü oluşturucu eklendi.
 
-          ### Temel Özellikler
-          - **Sistem & Bakım Sekmesi (Wintoys Tarzı):** Canlı donanım özeti (OS, CPU, RAM, GPU, Disk C:), Performans/Hızlandırma anahtarları (HAGS, VBS, Hızlı Başlatma, Oyun DVR, Animasyonlar, Şeffaflık), Sistem Sağlığı ve Temizlik (TEMP/Shader/Geri Dönüşüm, WinSxS DISM, SSD TRIM, DISM+SFC, Defender Hızlı Tarama, WSReset, DNS temizliği), hızlı masaüstü/gizlilik ayarları ve 8 sistem aracı kısayolu.
-          - **240+ Uygulama (Wintoys Dahil):** WinGet veya Chocolatey ile tek tıkla sessiz kurulum, güncelleme ve kaldırma.
-          - **Çift Dil Desteği (Türkçe / English):** Windows sistem dilini otomatik algılar; sağ üst **Ayarlar (⚙️)** menüsünden anında değiştirilebilir.
-          - **Canlı Sistem Durumu Rozetleri:** İnce Ayarlar'da \`✓ Uygulu\`, Yapılandırma'da \`✓ Etkin\`, AppX'te \`✓ Kurulu\` rozetleri otomatik gösterilir.
-          - **PowerShell Tek Satır Desteği:**
+          ### Hızlı Kullanım
+          - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.
+          - **PowerShell Tek Satır:**
             \`\`\`powershell
             irm https://raw.githubusercontent.com/edizdar/winutil-tr/main/winutil.ps1 | iex
             \`\`\`
