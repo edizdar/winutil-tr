@@ -398,6 +398,7 @@ function Apply-WinUtilLanguageToUI {
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnClean" -Value $ui.SysSubClean -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnStartup" -Value $ui.SysSubStartup -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysSubBtnApps" -Value $ui.SysSubApps -Property "Content"
+    Set-WinUtilNamedControlText -Name "WPFSysSubBtnUpdates" -Value $ui.SysSubUpdates -Property "Content"
     Set-WinUtilNamedControlText -Name "WPFSysAppsTitle" -Value $ui.SysAppsTitle -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFSysAppsSubtitle" -Value $ui.SysAppsSubtitle -Property "Text"
     Set-WinUtilNamedControlText -Name "WPFSysAppsSearchLbl" -Value $ui.SysAppsSearchLbl -Property "Text"

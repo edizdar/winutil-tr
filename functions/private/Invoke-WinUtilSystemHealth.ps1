@@ -32,7 +32,7 @@ function Get-WinUtilSysRegValue {
 }
 
 function Set-WinUtilSystemHealthSubTab {
-    param([ValidateSet("Overview", "Boost", "Clean", "Startup", "Apps")][string]$Tab)
+    param([ValidateSet("Overview", "Boost", "Clean", "Startup", "Apps", "Updates")][string]$Tab)
 
     $map = @{
         Overview = @{ Btn = "WPFSysSubBtnOverview"; Panel = "WPFSysPanelOverview" }
@@ -40,6 +40,7 @@ function Set-WinUtilSystemHealthSubTab {
         Clean    = @{ Btn = "WPFSysSubBtnClean";    Panel = "WPFSysPanelClean" }
         Startup  = @{ Btn = "WPFSysSubBtnStartup";  Panel = "WPFSysPanelStartup" }
         Apps     = @{ Btn = "WPFSysSubBtnApps";     Panel = "WPFSysPanelApps" }
+        Updates  = @{ Btn = "WPFSysSubBtnUpdates";  Panel = "WPFSysPanelUpdates" }
     }
 
     $sync.SysHealthActiveSubTab = $Tab
@@ -1437,6 +1438,7 @@ function Initialize-WinUtilSystemHealthHandlers {
         WPFSysSubBtnClean    = "Clean"
         WPFSysSubBtnStartup  = "Startup"
         WPFSysSubBtnApps     = "Apps"
+        WPFSysSubBtnUpdates  = "Updates"
     }
     foreach ($kv in $subMap.GetEnumerator()) {
         if ($sync[$kv.Key]) {

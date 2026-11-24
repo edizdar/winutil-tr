@@ -24,11 +24,11 @@ jobs:
           cat <<EOF > release_notes.md
           ## WinUtil Türkçe ${TAG_NAME}
 
-          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) ince ayarlar, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, sistem yapılandırma, Windows Update profil yönetimi, özel Windows 11 ISO/USB oluşturma ve **240+ toplu uygulama kurulum** aracı.
+          Windows 10 ve Windows 11 için çift dilli (**Türkçe / English**) ince ayarlar, **6 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi**, **Derin Kaldırıcı (Program Ekle/Kaldır + Regedit/AppData/TEMP)**, Windows Update profilleri, sistem yapılandırma, özel Windows 11 ISO/USB oluşturma ve **240+ toplu uygulama kurulum** aracı.
 
           ### ${TAG_NAME} Sürümündeki Yenilikler
-          - **Açılış Ekranı \`İnce Ayarlar\`:** Uygulama artık doğrudan **İnce Ayarlar** ekranıyla açılır ve sisteminizde kurulu ayarlar anında \`✓ Uygulu\` rozetleriyle gösterilir.
-          - **Yenilenen Sekme Sıralaması:** **Kurulum** sekmesi üst menünün en sağına alındı (\`İnce Ayarlar\` → \`Yapılandırma\` → \`Güncellemeler\` → \`Win11 Oluşturucu\` → \`Sistem & Bakım\` → \`Kurulum\`); arka planda ön yüklenerek tıklandığında anında açılır.
+          - **Güncellemeler \`Sistem & Bakım\` Altında:** Windows Update profilleri (*Önerilen*, *Windows Varsayılanı*, *Güncellemeleri Kapat*) **Sistem & Bakım** merkezinin 6. alt sekmesi olarak taşındı (`Alt+G` kısayolu doğrudan bu alt sekmeyi açar).
+          - **Daha Sade 5 Sekmeli Üst Menü:** \`İnce Ayarlar\` → \`Yapılandırma\` → \`Win11 Oluşturucu\` → \`Sistem & Bakım\` → \`Kurulum\` düzeniyle üst çubuk ve arama kutusu çok daha ferah hale getirildi.
 
           ### Hızlı Kullanım
           - **Tek Dosya \`.exe\`:** Aşağıdaki \`WinUtil-TR.exe\` dosyasını indirip çift tıklayın.

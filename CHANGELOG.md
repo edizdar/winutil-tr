@@ -4,6 +4,13 @@
 
 ---
 
+## v1.9 — 2026-11-24
+### Sadeleştirilmiş 5 Sekmeli Üst Menü ve Birleştirilmiş `Güncellemeler` Alt Sekmesi
+- **Güncellemeler Artık `Sistem & Bakım` Altında:** Windows Update profil yönetimi (*Önerilen*, *Windows Varsayılanı*, *Güncellemeleri Kapat*) **Sistem & Bakım** merkezinin 6. alt sekmesi (**Güncellemeler**) olarak entegre edildi; `Alt+G` kısayolu doğrudan bu alt sekmeye yönlendirir.
+- **Daha Ferah Üst Menü:** Üst gezinme çubuğu 5 temiz ana sekmeden oluşur: `İnce Ayarlar` → `Yapılandırma` → `Win11 Oluşturucu` → `Sistem & Bakım` → `Kurulum`.
+
+---
+
 ## v1.8 — 2026-11-24
 ### Arayüz ve Başlangıç Deneyimi İyileştirmesi
 - **Açılış Ekranı `İnce Ayarlar` Oldu:** WinUtil Türkçe artık doğrudan **İnce Ayarlar** sekmesiyle açılır ve bilgisayarınızda zaten uygulanan ayarlar anında yeşil `✓ Uygulu` rozetleriyle görünür.

@@ -1,11 +1,11 @@
 # WinUtil Türkçe
 
-[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.8-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
+[![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-v1.9-2F7D78?style=flat-square)](https://github.com/edizdar/winutil-tr/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D6?style=flat-square)](#hızlı-başlangıç)
 [![Dil](https://img.shields.io/badge/Dil-T%C3%BCrk%C3%A7e%20%7C%20English-E84A4A?style=flat-square)](#öne-çıkan-özellikler)
 [![Lisans](https://img.shields.io/badge/Lisans-MIT-green?style=flat-square)](LICENSE)
 
-**WinUtil Türkçe**; Windows 10 ve Windows 11 sistemlerde toplu uygulama kurulumu (**240+ uygulama**), gizlilik ve performans ince ayarları, **5 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi** (canlı donanım/pil/S.M.A.R.T., oyun boost, derin temizlik, DNS+ping, başlangıç yöneticisi ve **Regedit + TEMP derin kaldırıcılı Yüklü Programlar yöneticisi**), sistem onarımı, Windows Update profil yönetimi ve özel Windows 11 kurulum kalıbı (**ISO / USB**) oluşturma işlemlerini tek bir **Türkçe / İngilizce** arayüzde toplayan açık kaynaklı araçtır.
+**WinUtil Türkçe**; Windows 10 ve Windows 11 sistemlerde gizlilik ve performans ince ayarları, **6 alt sekmeli Wintoys tarzı Sistem & Bakım merkezi** (canlı donanım/pil/S.M.A.R.T., oyun boost, derin temizlik, DNS+ping, başlangıç yöneticisi, **Regedit + TEMP derin kaldırıcılı Yüklü Programlar yöneticisi** ve **Windows Update profilleri**), sistem yapılandırma, özel Windows 11 kurulum kalıbı (**ISO / USB**) oluşturma ve **240+ toplu uygulama kurulumu** işlemlerini tek bir **Türkçe / İngilizce** arayüzde toplayan açık kaynaklı araçtır.
 
 > **Hazırlayan:** Erol Dizdar — [https://www.eroldizdar.tr/](https://www.eroldizdar.tr/)  
 > **Esinlenme:** [ChrisTitusTech / winutil](https://github.com/christitustech/winutil) · **Sürüm Geçmişi:** [CHANGELOG.md](CHANGELOG.md)

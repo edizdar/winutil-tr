@@ -22,6 +22,13 @@ function Invoke-WPFTab {
         [switch]$Yield
     )
 
+    # Updates now lives as a sub-tab inside System & Health (WPFTab7BT)
+    if ($ClickedTab -eq "WPFTab4BT") {
+        Invoke-WPFTab "WPFTab7BT" -Yield:$Yield
+        Set-WinUtilSystemHealthSubTab -Tab "Updates"
+        return
+    }
+
     $tabNumber = [int]($ClickedTab -replace "WPFTab","" -replace "BT","") - 1
 
     Measure-WinUtilStep -Scope "Tab" -Name "$ClickedTab select" -ScriptBlock {

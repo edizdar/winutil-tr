@@ -1106,7 +1106,7 @@
                         <TextBlock Name="WPFNavTab3Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonConfigForegroundColor}" Text="Yapılandırma"/>
                     </ToggleButton.Content>
                 </ToggleButton>
-                <ToggleButton Style="{StaticResource TabToggleButton}" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
+                <ToggleButton Style="{StaticResource TabToggleButton}" Visibility="Collapsed" Margin="0,0,5,0" Height="{DynamicResource TabButtonHeight}" Width="Auto" MinWidth="{DynamicResource TabButtonWidth}" Padding="10,0"
                     Background="{DynamicResource ButtonUpdatesBackgroundColor}" Foreground="{DynamicResource ButtonUpdatesForegroundColor}" FontWeight="Bold" Name="WPFTab4BT">
                     <ToggleButton.Content>
                         <TextBlock Name="WPFNavTab4Text" FontSize="{DynamicResource TabButtonFontSize}" Background="Transparent" Foreground="{DynamicResource ButtonUpdatesForegroundColor}" Text="Güncellemeler"/>
@@ -1663,153 +1663,7 @@
                     </Grid>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Updates" Visibility="Collapsed" Name="WPFTab4">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="{DynamicResource TabContentMargin}">
-                    <Grid Background="Transparent" MaxWidth="1250" HorizontalAlignment="Center">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-
-                        <StackPanel Grid.Row="0" Margin="10,10,10,14">
-                            <TextBlock Name="WPFUpdatesTitle" Text="Windows Update Profilleri"
-                                       FontSize="24"
-                                       FontWeight="Bold"
-                                       Foreground="{DynamicResource MainForegroundColor}"/>
-                            <TextBlock Name="WPFUpdatesSubtitle" Text="Windows'un güncellemeleri nasıl alacağını seçin. Her profil, WinUtil tarafından yönetilen Windows Update ayarlarının yerini alır."
-                                       Margin="0,6,0,0"
-                                       FontSize="13"
-                                       TextWrapping="Wrap"
-                                       Foreground="{DynamicResource MainForegroundColor}"/>
-                        </StackPanel>
-
-                        <UniformGrid Grid.Row="1" Columns="3">
-                            <Border Style="{StaticResource BorderStyle}"
-                                    BorderBrush="{DynamicResource ProgressBarForegroundColor}"
-                                    BorderThickness="2"
-                                    Padding="16"
-                                    MinHeight="300">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Name="WPFUpdRecTitle" Text="Önerilen"
-                                                   FontSize="20"
-                                                   FontWeight="Bold"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdRecSub" Text="Dengeli güvenlik ve kararlılık"
-                                                   Margin="0,4,0,0"
-                                                   FontSize="13"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                    </StackPanel>
-                                    <StackPanel Grid.Row="1">
-                                        <TextBlock Name="WPFUpdRecB1" Text="- Özellik güncellemelerini 365 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdRecB2" Text="- Kalite (güvenlik) güncellemelerini 4 gün erteler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdRecB3" Text="- Sürücüleri kalite güncellemelerinden hariç tutar" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdRecB4" Text="- İndirilen güncellemeler kuruluma hazır olduğunda bildirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdRecNote" Text="Windows Pro, Enterprise ve Education sürümlerinde kullanılabilir."
-                                                   FontSize="11"
-                                                   FontStyle="Italic"
-                                                   TextWrapping="Wrap"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                    </StackPanel>
-                                    <Button Name="WPFUpdatessecurity"
-                                            Grid.Row="2"
-                                            Content="Önerileni Uygula"
-                                            FontSize="{DynamicResource ConfigTabButtonFontSize}"
-                                            Margin="0,16,0,0"
-                                            Padding="10"/>
-                                </Grid>
-                            </Border>
-
-                            <Border Style="{StaticResource BorderStyle}" Padding="16" MinHeight="300">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Name="WPFUpdDefTitle" Text="Windows Varsayılanı"
-                                                   FontSize="20"
-                                                   FontWeight="Bold"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDefSub" Text="Kontrolü Windows'a geri ver"
-                                                   Margin="0,4,0,0"
-                                                   FontSize="13"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                    </StackPanel>
-                                    <StackPanel Grid.Row="1">
-                                        <TextBlock Name="WPFUpdDefB1" Text="- WinUtil tarafından uygulanan güncelleme ilkelerini kaldırır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDefB2" Text="- Güncelleme hizmeti başlangıç ayarlarını geri yükler" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDefB3" Text="- Zamanlanmış güncelleme görevlerini yeniden etkinleştirir" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDefNote" Text="Önerilen veya Devre Dışı profilini geri almak için bunu kullanın."
-                                                   FontSize="11"
-                                                   FontStyle="Italic"
-                                                   TextWrapping="Wrap"
-                                                   Foreground="{DynamicResource MainForegroundColor}"/>
-                                    </StackPanel>
-                                    <Button Name="WPFUpdatesdefault"
-                                            Grid.Row="2"
-                                            Content="Varsayılanlara Dön"
-                                            FontSize="{DynamicResource ConfigTabButtonFontSize}"
-                                            Margin="0,16,0,0"
-                                            Padding="10"/>
-                                </Grid>
-                            </Border>
-
-                            <Border Style="{StaticResource BorderStyle}" Padding="16" MinHeight="300">
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
-                                    <StackPanel Grid.Row="0" Margin="0,0,0,14">
-                                        <TextBlock Name="WPFUpdDisTitle" Text="Güncellemeleri Kapat"
-                                                   FontSize="20"
-                                                   FontWeight="Bold"
-                                                   Foreground="Red"/>
-                                        <TextBlock Name="WPFUpdDisSub" Text="Yalnızca ileri düzey kullanıcılar için"
-                                                   Margin="0,4,0,0"
-                                                   FontSize="13"
-                                                   FontWeight="SemiBold"
-                                                   Foreground="Red"/>
-                                    </StackPanel>
-                                    <StackPanel Grid.Row="1">
-                                        <TextBlock Name="WPFUpdDisB1" Text="- Otomatik güncelleme ilkesini devre dışı bırakır" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDisB2" Text="- Güncelleme hizmetlerini ve zamanlanmış görevleri durdurur" TextWrapping="Wrap" Margin="0,0,0,7" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDisB3" Text="- İndirilmiş güncelleme dosyalarını temizler" TextWrapping="Wrap" Margin="0,0,0,12" Foreground="{DynamicResource MainForegroundColor}"/>
-                                        <TextBlock Name="WPFUpdDisNote" Text="Bu profil etkinken güvenlik güncellemeleri yüklenmeyecektir."
-                                                   FontSize="11"
-                                                   FontStyle="Italic"
-                                                   TextWrapping="Wrap"
-                                                   Foreground="Red"/>
-                                    </StackPanel>
-                                    <Button Name="WPFUpdatesdisable"
-                                            Grid.Row="2"
-                                            Content="Güncellemeleri Kapat"
-                                            FontSize="{DynamicResource ConfigTabButtonFontSize}"
-                                            Foreground="Red"
-                                            Margin="0,16,0,0"
-                                            Padding="10"/>
-                                </Grid>
-                            </Border>
-                        </UniformGrid>
-
-                        <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Margin="8,14,8,8" Padding="12">
-                            <TextBlock Name="WPFUpdFooter" Text="Değişiklikler sistem genelinde uygulanır. Profil değiştirdikten sonra Windows'u yeniden başlatın. WinUtil ilkelerini geri almak için Varsayılanlara Dön seçeneğini kullanın."
-                                       TextWrapping="Wrap"
-                                       HorizontalAlignment="Center"
-                                       Foreground="{DynamicResource MainForegroundColor}"/>
-                        </Border>
-                    </Grid>
-                </ScrollViewer>
-            </TabItem>
+            <TabItem Header="Updates" Visibility="Collapsed" Name="WPFTab4"/>
             <TabItem Header="Win11ISO" Visibility="Collapsed" Name="WPFTab5">
                 <Grid Name="Win11ISOPanel" Margin="{DynamicResource TabContentMargin}" Background="Transparent">
                     <Grid.ColumnDefinitions>
@@ -2470,7 +2324,8 @@
                                 <ToggleButton Name="WPFSysSubBtnBoost" Content="Performans &amp; Oyun" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
                                 <ToggleButton Name="WPFSysSubBtnClean" Content="Temizlik &amp; Ağ" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
                                 <ToggleButton Name="WPFSysSubBtnStartup" Content="Başlangıç &amp; Ayarlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
-                                <ToggleButton Name="WPFSysSubBtnApps" Content="Yüklü Programlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0"/>
+                                <ToggleButton Name="WPFSysSubBtnApps" Content="Yüklü Programlar" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0,0,6,0"/>
+                                <ToggleButton Name="WPFSysSubBtnUpdates" Content="Güncellemeler" IsChecked="False" Style="{StaticResource FilterChipToggleStyle}" Padding="16,5" Margin="0"/>
                             </WrapPanel>
                         </Grid>
                     </Border>
@@ -2889,6 +2744,167 @@
                                             </ScrollViewer>
                                         </Border>
                                     </Grid>
+                                </Border>
+                            </Grid>
+
+                            <!-- ================= SUB-TAB 6: WINDOWS UPDATE PROFILES ================= -->
+                            <Grid Name="WPFSysPanelUpdates" Visibility="Collapsed" Margin="4,0,4,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="0" Style="{StaticResource BorderStyle}" Padding="12,10" Margin="0,0,0,6">
+                                    <StackPanel>
+                                        <TextBlock Name="WPFUpdatesTitle" Text="Windows Update Profilleri"
+                                                   FontSize="17"
+                                                   FontWeight="Bold"
+                                                   Background="Transparent"
+                                                   Foreground="{DynamicResource MainForegroundColor}"/>
+                                        <TextBlock Name="WPFUpdatesSubtitle" Text="Windows'un güncellemeleri nasıl alacağını seçin. Her profil, WinUtil tarafından yönetilen Windows Update ayarlarının yerini alır."
+                                                   Margin="0,4,0,0"
+                                                   FontSize="12"
+                                                   Opacity="0.82"
+                                                   TextWrapping="Wrap"
+                                                   Background="Transparent"
+                                                   Foreground="{DynamicResource MainForegroundColor}"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <UniformGrid Grid.Row="1" Columns="3">
+                                    <Border Style="{StaticResource BorderStyle}"
+                                            BorderBrush="{DynamicResource ProgressBarForegroundColor}"
+                                            BorderThickness="2"
+                                            Padding="14"
+                                            Margin="0,0,4,0"
+                                            MinHeight="285">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                                                <TextBlock Name="WPFUpdRecTitle" Text="Önerilen"
+                                                           FontSize="18"
+                                                           FontWeight="Bold"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdRecSub" Text="Dengeli güvenlik ve kararlılık"
+                                                           Margin="0,3,0,0"
+                                                           FontSize="12.5"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock Name="WPFUpdRecB1" Text="- Özellik güncellemelerini 365 gün erteler" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdRecB2" Text="- Kalite (güvenlik) güncellemelerini 4 gün erteler" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdRecB3" Text="- Sürücüleri kalite güncellemelerinden hariç tutar" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdRecB4" Text="- İndirilen güncellemeler kuruluma hazır olduğunda bildirir" TextWrapping="Wrap" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdRecNote" Text="Windows Pro, Enterprise ve Education sürümlerinde kullanılabilir."
+                                                           FontSize="11"
+                                                           FontStyle="Italic"
+                                                           TextWrapping="Wrap"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                            </StackPanel>
+                                            <Button Name="WPFUpdatessecurity"
+                                                    Grid.Row="2"
+                                                    Content="Önerileni Uygula"
+                                                    FontSize="{DynamicResource ConfigTabButtonFontSize}"
+                                                    Margin="0,12,0,0"
+                                                    Padding="8"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <Border Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,4,0" MinHeight="285">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                                                <TextBlock Name="WPFUpdDefTitle" Text="Windows Varsayılanı"
+                                                           FontSize="18"
+                                                           FontWeight="Bold"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDefSub" Text="Kontrolü Windows'a geri ver"
+                                                           Margin="0,3,0,0"
+                                                           FontSize="12.5"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock Name="WPFUpdDefB1" Text="- WinUtil tarafından uygulanan güncelleme ilkelerini kaldırır" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDefB2" Text="- Güncelleme hizmeti başlangıç ayarlarını geri yükler" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDefB3" Text="- Zamanlanmış güncelleme görevlerini yeniden etkinleştirir" TextWrapping="Wrap" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDefNote" Text="Önerilen veya Devre Dışı profilini geri almak için bunu kullanın."
+                                                           FontSize="11"
+                                                           FontStyle="Italic"
+                                                           TextWrapping="Wrap"
+                                                           Background="Transparent"
+                                                           Foreground="{DynamicResource MainForegroundColor}"/>
+                                            </StackPanel>
+                                            <Button Name="WPFUpdatesdefault"
+                                                    Grid.Row="2"
+                                                    Content="Varsayılanlara Dön"
+                                                    FontSize="{DynamicResource ConfigTabButtonFontSize}"
+                                                    Margin="0,12,0,0"
+                                                    Padding="8"/>
+                                        </Grid>
+                                    </Border>
+
+                                    <Border Style="{StaticResource BorderStyle}" Padding="14" Margin="4,0,0,0" MinHeight="285">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <StackPanel Grid.Row="0" Margin="0,0,0,12">
+                                                <TextBlock Name="WPFUpdDisTitle" Text="Güncellemeleri Kapat"
+                                                           FontSize="18"
+                                                           FontWeight="Bold"
+                                                           Background="Transparent"
+                                                           Foreground="Red"/>
+                                                <TextBlock Name="WPFUpdDisSub" Text="Yalnızca ileri düzey kullanıcılar için"
+                                                           Margin="0,3,0,0"
+                                                           FontSize="12.5"
+                                                           FontWeight="SemiBold"
+                                                           Background="Transparent"
+                                                           Foreground="Red"/>
+                                            </StackPanel>
+                                            <StackPanel Grid.Row="1">
+                                                <TextBlock Name="WPFUpdDisB1" Text="- Otomatik güncelleme ilkesini devre dışı bırakır" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDisB2" Text="- Güncelleme hizmetlerini ve zamanlanmış görevleri durdurur" TextWrapping="Wrap" Margin="0,0,0,6" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDisB3" Text="- İndirilmiş güncelleme dosyalarını temizler" TextWrapping="Wrap" Margin="0,0,0,10" Background="Transparent" Foreground="{DynamicResource MainForegroundColor}"/>
+                                                <TextBlock Name="WPFUpdDisNote" Text="Bu profil etkinken güvenlik güncellemeleri yüklenmeyecektir."
+                                                           FontSize="11"
+                                                           FontStyle="Italic"
+                                                           TextWrapping="Wrap"
+                                                           Background="Transparent"
+                                                           Foreground="Red"/>
+                                            </StackPanel>
+                                            <Button Name="WPFUpdatesdisable"
+                                                    Grid.Row="2"
+                                                    Content="Güncellemeleri Kapat"
+                                                    FontSize="{DynamicResource ConfigTabButtonFontSize}"
+                                                    Foreground="Red"
+                                                    Margin="0,12,0,0"
+                                                    Padding="8"/>
+                                        </Grid>
+                                    </Border>
+                                </UniformGrid>
+
+                                <Border Grid.Row="2" Style="{StaticResource BorderStyle}" Margin="0,6,0,0" Padding="10">
+                                    <TextBlock Name="WPFUpdFooter" Text="Değişiklikler sistem genelinde uygulanır. Profil değiştirdikten sonra Windows'u yeniden başlatın. WinUtil ilkelerini geri almak için Varsayılanlara Dön seçeneğini kullanın."
+                                               TextWrapping="Wrap"
+                                               HorizontalAlignment="Center"
+                                               Background="Transparent"
+                                               Foreground="{DynamicResource MainForegroundColor}"/>
                                 </Border>
                             </Grid>
                         </Grid>

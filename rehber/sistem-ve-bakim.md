@@ -2,13 +2,14 @@
 
 # 🩺 Sistem & Bakım (Wintoys Tarzı Yönetim Merkezi) Rehberi
 
-**Sistem & Bakım** (*System & Health*) sekmesi, popüler **Wintoys** aracının en sevilen özelliklerini 5 düzenli alt sekme altında doğrudan **WinUtil Türkçe** içine entegre eder:
+**Sistem & Bakım** (*System & Health*) sekmesi, popüler **Wintoys** aracının en sevilen özelliklerini 6 düzenli alt sekme altında doğrudan **WinUtil Türkçe** içine entegre eder:
 
 1. **Özet & Donanım** — Canlı sistem kartları, pil sağlığı (HTML rapor), anakart/BIOS/TPM/lisans kimliği, tüm diskler ve S.M.A.R.T. sağlığı
 2. **Performans & Oyun** — 9 canlı hızlandırma/oyun anahtarı, canlı güç planı seçici, `hiberfil.sys` yönetimi, anlık RAM temizleme ve GPU sürücü yenileme
 3. **Temizlik & Ağ** — 10 derin temizlik ve bakım aracı (tarayıcı önbelleği, Windows Update, DriverStore, WinSxS, SSD TRIM, DISM+SFC, simge onarımı) + tek tıkla DNS değiştirici, canlı ping testi ve ağ sıfırlama
 4. **Başlangıç & Ayarlar** — Görev Yöneticisi uyumlu canlı Başlangıç Uygulamaları Yöneticisi, 11 hızlı masaüstü/gezgin/gizlilik anahtarı, 8 sistem aracı ve tek tıkla **Tanrı Modu (God Mode)**
-5. **Yüklü Programlar (Derin Kaldırıcı)** — Windows Program Ekle/Kaldır'daki **tüm kurulu programları** canlı aramayla listeler; kaldırma sonrası **Kayıt Defteri (Regedit)**, **AppData / ProgramData** ve **TEMP** artıklarını güvenle tarayıp onayınızla temizler!
+5. **Yüklü Programlar (Derin Kaldırıcı)** — Windows Program Ekle/Kaldır'daki **tüm kurulu programları** canlı aramayla listeler; kaldırma sonrası **Kayıt Defteri (Regedit)**, **AppData / ProgramData** ve **TEMP** artıklarını güvenle tarayıp onayınızla temizler
+6. **Güncellemeler** — Windows Update profilleri (*Önerilen*, *Windows Varsayılanı* ve *Güncellemeleri Kapat*) tek merkezden yönetilir
 
 ---
 
